@@ -8,6 +8,7 @@ This repository contains all technical aspects of the project, including databas
  - MySQL Workbench 6.0(or above)
  - MySQL 5.6
  - Apache HTTP Server 2.4
+
 > [XAMPP](https://www.apachefriends.org/) contains both MySQL and Apache
 
 #####Optional
@@ -17,6 +18,7 @@ This repository contains all technical aspects of the project, including databas
 
 ###Setup
 ####Database Model
+
 > Model file: "/db_model/TEACH.mwb"
 
 1. Open MySQL Workbench
@@ -25,7 +27,9 @@ This repository contains all technical aspects of the project, including databas
 4. In __Model -> Relationship Notation__, choose __UML__
 
 ####Website Sources
+
 > Location: `/source`
+
 1. Copy the contents of the entire folder `/source` _(not the folder itself)_ to to your Apache root folder. 
  - XAMPP Windows: `C:\xampp\htdocs\`
  - Linux(non-XAMPP): `/var/www/html/`
