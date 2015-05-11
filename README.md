@@ -9,9 +9,10 @@ This repository contains all technical aspects of the project, including databas
  - MySQL Workbench 6.0(or above)
  - MySQL 5.6
  - Apache HTTP Server 2.4
+ - PHP 5
  - Web browser with HTML5 and Javascript
 
-> [XAMPP](https://www.apachefriends.org/) contains both MySQL and Apache
+> [XAMPP](https://www.apachefriends.org/) contains Apache, MySQL and PHP
 
 #####Optional
 
@@ -121,7 +122,7 @@ USE `TEACH`;
 
 ####Website Sources
 
- - Templates for topbars, footers etc can be copied over from `index.html`.
+ - Templates are found in `/templates`, containg resource includes, headers and footers
  - Materialize reference can be found [here](http://materializecss.com/).
  - Internal resources can be found in `/resources`
  - External resources can be found in `/bower_components`
