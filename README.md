@@ -123,5 +123,12 @@ USE `TEACH`;
 
  - Templates for topbars, footers etc can be copied over from `index.html`.
  - Materialize reference can be found [here](http://materializecss.com/).
- - Resources can be found in `/bower_components`
+ - Internal resources can be found in `/resources`
+ - External resources can be found in `/bower_components`
   - e.g. Materialize: `/bower_components/materialize/dist`
+
+---
+
+###Credits
+
+ - Icons: Icons made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](http://www.flaticon.com/) 
