@@ -1,7 +1,7 @@
 <div class="container">
   <h3>Login</h3>
 
-  <form action="dashboard.php">
+  <form action="/pages/account/dashboard.php">
 
     <!--Username-->
     <div class="row">

@@ -28,9 +28,6 @@
 		    <a href="" class="collection-item">
 			    <div>
 			    	<?php echo $question["title"]; ?>
-			    	<?php if ($question["status"] == "new"): ?>
-				    	<span class="new badge cyan accent-4"></span>
-			    	<?php endif; ?>
 			    </div>
 		    </a>
 	    <?php endforeach; ?>

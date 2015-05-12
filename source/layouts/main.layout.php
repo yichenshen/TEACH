@@ -35,11 +35,11 @@
           <!--Navbar buttons-->
           <ul id="nav-mobile" class="right hide-on-small-only">
             <?php if(isset($loggedInUser)): ?>
-              <li><a href="/account/dashboard.php">Dashboard</a></li>
-              <li><a href="/index.php">Logout</a></li>
+              <li><a href="/pages/account/dashboard.php">Dashboard</a></li>
+              <li><a href="/">Logout</a></li>
               <li></li>
             <?php else: ?>
-              <li><a href="/account/login.php">Login</a></li>
+              <li><a href="/pages/account/login.php">Login</a></li>
             <?php endif; ?>
           </ul>
 
@@ -47,10 +47,10 @@
           <ul id="mobile-menu" class="side-nav">
             <div class="hide-on-med-and-up">
               <?php if(isset($loggedInUser)): ?>
-                <li><a href="/account/dashboard.php">Dashboard</a></li>
-                <li><a href="/index.php">Logout</a></li>
+                <li><a href="/pages/account/dashboard.php">Dashboard</a></li>
+                <li><a href="/">Logout</a></li>
               <?php else: ?>
-                <li><a href="/account/login.php">Login</a></li>
+                <li><a href="/pages/account/login.php">Login</a></li>
               <?php endif; ?>
             </div>
           </ul>
