@@ -5,6 +5,14 @@ body {
 	background-color: #f3f3f3;
 }
 
+.large-font{
+	font-size: 23px;
+}
+
+.small-spacing{
+	line-height: 150%;
+}
+
 main {
 	flex: 1 0 auto;
 }

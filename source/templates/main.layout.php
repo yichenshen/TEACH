@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title><?= $page_title; ?></title>
+      <title><?= $pageTitle; ?></title>
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
       <!--Project CSS-->
@@ -20,24 +20,48 @@
       <nav>
         <div class="nav-wrapper blue darken-2">
           <a href="/" class="brand-logo center">TEACH</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/account/login.php">Login</a></li>
+          <a href="#" data-activates="mobile-menu" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+          <ul id="nav-mobile" class="right hide-on-small-only">
+            <?php if(isset($loggedInUser)): ?>
+              <li><a href="">Dashboard</a></li>
+              <li><a href="/index.php">Logout</a></li>
+              <li></li>
+            <?php else: ?>
+              <li><a href="/account/login.php">Login</a></li>
+            <?php endif; ?>
+          </ul>
+          <ul id="mobile-menu" class="side-nav">
+            <div class="hide-on-med-and-up">
+              <?php if(isset($loggedInUser)): ?>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="/index.php">Logout</a></li>
+              <?php else: ?>
+                <li><a href="/account/login.php">Login</a></li>
+              <?php endif; ?>
+            </div>
           </ul>
         </div>
       </nav>
     </header>
 
     <main>
-      <?php include $main_content ?>
+      <?php include $mainContent ?>
     </main>
     
     <footer class="page-footer blue darken-3">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">TEACH</h5>
-            <p class="white-text">
-              One-stop affordable education
+            <p class="white-text small-spacing">
+              <span class="large-font">TEACH</span>
+              <br />
+              <span class="large-font">E</span>ducation for 
+              <br />
+              <span class="large-font">A</span>ll 
+              <br />
+              <span class="large-font">C</span>omprehensive
+              <br />
+              <span class="large-font">H</span>elp 
             </p>
           </div>
           <div class="col l4 offset-l2 s12">
@@ -56,5 +80,11 @@
         </div>
       </div>
     </footer>
+
+    <script type="text/javascript">
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+      });
+    </script>
   </body>
 </html>
