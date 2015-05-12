@@ -1,6 +1,9 @@
 <div class="container">
   <h3>Login</h3>
-  <form>
+
+  <form action="dashboard.php">
+
+    <!--Username-->
     <div class="row">
       <div class="input-field col l10 s12">
         <i class="mdi-action-account-circle prefix"></i>
@@ -8,6 +11,8 @@
         <label for="first_name">Username</label>
       </div>
     </div>
+
+    <!--Password-->
     <div class="row">
       <div class="input-field col l10 s12">
         <i class="mdi-action-lock prefix"></i>
@@ -19,6 +24,7 @@
     <button type="submit" class="btn blue waves-effect waves-light">Login</button> 
   </form>
 </div>
+
 <br />
 <br />
 <br />
