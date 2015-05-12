@@ -122,7 +122,22 @@ USE `TEACH`;
 
 ####Website Sources
 
- - Templates are found in `/templates`, containg resource includes, headers and footers
+######Framework
+
+ - Each page has a `page.php` and a `page.layout.php`
+  - `page.php` specifies the data required and `page.layout.php` specifies the layout
+
+The main template is `/templates/main.layout.php`. To set up a page, use the following in `page.php`
+
+
+```PHP
+$page_title = "...";
+$main_content = $_SERVER['DOCUMENT_ROOT']."/page.layout.php";
+include($_SERVER['DOCUMENT_ROOT']."/templates/main.layout.php");
+```
+
+######Resources
+
  - Materialize reference can be found [here](http://materializecss.com/).
  - Internal resources can be found in `/resources`
  - External resources can be found in `/bower_components`
