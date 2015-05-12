@@ -35,5 +35,4 @@
 		    </a>
 	    <?php endforeach; ?>
 	</ul>
-
 </div>
