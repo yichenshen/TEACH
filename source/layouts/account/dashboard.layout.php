@@ -25,7 +25,7 @@
 	<div class="collection with-header">
 	    <div class="collection-header"><h4>Questions</h4></div>
 	    <?php foreach ($questions as $id => $question): ?>
-		    <a href="" class="collection-item">
+		    <a href="/pages/question/show.php?id=<?php echo $id; ?>" class="collection-item">
 			    <div>
 			    	<?php echo $question["title"]; ?>
 			    </div>
