@@ -17,10 +17,14 @@
   					 			  			 "content" => "It's a really interesting question!\n\nI really want to ask it!",
   					 			  			 "status" => "open"));
 
-		public static function getActiveQuestions() {
+		public static function getActiveQuestionsLabel() {
 			return array_filter(self::$questions, function ($val) {
-				return $val["status"] == "answered" || $val["status"] == "modified";
+				return self::answered($val["status"]);
 			});
+		}
+
+		public static function allLabels(){
+			return self::$questions;
 		}
 
 		public static function getQuestion($ID){

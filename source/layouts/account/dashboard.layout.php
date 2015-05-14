@@ -23,13 +23,20 @@
 	</div>
 
 	<div class="collection with-header">
-	    <div class="collection-header"><h4>Questions</h4></div>
+	    <div class="collection-header">
+		    <div class="section">
+		    	<h4 class="inline">Questions</h4>
+		    	<a 	href="/pages/question/index.php" 
+		    		class="btn-floating waves-effect waves-light blue tooltipped right" 
+		    		data-position="left" data-delay="10" data-tooltip="Show All Questions">
+		    		<i class="mdi-action-view-list"></i>
+		    	</a>
+	    	</div>
+	    </div>
 	    <?php foreach ($questions as $id => $question): ?>
 		    <a href="/pages/question/show.php?id=<?php echo $id; ?>" class="collection-item">
-			    <div>
-			    	<?php echo $question["title"]; ?>
-			    </div>
+		    	<?php echo $question["title"]; ?>
 		    </a>
 	    <?php endforeach; ?>
-	</ul>
+	</div>
 </div>

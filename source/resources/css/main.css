@@ -5,6 +5,18 @@ body {
 	background-color: #f3f3f3;
 }
 
+main {
+	flex: 1 0 auto;
+}
+
+#title-label{
+	font-size: 31.5px;
+}
+
+.inline{
+	display: inline;
+}
+
 .large-font{
 	font-size: 23px;
 }
@@ -13,6 +25,14 @@ body {
 	line-height: 150%;
 }
 
-main {
-	flex: 1 0 auto;
+.tabs .indicator{
+	background-color: #03a9f4;
+}
+
+.tabs .tab a{
+	color: #03a9f4;
+}
+
+.tabs .tab a:hover{
+	color: #64b5f6;
 }

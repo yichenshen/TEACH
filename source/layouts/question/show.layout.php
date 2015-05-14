@@ -1,6 +1,6 @@
 <div class="container">
 <br />
-	<div class="card  blue-grey lighten-5">
+	<div class="card blue-grey lighten-5">
 		<div class="card-content">
 		    <div class="section">
 			    <span class="hide-on-small-only">
