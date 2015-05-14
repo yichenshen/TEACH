@@ -10,7 +10,7 @@ main {
 }
 
 #title-label{
-	font-size: 31.5px;
+	font-size: 23px;
 }
 
 .inline{
@@ -35,4 +35,8 @@ main {
 
 .tabs .tab a:hover{
 	color: #64b5f6;
+}
+
+nav .nav-wrapper i.large{
+	font-size: 6rem;
 }

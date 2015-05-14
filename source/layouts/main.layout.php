@@ -17,45 +17,7 @@
     <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.min.js"></script>
 
     <header>
-      <nav>
-        <div class="nav-wrapper blue darken-2">
-          <!--Logo-->
-          <a href="/" class="brand-logo center">TEACH</a>
-        
-          <!--Show SideNav button if logged in or on small screens-->
-          <?php if (isset($loggedInUser)) {
-            $showSideNav = "show-on-large";
-          }else{
-            $showSideNav = "";
-          }?>
-          <a href="#" data-activates="mobile-menu" class="button-collapse <?php echo $showSideNav; ?>">
-            <i class="mdi-navigation-menu"></i>
-          </a>
-
-          <!--Navbar buttons-->
-          <ul id="nav-mobile" class="right hide-on-small-only">
-            <?php if(isset($loggedInUser)): ?>
-              <li><a href="/pages/account/dashboard.php">Dashboard</a></li>
-              <li><a href="/">Logout</a></li>
-              <li></li>
-            <?php else: ?>
-              <li><a href="/pages/account/login.php">Login</a></li>
-            <?php endif; ?>
-          </ul>
-
-          <!--SideNav-->
-          <ul id="mobile-menu" class="side-nav">
-            <div class="hide-on-med-and-up">
-              <?php if(isset($loggedInUser)): ?>
-                <li><a href="/pages/account/dashboard.php">Dashboard</a></li>
-                <li><a href="/">Logout</a></li>
-              <?php else: ?>
-                <li><a href="/pages/account/login.php">Login</a></li>
-              <?php endif; ?>
-            </div>
-          </ul>
-        </div>
-      </nav>
+      <?php include($_SERVER['DOCUMENT_ROOT']."/layouts/shared/nav.layout.php"); ?>
     </header>
 
     <main>

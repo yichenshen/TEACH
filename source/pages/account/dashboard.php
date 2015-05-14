@@ -1,5 +1,6 @@
 <?php
   $pageTitle = "Dashboard - TEACH";
+  $titleLabel = "Dashboard";
   $loggedInUser = "User";
 
   $balance = 200;

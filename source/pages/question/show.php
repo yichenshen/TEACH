@@ -6,6 +6,7 @@
 	$question = Question::getQuestion($qID);
 
 	$pageTitle = $question["title"]." - TEACH";
+	$titleLabel = "Question";
 	$loggedInUser = "User";
 
 	$answered = Question::answered($question["status"]);

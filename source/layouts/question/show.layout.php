@@ -4,7 +4,7 @@
 		<div class="card-content">
 		    <div class="section">
 			    <span class="hide-on-small-only">
-			    	<i class="mdi-action-account-circle small"></i>
+			    	<i class="grey-text text-darken-3 mdi-action-help small"></i>
 			    	&nbsp;
 			    </span>
 			    <span class="card-title black-text"><?php echo $question["title"]; ?></span>
@@ -25,7 +25,7 @@
 			<div class="card-content">
 				<div class="section">
 					<span class="hide-on-small-only">
-			    	<i class="mdi-action-question-answer small"></i>
+			    	<i class="grey-text text-darken-3 mdi-action-question-answer small"></i>
 			    	&nbsp;
 				    </span>
 				    <span class="card-title black-text">Answer</span>
