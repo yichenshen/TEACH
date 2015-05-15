@@ -31,11 +31,19 @@
               <i class="mdi-action-dashboard"></i>
           </a>
         </li>
+
+        <li>
+          <a  href="/pages/question/index.php"
+              class="tooltipped"
+              data-position="bottom" data-delay="10" data-tooltip="Questions List">
+            <i class="mdi-action-view-list"></i>
+          </a>
+        </li>
         
         <li>
           <a  href="/"
               class="tooltipped"
-              data-position="bottom" data-delay="10" data-tooltip="Logout">
+              data-position="left" data-delay="10" data-tooltip="Logout">
             <i class="mdi-action-exit-to-app"></i>
           </a>
         </li>

@@ -22,8 +22,17 @@
 
     <main>
       <?php include $mainContent ?>
+      <?php if(isset($loggedInUser)): ?>
+        <div class="fixed-action-btn bottom-right-btn">
+          <a  class="btn-floating btn-large waves-effect waves-light red lighten-1 tooltipped"
+              href="/pages/question/create.php"
+              data-position="left" data-delay="1" data-tooltip="Ask!" >
+            <i class="mdi-communication-live-help"></i>
+          </a>
+        </div>
+      <?php endif; ?>
     </main>
-    
+
     <footer class="page-footer blue darken-3">
       <div class="container">
 
@@ -56,7 +65,7 @@
       <div class="footer-copyright blue darken-4">
         <div class="container">
           TEACH 2015
-          <div class='right grey-text h6'>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+          <div class='right grey-text h6'>SVG Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
         </div>
       </div>
     </footer>

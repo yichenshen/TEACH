@@ -7,8 +7,8 @@
     <div class="row">
       <div class="input-field col l10 s12">
         <i class="mdi-action-account-circle prefix"></i>
-        <input id="first_name" type="text" class="validate">
-        <label for="first_name">Username</label>
+        <input id="username" type="text" class="validate">
+        <label for="username">Username</label>
       </div>
     </div>
 

@@ -21,6 +21,18 @@ main {
 	font-size: 23px;
 }
 
+.bottom-right-btn{
+	bottom: 35px; 
+	right: 24px;
+}
+
+@media only screen and (min-width : 993px) {
+	.bottom-right-btn{
+		bottom: 57px;
+		right: 35px;
+	}
+}
+
 .small-spacing{
 	line-height: 150%;
 }

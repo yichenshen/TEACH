@@ -6,9 +6,11 @@
 				<i class="grey-text large mdi-action-account-circle center"></i>
 				</div>
 			<?php else: ?>
-				<div class="col s8 offset-s2">
-					<img src="/resources/images/school1.svg">
-				</div>
+				<a href="/">
+					<div class="col s8 offset-s2">
+						<img src="/resources/images/school1.svg">
+					</div>
+				</a>
 			<?php endif; ?>
 		</div>
 	</li>
@@ -25,7 +27,7 @@
 
 	    <li>
 	    	<a href="/pages/question/index.php">
-	    		<i class="left mdi-action-help"></i>
+	    		<i class="left mdi-action-view-list"></i>
 	    		Questions
 	    	</a>
 	    </li>
