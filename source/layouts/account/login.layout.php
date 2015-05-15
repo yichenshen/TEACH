@@ -7,7 +7,7 @@
     <div class="row">
       <div class="input-field col l10 s12">
         <i class="mdi-action-account-circle prefix"></i>
-        <input id="username" type="text" class="validate">
+        <input id="username" type="text" class="validate" required>
         <label for="username">Username</label>
       </div>
     </div>
@@ -16,12 +16,12 @@
     <div class="row">
       <div class="input-field col l10 s12">
         <i class="mdi-action-lock prefix"></i>
-        <input id="password" type="password" class="validate">
+        <input id="password" type="password" class="validate" minlength="8" required>
         <label for="password">Password</label>
       </div>
     </div>
 
-    <button type="submit" class="btn blue waves-effect waves-light">Login</button> 
+    <button type="submit" class="right btn blue waves-effect waves-light">Login</button> 
   </form>
 </div>
 

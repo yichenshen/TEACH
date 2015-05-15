@@ -6,5 +6,8 @@
         <img src="/resources/images/school1.svg">
       </div>
     </div>
+    <center>
+    	<a class="waves-effect waves-light btn-large light-blue darken-1" href="/pages/account/signup.php">Sign-up Now</a>
+    </center>
   </div>
 </div>

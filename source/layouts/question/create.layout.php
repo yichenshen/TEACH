@@ -5,7 +5,7 @@
 	<div class="row">
 		
 		<div class="input-field col s12">
-	        <input id="title" type="text" class="validate" length="150" maxlength="150">
+	        <input id="title" type="text" class="validate" length="150" maxlength="150" required>
 	        <label for="title">Question</label>
 		</div>
 	    
@@ -29,7 +29,7 @@
 	    </div>
 
 	    <div class="input-field col s12 m6 l8">
-	    	<select>
+	    	<select id="subject">
     	      <option value="" disabled selected>Choose your subject</option>
     	      <?php foreach ($subjects as $subject){
     	      	echo '<option value="'.$subject.'">'.$subject.'</option>';
