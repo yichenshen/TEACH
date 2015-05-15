@@ -31,6 +31,13 @@
 	    		Questions
 	    	</a>
 	    </li>
+
+	    <li>
+	    	<a href="/pages/question/create.php">
+				<i class="left mdi-communication-live-help"></i>
+				Ask
+	    	</a>
+	    </li>
 	    
 	    <div class="divider"></div>	
     	

@@ -28,7 +28,7 @@ main {
 
 @media only screen and (min-width : 993px) {
 	.bottom-right-btn{
-		bottom: 57px;
+		bottom: 50px;
 		right: 35px;
 	}
 }
@@ -51,4 +51,8 @@ main {
 
 nav .nav-wrapper i.large{
 	font-size: 6rem;
+}
+
+.dropdown-content{
+	z-index: 2;
 }

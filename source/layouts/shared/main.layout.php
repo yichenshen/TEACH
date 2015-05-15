@@ -73,6 +73,7 @@
     <script type="text/javascript">
       $( document ).ready(function(){
         $(".button-collapse").sideNav();
+        $('select').material_select();
       });
     </script>
   </body>
