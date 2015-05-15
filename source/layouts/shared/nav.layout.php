@@ -14,7 +14,7 @@
     </a>
 
     <!--Nav Title-->
-    <span id="title-label" class="hide-on-small-only">
+    <span class="large-font hide-on-small-only">
       &nbsp;
       <?php if(isset($titleLabel)){
         echo $titleLabel;

@@ -11,43 +11,32 @@
 
 	    <!--First tab: Active-->
 	    <div id="act" class="col s12">
-	    	<?php foreach ($questions as $id => $question): 
-	    			if(Question::answered($question["status"])):?>
+	    	<?php $filter = function($qns){
+	    			return Question::answered($qns["status"]);
+	    		};
 
-			    <a class="teal-text text-lighten-1" href="/pages/question/show.php?id=<?php echo $id; ?>">
-			    	<div class="card-panel">
-				    	<?php echo $question["title"]; ?>
-			    	</div>
-			    </a>
-
-		    <?php 	endif; 
-		    		endforeach; ?>
+	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
+	    	?>
 	    </div>
 
 	    <!--Second tab: Open-->
 	    <div id="open" class="col s12">
-	    	<?php foreach ($questions as $id => $question): 
-	    			if($question["status"] == "open"):?>
+	    	<?php $filter = function($qns){
+	    			return $qns["status"] == "open";
+	    		};
 
-			    <a class="teal-text text-lighten-1" href="/pages/question/show.php?id=<?php echo $id; ?>">
-			    	<div class="card-panel">
-				    	<?php echo $question["title"]; ?>
-			    	</div>
-			    </a>
-
-		    <?php 	endif; 
-		    		endforeach; ?>
+	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
+	    	?>
 	    </div>
 
 	    <!--Third tab: All-->
 	    <div id="all" class="col s12">
-	    	<?php foreach ($questions as $id => $question): ?>
-		    	<a class="teal-text text-lighten-1" href="/pages/question/show.php?id=<?php echo $id; ?>">
-			    	<div class="card-panel">
-				    	<?php echo $question["title"]; ?>
-			    	</div>
-			    </a>
-		    <?php endforeach; ?>
+	    	<?php $filter = function($qns){
+	    			return true;
+	    		};
+
+	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
+	    	?>
 	    </div>
 	</div>
 </div>

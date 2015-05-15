@@ -22,21 +22,26 @@
 	    </div>
 	</div>
 
-	<div class="collection with-header">
-	    <div class="collection-header">
-		    <div class="section">
-		    	<h4 class="inline">Questions</h4>
-		    	<a 	href="/pages/question/index.php" 
-		    		class="btn-floating waves-effect waves-light blue tooltipped right" 
-		    		data-position="left" data-delay="10" data-tooltip="Show All Questions">
-		    		<i class="mdi-action-view-list"></i>
-		    	</a>
-	    	</div>
-	    </div>
-	    <?php foreach ($questions as $id => $question): ?>
-		    <a href="/pages/question/show.php?id=<?php echo $id; ?>" class="collection-item">
-		    	<?php echo $question["title"]; ?>
-		    </a>
-	    <?php endforeach; ?>
+	<div class="section">
+		<a 	href="/pages/question/index.php" 
+    		class="btn-floating waves-effect waves-light blue tooltipped right" 
+    		data-position="left" data-delay="10" data-tooltip="Show All Questions">
+    		<i class="mdi-action-view-list"></i>
+		</a>
+		<h6 class="grey-text">Questions</h6>
 	</div>
+
+	<?php if(count($questions) > 0): ?>
+		<?php 	
+			$filter = function($qns){
+	    		return true;
+	    	};
+
+    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
+    	?>
+	<?php else: ?>
+		<div class="card-panel green lighten-2">
+			<center>You have no active questions.</center>
+		</div>
+	<?php endif; ?>
 </div>

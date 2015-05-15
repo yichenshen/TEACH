@@ -9,10 +9,6 @@ main {
 	flex: 1 0 auto;
 }
 
-#title-label{
-	font-size: 23px;
-}
-
 .inline{
 	display: inline;
 }
@@ -55,4 +51,10 @@ nav .nav-wrapper i.large{
 
 .dropdown-content{
 	z-index: 2;
+}
+
+.avatar .text-avatar{
+	margin-top: 10px;
+	font-size: 23px;
+	color: #e0e0e0;
 }
