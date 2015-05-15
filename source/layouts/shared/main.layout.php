@@ -17,7 +17,7 @@
     <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.min.js"></script>
 
     <header>
-      <?php include($_SERVER['DOCUMENT_ROOT']."/layouts/shared/nav.layout.php"); ?>
+      <?php require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/nav.layout.php"); ?>
     </header>
 
     <main>

@@ -1,7 +1,7 @@
 <?php
-  $pageTitle = "Login - TEACH";
-  $titleLabel = "Login";
+	$pageTitle = "Login - TEACH";
+	$titleLabel = "Login";
 
-  $mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/account/login.layout.php";
-  include($_SERVER['DOCUMENT_ROOT']."/layouts/main.layout.php"); 
+	$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/account/login.layout.php";
+	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php"); 
 ?>

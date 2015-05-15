@@ -1,7 +1,7 @@
 <?php
 	$qID = $_GET["id"];
 
-	include($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+	require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
 
 	$question = Question::getQuestion($qID);
 
@@ -12,5 +12,5 @@
 	$answered = Question::answered($question["status"]);
 
 	$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/show.layout.php";
-  	include($_SERVER['DOCUMENT_ROOT']."/layouts/main.layout.php");
+  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");
 ?>
