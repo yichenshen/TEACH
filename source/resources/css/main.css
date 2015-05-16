@@ -58,3 +58,11 @@ nav .nav-wrapper i.large{
 	font-size: 23px;
 	color: #e0e0e0;
 }
+
+.question-badge{
+	padding: 0px 8px; 
+	border-radius: 2px;
+	font-size: 12px;
+	font-weight: 350;
+	color: #fff;
+}

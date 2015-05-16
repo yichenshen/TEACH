@@ -12,7 +12,7 @@
 	    <!--First tab: Active-->
 	    <div id="act" class="col s12">
 	    	<?php $filter = function($qns){
-	    			return Question::answered($qns["status"]);
+	    			return Question::active($qns["status"]);
 	    		};
 
 	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
