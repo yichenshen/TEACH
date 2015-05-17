@@ -19,7 +19,7 @@
 	    	<select>
 	    		<?php foreach ($levels as $level){
 	    			if($level["id"] == $defaultLevel){
-		    	      	echo '<option value="'.$level["id"].'" selected >'.$level["name"].'(default)</option>';
+		    	      	echo '<option value="'.$level["id"].'" selected >'.$level["name"].' (default)</option>';
 	    			}else{
 	    				echo '<option value="'.$level["id"].'">'.$level["name"].'</option>';
 	    			}
