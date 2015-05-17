@@ -53,10 +53,11 @@ nav .nav-wrapper i.large{
 	z-index: 2;
 }
 
-.avatar .text-avatar{
-	margin-top: 10px;
-	font-size: 23px;
-	color: #e0e0e0;
+.avatar .icon{
+	height: 75%;
+	width: 75%;
+	margin-top: 12.5%;
+	margin-left: 12.5%;
 }
 
 .question-badge{

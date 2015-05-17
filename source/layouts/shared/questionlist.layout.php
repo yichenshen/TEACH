@@ -1,15 +1,12 @@
-<?php require_once $_SERVER["DOCUMENT_ROOT"]."/helpers/strlib.helper.php" ?>
+<?php require_once $_SERVER["DOCUMENT_ROOT"]."/helpers/questionlist.helper.php" ?>
 
 <div class="collection z-depth-1">
 	<?php foreach ($questions as $question): 
 			if($filter($question)):?>
 			    <a 	class="grey-text text-darken-4 collection-item avatar" 
 			    	href="/pages/question/show.php?id=<?php echo $question["id"]; ?>">
-			    	<div class="circle blue">
-			    		<center class="text-avatar">
-				    		<?php echo strtoupper($question["title"][0]); ?>
-			    		</center>
-			    	</div>
+			    	
+			    	<?php echo avatar($question["subject"]); ?>
 				    
 				    <span class="title">
 				    	<span class="hide-on-med-and-down">
@@ -35,17 +32,7 @@
 				    	</span>
 				    </p>
 
-				    <?php if ($question["status"] == "answered"): ?>
-					    <div class="green lighten-1 secondary-content question-badge">answered</div>
-				    <?php elseif ($question["status"] == "modified"): ?>
-				    	<div class="light-green lighten-1 secondary-content question-badge">modified</div>
-			    	<?php elseif ($question["status"] == "open"): ?>
-			    		<div class="orange lighten-2 secondary-content question-badge">open</div>
-		    		<?php elseif ($question["status"] == "read"): ?>
-		    			<div class="secondary-content grey-text text-lighten-1">
-		    				<i class="mdi-action-done small"></i>
-		    			</div>
-			    	<?php endif; ?>
+				    <?php echo label($question["status"]) ?>
 			    </a>
 	<?php 	endif; 
 		endforeach; ?>
