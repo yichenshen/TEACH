@@ -13,7 +13,18 @@
 	        <textarea id="content" class="materialize-textarea" length="2000" maxlength="2000"></textarea>
 	        <label for="content">Elaborate</label>
 	    </div>
+	
+	    <div class="input-field file-field col s6 m4 l3">
+			<div class="btn-flat blue lighten-1 white-text">
+				<span>Attachments</span>
+				<input id="fileInput" type="file" name="attach[]" multiple />
+			</div>
+	    </div>
 
+	    <div class="col s6 m8 l9">
+			<input id="output" class="grey-text text-darken-1" type="text" disabled="" value="No file(s) uploaded" />
+			<br /><br />
+	    </div>
 
 	    <div class="input-field col s12 m8">
 	    	<select>
@@ -50,10 +61,21 @@
 			</div>
 	    </div>
 
-
 	    <div class="col s12">
 		    <button type="submit" class="right btn blue waves-effect waves-light">Ask now</button> 
 	    </div>
 	</div>
 	</form>
 </div>
+
+<script type="text/javascript">
+	$('#fileInput').change( function(event) {
+		var tmppath = event.target.files.length;
+
+		if(tmppath===0){
+			tmppath = "No"
+		}
+
+		$('#output').val(tmppath + " file(s) uploaded");
+	});
+</script>
