@@ -18,7 +18,13 @@
 			return "<div class=\"secondary-content grey-text text-lighten-1\">
 	    				<i class=\"mdi-action-done small\"></i>
 	    			</div>";
-		} else{
+		} elseif ($status == "fined") {
+			return "<div class=\"secondary-content red-text tooltipped\"
+						 data-position=\"left\" data-delay=\"10\" data-tooltip=\"Question Level Changed!\">
+	    				<i class=\"mdi-av-new-releases small\"></i>
+	    			</div>";
+		} 
+		else{
 			return "";
 		}
 	}
