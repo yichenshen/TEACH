@@ -21,7 +21,7 @@
 	<?php if ($answered): ?>	
 		<br />
 
-		<div class="card green lighten-5">
+		<div class="card green lighten-4">
 			<div class="card-content">
 				<div class="section">
 					<span class="hide-on-small-only">
