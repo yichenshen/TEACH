@@ -1,12 +1,26 @@
 <div class="container">
 <br />
+	<nav>
+		<div class="nav-wrapper blue lighten-2">
+			<form action="/pages/question/index.php" method="GET">
+		        <div class="input-field">
+	          		<input id="search" type="search" name="search" value="<?php echo $search; ?>">
+	          		<label for="search"><i class="mdi-action-search"></i></label>
+	          		<i class="mdi-navigation-close"></i>
+	        	</div>
+	      	</form>
+		</div>
+	</nav>
+	<br />
+
 	<div class="row">
+
 	    <div class="col s12">
-	      <ul class="tabs blue-grey lighten-5 z-depth-1">
-	        <li class="tab col s4"><a class="active" href="#act">Active</a></li>
-	        <li class="tab col s4"><a href="#open">Open</a></li>
-	        <li class="tab col s4"><a href="#all">All</a></li>
-	      </ul>
+			<ul class="tabs blue-grey lighten-5 z-depth-1">
+				<li class="tab col s4"><a class="active" href="#act">Active</a></li>
+				<li class="tab col s4"><a href="#open">Open</a></li>
+				<li class="tab col s4"><a href="#all">All</a></li>
+			</ul>
 	    </div>
 
 	    <!--First tab: Active-->

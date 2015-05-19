@@ -52,6 +52,12 @@
 			return $return;
 		}
 
+		public static function searchQuestions($t){
+			return array_filter(self::$questions, function($val) use($t){
+				return stripos($val["title"], $t) !== false;
+			});
+		}
+
 		public static function active($status){
 			return $status == "answered" || $status == "modified" || $status == "fined";
 		}

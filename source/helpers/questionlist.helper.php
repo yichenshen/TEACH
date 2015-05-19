@@ -23,8 +23,7 @@
 						 data-position=\"left\" data-delay=\"10\" data-tooltip=\"Question Level Changed!\">
 	    				<i class=\"mdi-av-new-releases small\"></i>
 	    			</div>";
-		} 
-		else{
+		} else{
 			return "";
 		}
 	}
