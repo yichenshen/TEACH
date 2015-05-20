@@ -1,39 +1,48 @@
-<?php require_once $_SERVER["DOCUMENT_ROOT"]."/helpers/questionlist.helper.php" ?>
+<?php 
+	require_once $_SERVER["DOCUMENT_ROOT"]."/helpers/questionlist.helper.php";
+	
+	$displayList = array_filter($questions, $filter);	
+?>
 
-<div class="collection z-depth-1">
-	<?php foreach ($questions as $question): 
-			if($filter($question)):?>
-			    <a 	class="grey-text text-darken-4 collection-item avatar" 
-			    	href="/pages/question/show.php?id=<?php echo $question["id"]; ?>">
-			    	
-			    	<?php echo avatar($question["subject"]); ?>
-				    
-				    <span class="title">
+<?php if(count($displayList) > 0): ?>
+	<div class="collection z-depth-1">
+		<?php foreach ($displayList as $question): ?>
+		    <a 	class="grey-text text-darken-4 collection-item avatar" 
+		    	href="/pages/question/show.php?id=<?php echo $question["id"]; ?>">
+		    	
+		    	<?php echo avatar($question["subject"]); ?>
+			    
+			    <span class="title">
+			    	<span class="hide-on-med-and-down">
+				    	<?php echo truncate($question["title"], 50); ?>
+			    	</span>
+			    	<span class="hide-on-small-only hide-on-large-only">
+				    	<?php echo truncate($question["title"], 30); ?>
+			    	</span>
+			    	<span class="hide-on-med-and-up">
+				    	<?php echo truncate($question["title"], 20); ?>
+			    	</span>
+		    	</span>
+			    <p class="grey-text text-darken-1">
+				    </span>
 				    	<span class="hide-on-med-and-down">
-					    	<?php echo truncate($question["title"], 50); ?>
+					    	<?php echo truncate($question["content"], 70); ?>
 				    	</span>
 				    	<span class="hide-on-small-only hide-on-large-only">
-					    	<?php echo truncate($question["title"], 30); ?>
+					    	<?php echo truncate($question["content"], 40); ?>
 				    	</span>
 				    	<span class="hide-on-med-and-up">
-					    	<?php echo truncate($question["title"], 20); ?>
-				    	</span>
+					    	<?php echo truncate($question["content"], 30); ?>
 			    	</span>
-				    <p class="grey-text text-darken-1">
-					    </span>
-					    	<span class="hide-on-med-and-down">
-						    	<?php echo truncate($question["content"], 70); ?>
-					    	</span>
-					    	<span class="hide-on-small-only hide-on-large-only">
-						    	<?php echo truncate($question["content"], 40); ?>
-					    	</span>
-					    	<span class="hide-on-med-and-up">
-						    	<?php echo truncate($question["content"], 30); ?>
-				    	</span>
-				    </p>
+			    </p>
 
-				    <?php echo label($question["status"]) ?>
-			    </a>
-	<?php 	endif; 
-		endforeach; ?>
+			    <?php echo label($question["status"]) ?>
+		    </a>
+		<?php endforeach; ?>
+<?php else: ?>
+	<div class="card-panel green lighten-2">
+		<center>No questions here.</center>
+	</div>
+<?php endif; ?>
+
 </div>
