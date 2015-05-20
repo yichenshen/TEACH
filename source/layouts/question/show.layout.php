@@ -34,7 +34,26 @@
 				<div class="divider"></div>
 
 				<div class="section"><?php echo nl2br($question["answer"]); ?></div>
+				<div class="divider"></div>
+				<div class="section">
+					<span>Rate this answer:&nbsp;&nbsp;</span>
+
+					<!-- From https://css-tricks.com/star-ratings/ -->
+					<div class="rating inline">
+						<span>☆</span>
+						<span>☆</span>
+						<span>☆</span>
+						<span>☆</span>
+						<span>☆</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	<?php endif; ?>
 </div>
+
+<script type="text/javascript">
+	$(".rating span").click(function(){
+		window.location.reload();
+	});
+</script>
