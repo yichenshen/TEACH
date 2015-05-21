@@ -16,12 +16,18 @@
 			        	<br />
 		        	</div>
 	        		Account balance: $<?php echo $balance; ?><br />
-		        	Fines: $<?php echo $fine; ?>
+		        	<?php if($fine > 0){
+		        		echo "Fines: $".$fine; 
+		        	} ?>
 		        </p>
 	        </div>
 	        <div class="card-action">
-				<a href="/pages/account/topup.php" class="btn waves-effect waves-light blue-grey right white-text">Top-up</a>
-				<br />
+		        <div class="right card-buttons">
+		        	<?php if($fine > 0): ?>
+		        		<a href="/pages/account/fines.php" class="btn waves-effect waves-light red lighten-1 white-text ">Pay Fines</a>
+		        	<?php endif; ?>
+					<a href="/pages/account/topup.php" class="btn waves-effect waves-light blue-grey white-text">Top-up</a>
+		        </div>
             </div>
 	    </div>
 	</div>
@@ -35,17 +41,11 @@
 		<h6 class="grey-text">Questions</h6>
 	</div>
 
-	<?php if(count($questions) > 0): ?>
-		<?php 	
-			$filter = function($qns){
-	    		return true;
-	    	};
+	<?php 	
+		$filter = function($qns){
+    		return true;
+    	};
 
-    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
-    	?>
-	<?php else: ?>
-		<div class="card-panel green lighten-2">
-			<center>You have no active questions.</center>
-		</div>
-	<?php endif; ?>
+		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
+	?>
 </div>

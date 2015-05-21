@@ -4,7 +4,7 @@
   $loggedInUser = "User";
 
   $balance = 200;
-  $fine = 0;
+  $fine = 1;
 
   require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
   $questions = Question::getActiveQuestionsLabel();
