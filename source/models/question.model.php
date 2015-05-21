@@ -38,6 +38,12 @@
 			});
 		}
 
+		public static function getFinedQuestionsLabel(){
+			return array_filter(self::$questions, function($val){
+				return $val["status"] == "fined";
+			});
+		}
+
 		public static function all(){
 			return self::$questions;
 		}
