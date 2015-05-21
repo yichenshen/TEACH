@@ -38,6 +38,7 @@
 				<div class="section">
 					<span>Rate this answer:&nbsp;&nbsp;</span>
 
+					<div class="hide-on-med-and-up"><br /></div>
 					<!-- From https://css-tricks.com/star-ratings/ -->
 					<div class="rating inline">
 						<span>☆</span>

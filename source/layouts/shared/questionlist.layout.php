@@ -20,7 +20,7 @@
 				    	<?php echo truncate($question["title"], 30); ?>
 			    	</span>
 			    	<span class="hide-on-med-and-up">
-				    	<?php echo truncate($question["title"], 20); ?>
+				    	<?php echo truncate($question["title"], 15); ?>
 			    	</span>
 		    	</span>
 			    <p class="grey-text text-darken-1">
@@ -32,7 +32,7 @@
 					    	<?php echo truncate($question["content"], 40); ?>
 				    	</span>
 				    	<span class="hide-on-med-and-up">
-					    	<?php echo truncate($question["content"], 30); ?>
+					    	<?php echo truncate($question["content"], 20); ?>
 			    	</span>
 			    </p>
 
