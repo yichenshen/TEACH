@@ -1,16 +1,24 @@
 <?php
-	$qID = $_GET["id"];
+	require $_SERVER['DOCUMENT_ROOT']."/helpers/login.helper.php";
 
-	require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+	$loggedInUser = getLogin("user");
 
-	$question = Question::getQuestion($qID);
+	if(isset($loggedInUser)){
+		$qID = $_GET["id"];
 
-	$pageTitle = $question["title"]." - TEACH";
-	$titleLabel = "Question";
-	$loggedInUser = "User";
+		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
 
-	$answered = Question::answered($question["status"]);
+		$question = Question::getQuestion($qID);
 
-	$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/show.layout.php";
-  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");
+		$pageTitle = $question["title"]." - TEACH";
+		$titleLabel = "Question";
+		$loggedInUser = "User";
+
+		$answered = Question::answered($question["status"]);
+
+		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/show.layout.php";
+	  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");
+	} else{
+		header("Location: /pages/account/login.php");
+	}
 ?>

@@ -1,4 +1,12 @@
 <?php
+	require $_SERVER['DOCUMENT_ROOT']."/helpers/login.helper.php";
+
+	$loggedInUser = getLogin("all");
+
+	if(isset($loggedInUser)){
+		header("Location: /pages/account/login.php");
+	}
+
 	$pageTitle = "Signup - TEACH";
 	$titleLabel = "Signup";
 

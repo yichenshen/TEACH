@@ -1,14 +1,22 @@
 <?php
-	$pageTitle = "Fines - TEACH";
-	$titleLabel = "Fines";
+	require $_SERVER['DOCUMENT_ROOT']."/helpers/login.helper.php";
 
-	$loggedInUser = "User";
-	$balance = 200;
-	$fine = 1;
+	$loggedInUser = getLogin("user");
 
-	require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
-	$questions = Question::getFinedQuestionsLabel();
+	if(isset($loggedInUser)){
+		$pageTitle = "Fines - TEACH";
+		$titleLabel = "Fines";
 
-	$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/account/fines.layout.php";
-  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");
+		$user = User::getUser($loggedInUser);
+		$balance = $user['balance'];
+		$fine = $user['fine'];
+
+		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+		$questions = Question::getFinedQuestionsLabel();
+
+		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/account/fines.layout.php";
+	  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");
+	} else{
+		header("Location: /pages/account/login.php");
+	}
 ?>

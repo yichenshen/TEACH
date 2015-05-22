@@ -1,13 +1,20 @@
-<?php 
-	$pageTitle = "Questions Index - TEACH";
-	$titleLabel = "Questions";
-	$loggedInUser = "User";
+<?php
+	require $_SERVER['DOCUMENT_ROOT']."/helpers/login.helper.php";
 
-	$term = trim(isset($_GET['search']) ? $_GET['search'] : "");
+	$loggedInUser = getLogin("user");
 
-	require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
-	$questions = Question::all();
+	if(isset($loggedInUser)){
+		$pageTitle = "Questions Index - TEACH";
+		$titleLabel = "Questions";
 
-	$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/index.layout.php";
-  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php"); 
+		$term = trim(isset($_GET['search']) ? $_GET['search'] : "");
+
+		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+		$questions = Question::all();
+
+		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/index.layout.php";
+	  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php"); 
+	} else{
+		header("Location: /pages/account/login.php");
+	} 
 ?>
