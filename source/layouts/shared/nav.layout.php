@@ -41,7 +41,7 @@
         </li>
         
         <li>
-          <a  href="/"
+          <a  href="/pages/account/logout.php"
               class="tooltipped"
               data-position="left" data-delay="10" data-tooltip="Logout">
             <i class="mdi-action-exit-to-app"></i>

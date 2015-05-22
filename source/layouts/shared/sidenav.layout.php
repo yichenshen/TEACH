@@ -42,7 +42,7 @@
 	    <div class="divider"></div>	
     	
     	<li>
-    		<a href="/">
+    		<a href="/pages/account/logout.php">
     			<i class="left mdi-action-exit-to-app"></i>
     			Logout
     		</a>
