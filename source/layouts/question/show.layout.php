@@ -1,5 +1,28 @@
+<?php require_once $_SERVER["DOCUMENT_ROOT"]."/helpers/questionlist.helper.php"; ?>
+
 <div class="container">
-<br />
+	<br />
+
+	<?php if($question["status"] == "fined"): ?>
+		<div class="card red lighten-3">
+			<div class="card-content">
+				<p class="valign-wrapper">
+				<i class="mdi-alert-error small red-text valign"></i>
+					&nbsp;<b>The selected level of this question did not match its content and was thus changed to "<?php echo $question["level"]; ?>".</b>
+				</p>
+				<br />
+				<p>
+					Please email us at <a href="mailto:leveldisputes@teach.com" target="_top">leveldisputes@teach.com</a> if you feel this is done in error. Otherwise, please accept the change by clicking the button below.
+				</p>
+			</div>
+			<div class="card-action">
+				<div class="right card-buttons">
+					<a class="btn white-text red lighten-1 waves-effect waves-light">Accept</a> 	
+				</div>
+			</div>
+		</div>
+	<?php endif ?>
+
 	<div class="card blue-grey lighten-5">
 		<div class="card-content">
 		    <div class="section">
@@ -7,6 +30,7 @@
 			    	<i class="grey-text text-darken-3 mdi-action-help small"></i>
 			    	&nbsp;
 			    </span>
+			    	
 			    <span class="card-title black-text"><?php echo $question["title"]; ?></span>
 		    </div>
 

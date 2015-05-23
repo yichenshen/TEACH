@@ -13,6 +13,10 @@ main {
 	display: inline;
 }
 
+.clear{
+	clear: both;
+}
+
 .large-font{
 	font-size: 23px;
 }
@@ -59,6 +63,24 @@ nav .nav-wrapper i.large{
 }
 
 .avatar .icon{
+	height: 75%;
+	width: 75%;
+	margin-top: 12.5%;
+	margin-left: 12.5%;
+}
+
+.icon-wrapper{
+	height: 42px;
+	width: 42px;
+	display: inline-block;
+}
+
+.icon-wrapper .circle{
+	height: 100%;
+	width: 100%;
+}
+
+.icon-wrapper .circle .icon{
 	height: 75%;
 	width: 75%;
 	margin-top: 12.5%;
