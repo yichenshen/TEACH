@@ -22,7 +22,7 @@
 
     <main>
       <?php include $mainContent ?>
-      <?php if(isset($loggedInUser)): ?>
+      <?php if(isset($loggedInUser) && User::isUser($loggedInUser)): ?>
         <div class="fixed-action-btn bottom-right-btn">
           <a  class="btn-floating btn-large waves-effect waves-light red lighten-1 tooltipped"
               href="/pages/question/create.php"

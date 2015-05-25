@@ -24,22 +24,40 @@
     <!--Navbar buttons-->
     <ul id="nav-mobile" class="right hide-on-small-only">
       <?php if(isset($loggedInUser)): ?>
-        <li>
-          <a  href="/pages/account/dashboard.php" 
-              class="tooltipped" 
-              data-position="bottom" data-delay="10" data-tooltip="Dashboard">
-              <i class="mdi-action-dashboard"></i>
-          </a>
-        </li>
+        <?php if(User::isUser($loggedInUser)): ?>
+          <li>
+            <a  href="/pages/account/dashboard.php" 
+                class="tooltipped" 
+                data-position="bottom" data-delay="10" data-tooltip="Dashboard">
+                <i class="mdi-action-dashboard"></i>
+            </a>
+          </li>
 
-        <li>
-          <a  href="/pages/question/index.php"
-              class="tooltipped"
-              data-position="bottom" data-delay="10" data-tooltip="Questions List">
-            <i class="mdi-action-view-list"></i>
-          </a>
-        </li>
-        
+          <li>
+            <a  href="/pages/question/index.php"
+                class="tooltipped"
+                data-position="bottom" data-delay="10" data-tooltip="Questions List">
+              <i class="mdi-action-view-list"></i>
+            </a>
+          </li>
+        <?php elseif(User::isStaff($loggedInUser)): ?>
+          <li>
+            <a  href="/pages/staff/account/dashboard.php" 
+                class="tooltipped" 
+                data-position="bottom" data-delay="10" data-tooltip="Dashboard">
+                <i class="mdi-action-dashboard"></i>
+            </a>
+          </li>
+
+          <li>
+            <a  href="/pages/staff/question/index.php"
+                class="tooltipped"
+                data-position="bottom" data-delay="10" data-tooltip="Find Questions">
+              <i class="mdi-action-note-add"></i>
+            </a>
+          </li>
+        <?php endif; ?>
+
         <li>
           <a  href="/pages/account/logout.php"
               class="tooltipped"

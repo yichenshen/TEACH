@@ -18,26 +18,42 @@
 	<div class="divider"></div>
 
 	<?php if(isset($loggedInUser)): ?>
-    	<li>
-    		<a href="/pages/account/dashboard.php">
-	    		<i class="left mdi-action-dashboard"></i>
-	    		Dashboard
-    		</a>
-    	</li>
+		<?php if(User::isUser($loggedInUser)): ?>
+	    	<li>
+	    		<a href="/pages/account/dashboard.php">
+		    		<i class="left mdi-action-dashboard"></i>
+		    		Dashboard
+	    		</a>
+	    	</li>
 
-	    <li>
-	    	<a href="/pages/question/index.php">
-	    		<i class="left mdi-action-view-list"></i>
-	    		Questions
-	    	</a>
-	    </li>
+		    <li>
+		    	<a href="/pages/question/index.php">
+		    		<i class="left mdi-action-view-list"></i>
+		    		Questions
+		    	</a>
+		    </li>
 
-	    <li>
-	    	<a href="/pages/question/create.php">
-				<i class="left mdi-communication-live-help"></i>
-				Ask
-	    	</a>
-	    </li>
+		    <li>
+		    	<a href="/pages/question/create.php">
+					<i class="left mdi-communication-live-help"></i>
+					Ask
+		    	</a>
+		    </li>
+	    <?php elseif(User::isStaff($loggedInUser)): ?>
+	    	<li>
+	    		<a href="/pages/staff/account/dashboard.php">
+		    		<i class="left mdi-action-dashboard"></i>
+		    		Dashboard
+	    		</a>
+	    	</li>
+
+		    <li>
+		    	<a href="/pages/staff/question/index.php">
+		    		<i class="left mdi-action-note-add"></i>
+		    		Questions Finder
+		    	</a>
+		    </li>
+    	<?php endif; ?>
 	    
 	    <div class="divider"></div>	
     	
