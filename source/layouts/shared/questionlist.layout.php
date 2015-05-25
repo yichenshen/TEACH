@@ -44,5 +44,3 @@
 		<center>No questions here.</center>
 	</div>
 <?php endif; ?>
-
-</div>
