@@ -10,7 +10,6 @@
 		$term = trim(isset($_GET['search']) ? $_GET['search'] : "");
 
 		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
-		//TODO change model
 		$acceptedQuestions = Question::staffAccepted($loggedInUser);
 		$answeredQuestions = Question::staffAnswered($loggedInUser);
 		$openQuestions = Question::staffOpenToAll();

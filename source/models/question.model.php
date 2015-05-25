@@ -9,7 +9,8 @@
   										"answer" => "To get to the other side.",
   										"subject" => "Biology",
   										"level" => "Primary",
-  										"studentsUsername" => "user"), 
+  										"studentsUsername" => "user",
+  										"staffUsername" => "Alice"), 
   					 			  array("id" => 2,
   					 			  		"title" => "What is 1+1?",
   					 			  		"content" => "Is it equals to the question ID of this question?",
@@ -42,7 +43,8 @@
 								  		"answer" => "There are many explanations to this question.\n\nThe most popular of which is the Copenhagen interpretation, which states that the system will cease to be in a superposition of states upon observation. This implies that until you open the box (or find out for certain if the cat is alive or dead), the cat is indeed, both dead and alive. (Zombie cat ftw)\n\nThe other popular interpretation is the many worlds interpretation. In this case, the cat is alive in one world and dead in the other.",
 								  		"subject" => "Physics",
 								  		"level" => "A-Levels",
-								  		"studentsUsername" => "user"),
+								  		"studentsUsername" => "user",
+								  		"staffUsername" => "Alice"),
 								  array("id" => 6,
 								  		"title" => "CuSO4",
 								  		"content" => "What is the molar mass (M) of Copper(II) Sulphate (CuSO4)?",
@@ -72,13 +74,12 @@
 		}
 
 		public static function getQuestion($ID, $user){
-			$return = null;
 			foreach (self::all($user) as $question) {
 				if ($question["id"] == $ID) {
-					$return = $question;
+					return $question;
 				}
 			}
-			return $return;
+			return null;
 		}
 
 		public static function searchQuestions($t, $user){
@@ -90,7 +91,7 @@
 		//Staff queries
 		public static function staffOpenToAll(){
 			return array_filter(self::$questions, function($val){
-				return $val['status'] == "open" && (!isset($val['staffUsername']) || empty($val['staffUsername']));
+				return self::unaccepted($val);
 			});
 		}
 
@@ -106,6 +107,20 @@
 			});
 		}
 
+		public static function staffGetQuestion($ID, $staff){
+			$eligible = array_filter(self::$questions, function($val) use($staff){
+				return self::unaccepted($val) || $val['staffUsername'] == $staff;
+			});
+
+				
+			foreach ($eligible as $eQns) {
+				if ($eQns["id"] == $ID) {
+					return $eQns;
+				}
+			}
+			return null;
+		}
+
 		//Generic query helpers
 		public static function active($status){
 			return $status == "answered" || $status == "modified" || $status == "fined";
@@ -113,6 +128,10 @@
 
 		public static function answered($status){
 			return $status == "read" || self::active($status);
+		}
+
+		public static function unaccepted($question){
+			return $question['status'] == "open" && (!isset($question['staffUsername']) || empty($question['staffUsername']));
 		}
 
 		public static function filterByTerm($question, $term){

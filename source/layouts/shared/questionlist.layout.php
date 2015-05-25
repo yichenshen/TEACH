@@ -8,7 +8,12 @@
 	<div class="collection z-depth-1">
 		<?php foreach ($displayList as $question): ?>
 		    <a 	class="grey-text text-darken-4 collection-item avatar" 
-		    	href="/pages/question/show.php?id=<?php echo $question["id"]; ?>">
+		    	href="<?php 
+		    				if(User::isStaff($loggedInUser)){
+		    					echo "/pages/staff/question/show.php?id=".$question["id"];
+		    				}else {
+		    					echo "/pages/question/show.php?id=".$question["id"];
+		    				} ?>" >
 		    	
 		    	<?php echo avatar($question["subject"]); ?>
 			    
