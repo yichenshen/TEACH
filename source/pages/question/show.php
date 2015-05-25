@@ -8,7 +8,7 @@
 
 		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
 
-		$question = Question::getQuestion($qID);
+		$question = Question::getQuestion($qID, $loggedInUser);
 
 		$pageTitle = $question["title"]." - TEACH";
 		$titleLabel = "Question";

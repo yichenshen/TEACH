@@ -4,7 +4,11 @@
 		static $users = array(array("username" => "user",
 									"password" => "password",
 									"balance" => 200,
-									"fine" => 1));
+									"fine" => 1),
+							  array("username" => "Jack",
+									"password" => "jackjack",
+									"balance" => 100,
+									"fine" => 0));
 
 		public static function getUser($username){
 			$return = null;

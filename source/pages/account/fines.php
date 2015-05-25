@@ -12,7 +12,7 @@
 		$fine = $user['fine'];
 
 		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
-		$questions = Question::getFinedQuestionsLabel();
+		$questions = Question::getFinedQuestionsLabel($loggedInUser);
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/account/fines.layout.php";
 	  	require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");

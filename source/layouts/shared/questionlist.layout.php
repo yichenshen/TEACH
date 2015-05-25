@@ -39,6 +39,7 @@
 			    <?php echo label($question["status"]) ?>
 		    </a>
 		<?php endforeach; ?>
+	</div>
 <?php else: ?>
 	<div class="card-panel green lighten-2">
 		<center>No questions here.</center>
