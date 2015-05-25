@@ -27,13 +27,12 @@ DROP TABLE IF EXISTS `attachments`;
 CREATE TABLE `attachments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fileName` varchar(45) NOT NULL,
-  `file` blob NOT NULL,
-  `type` varchar(20) DEFAULT NULL,
+  `type` varchar(20) NOT NULL,
   `questionsId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_attachments_questions1_idx` (`questionsId`),
-  CONSTRAINT `fk_attachments_questions1` FOREIGN KEY (`questionsId`) REFERENCES `questions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_attachments_questions1` (`questionsId`),
+  CONSTRAINT `fk_attachments_questions1` FOREIGN KEY (`questionsId`) REFERENCES `questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,7 +53,7 @@ DROP TABLE IF EXISTS `levels`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `levels` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `price` float(5,2) DEFAULT '0.00',
   PRIMARY KEY (`id`),
@@ -80,22 +79,19 @@ DROP TABLE IF EXISTS `questionLevelChanges`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `questionLevelChanges` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `confirmed` tinyint(1) DEFAULT NULL,
+  `confirmed` tinyint(1) NOT NULL DEFAULT '0',
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `initialLevelsId` int(11) DEFAULT NULL,
   `finalLevelsId` int(11) NOT NULL,
   `questionId` int(11) NOT NULL,
-  `transactionsCode` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`questionId`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_level_changes_levels1_idx` (`initialLevelsId`),
-  KEY `fk_level_changes_levels2_idx` (`finalLevelsId`),
-  KEY `fk_level_changes_questions1_idx` (`questionId`),
-  KEY `fk_question_level_changes_transactions1_idx` (`transactionsCode`),
-  CONSTRAINT `fk_level_changes_levels1` FOREIGN KEY (`initialLevelsId`) REFERENCES `levels` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_level_changes_levels2` FOREIGN KEY (`finalLevelsId`) REFERENCES `levels` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_level_changes_questions1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_question_level_changes_transactions1` FOREIGN KEY (`transactionsCode`) REFERENCES `transactions` (`code`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_level_changes_levels1` (`initialLevelsId`),
+  KEY `fk_level_changes_levels2` (`finalLevelsId`),
+  KEY `fk_level_changes_questions1` (`questionId`),
+  CONSTRAINT `fk_level_changes_levels1` FOREIGN KEY (`initialLevelsId`) REFERENCES `levels` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `fk_level_changes_levels2` FOREIGN KEY (`finalLevelsId`) REFERENCES `levels` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `fk_level_changes_questions1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -116,7 +112,7 @@ DROP TABLE IF EXISTS `questions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `questions` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(150) NOT NULL,
   `content` varchar(2000) DEFAULT NULL,
   `answerText` varchar(5000) DEFAULT NULL,
@@ -125,20 +121,21 @@ CREATE TABLE `questions` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(100) DEFAULT 'OPEN',
   `statusUpdateTime` timestamp NULL DEFAULT NULL,
+  `clarificationCount` tinyint(1) NOT NULL DEFAULT '0',
   `studentsUsername` varchar(16) NOT NULL,
-  `staffUsername` varchar(16) NOT NULL,
-  `levelsId` int(11) NOT NULL,
-  `subjectsName` varchar(100) NOT NULL,
+  `staffUsername` varchar(16) DEFAULT NULL,
+  `levelsId` int(11) DEFAULT NULL,
+  `subjectsName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `questions_id_UNIQUE` (`id`),
-  KEY `fk_questions_students_idx` (`studentsUsername`),
-  KEY `fk_questions_levels1_idx` (`levelsId`),
-  KEY `fk_questions_staff1_idx` (`staffUsername`),
-  KEY `fk_questions_subjects1_idx` (`subjectsName`),
-  CONSTRAINT `fk_questions_levels1` FOREIGN KEY (`levelsId`) REFERENCES `levels` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_questions_staff1` FOREIGN KEY (`staffUsername`) REFERENCES `staff` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_questions_students` FOREIGN KEY (`studentsUsername`) REFERENCES `students` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_questions_subjects1` FOREIGN KEY (`subjectsName`) REFERENCES `subjects` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_questions_students` (`studentsUsername`),
+  KEY `fk_questions_levels1` (`levelsId`),
+  KEY `fk_questions_staff1` (`staffUsername`),
+  KEY `fk_questions_subjects1` (`subjectsName`),
+  CONSTRAINT `fk_questions_levels1` FOREIGN KEY (`levelsId`) REFERENCES `levels` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk_questions_staff1` FOREIGN KEY (`staffUsername`) REFERENCES `staff` (`username`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk_questions_students` FOREIGN KEY (`studentsUsername`) REFERENCES `students` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_questions_subjects1` FOREIGN KEY (`subjectsName`) REFERENCES `subjects` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -189,10 +186,9 @@ CREATE TABLE `staffHasSubjects` (
   `subjectName` varchar(100) NOT NULL,
   `staffUsername` varchar(16) NOT NULL,
   PRIMARY KEY (`subjectName`,`staffUsername`),
-  KEY `fk_subjects_has_staff_staff1_idx` (`staffUsername`),
-  KEY `fk_subjects_has_staff_subjects1_idx` (`subjectName`),
-  CONSTRAINT `fk_subjects_has_staff_staff1` FOREIGN KEY (`staffUsername`) REFERENCES `staff` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_subjects_has_staff_subjects1` FOREIGN KEY (`subjectName`) REFERENCES `subjects` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_subjects_has_staff_staff1` (`staffUsername`),
+  CONSTRAINT `fk_subjects_has_staff_staff1` FOREIGN KEY (`staffUsername`) REFERENCES `staff` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_subjects_has_staff_subjects1` FOREIGN KEY (`subjectName`) REFERENCES `subjects` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -216,13 +212,15 @@ CREATE TABLE `students` (
   `username` varchar(16) NOT NULL,
   `email` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
+  `balance` float(5,2) NOT NULL DEFAULT '0.00',
+  `fines` float(5,2) NOT NULL DEFAULT '0.00',
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `levelsId` int(11) NOT NULL,
   PRIMARY KEY (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `username_UNIQUE` (`username`),
-  KEY `fk_students_levels1_idx` (`levelsId`),
-  CONSTRAINT `fk_students_levels1` FOREIGN KEY (`levelsId`) REFERENCES `levels` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_students_levels1` (`levelsId`),
+  CONSTRAINT `fk_students_levels1` FOREIGN KEY (`levelsId`) REFERENCES `levels` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -266,17 +264,16 @@ DROP TABLE IF EXISTS `transactions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `transactions` (
-  `code` int(11) NOT NULL,
+  `code` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(45) NOT NULL,
   `amount` float(5,2) NOT NULL DEFAULT '0.00',
   `extID` varchar(255) DEFAULT NULL,
   `createTime` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updateTime` datetime DEFAULT NULL,
   `studentsUsername` varchar(16) NOT NULL,
   PRIMARY KEY (`code`),
   UNIQUE KEY `id_UNIQUE` (`code`),
-  KEY `fk_transactions_students1_idx` (`studentsUsername`),
-  CONSTRAINT `fk_transactions_students1` FOREIGN KEY (`studentsUsername`) REFERENCES `students` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_transactions_students1` (`studentsUsername`),
+  CONSTRAINT `fk_transactions_students1` FOREIGN KEY (`studentsUsername`) REFERENCES `students` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -298,4 +295,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-11 10:51:21
+-- Dump completed on 2015-05-25 22:42:24
