@@ -17,7 +17,8 @@
   					 					"answer" => "Very smart observation. \n\n Now stop wasting your money.",
   					 					"subject" => "Maths",
   					 					"level" => "O-Levels",
-  					 					"studentsUsername" => "user"),
+  					 					"studentsUsername" => "user",
+										"staffUsername" => "staff"),
   					 			  array("id" => 3,
   					 			  		"title" => "Can I ask a question?",
   					 			  		"content" => "It's a really interesting question!\n\nI really want to ask it!",
@@ -32,7 +33,8 @@
   					 			  		"answer" => "Uh I'm really sorry but can you repeat that again?",
   					 			  		"subject" => "",
   					 			  		"level" => "O-Levels",
-  					 			  		"studentsUsername" => "Jack"),
+  					 			  		"studentsUsername" => "Jack",
+  					 			  		"staffUsername" => "staff"),
 								  array("id" => 5,
 								  		"title" => "Zombie cat?", 
 								  		"content" => "Schrödinger wrote:\n\n A cat is penned up in a steel chamber, along with the following device (which must be secured against direct interference by the cat): in a Geiger counter, there is a tiny bit of radioactive substance, so small, that perhaps in the course of the hour one of the atoms decays, but also, with equal probability, perhaps none; if it happens, the counter tube discharges and through a relay releases a hammer that shatters a small flask of hydrocyanic acid. If one has left this entire system to itself for an hour, one would say that the cat still lives if meanwhile no atom has decayed. The psi-function of the entire system would express this by having in it the living and dead cat (pardon the expression) mixed or smeared out in equal parts.\n\nSo is the cat alive or dead?",
@@ -40,7 +42,15 @@
 								  		"answer" => "There are many explanations to this question.\n\nThe most popular of which is the Copenhagen interpretation, which states that the system will cease to be in a superposition of states upon observation. This implies that until you open the box (or find out for certain if the cat is alive or dead), the cat is indeed, both dead and alive. (Zombie cat ftw)\n\nThe other popular interpretation is the many worlds interpretation. In this case, the cat is alive in one world and dead in the other.",
 								  		"subject" => "Physics",
 								  		"level" => "A-Levels",
-								  		"studentsUsername" => "user"));
+								  		"studentsUsername" => "user"),
+								  array("id" => 6,
+								  		"title" => "CuSO4",
+								  		"content" => "What is the molar mass (M) of Copper(II) Sulphate (CuSO4)?",
+								  		"status" => "open",
+								  		"subject" => "Chemistry",
+								  		"level" => "O-Levels",
+								  		"studentsUsername" => "Jack",
+								  		"staffUsername" => "staff"));
 
 		//User/student queries
 		public static function all($user){
@@ -74,6 +84,25 @@
 		public static function searchQuestions($t, $user){
 			return array_filter(self::all($user), function($val) use($t){
 				return self::filterByTerm($val, $t);
+			});
+		}
+
+		//Staff queries
+		public static function staffOpenToAll(){
+			return array_filter(self::$questions, function($val){
+				return $val['status'] == "open" && (!isset($val['staffUsername']) || empty($val['staffUsername']));
+			});
+		}
+
+		public static function staffAnswered($staff){
+			return array_filter(self::$questions, function($val) use($staff){
+				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && self::answered($val['status']);
+			});
+		}
+
+		public static function staffAccepted($staff){
+			return array_filter(self::$questions, function($val) use($staff){
+				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && $val['status'] == "open";
 			});
 		}
 

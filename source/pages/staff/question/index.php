@@ -10,7 +10,10 @@
 		$term = trim(isset($_GET['search']) ? $_GET['search'] : "");
 
 		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
-		$questions = Question::getActiveQuestionsLabel($loggedInUser);
+		//TODO change model
+		$acceptedQuestions = Question::staffAccepted($loggedInUser);
+		$answeredQuestions = Question::staffAnswered($loggedInUser);
+		$openQuestions = Question::staffOpenToAll();
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/staff/question/index.layout.php";
 		require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php"); 	

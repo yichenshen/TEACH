@@ -22,32 +22,36 @@
 			</ul>
 	    </div>
 
-	    <!--First tab: Active-->
+	    <!--First tab: Accepted-->
 	    <div id="act" class="col s12">
-	    	<?php $filter = function($qns){
-	    			return Question::active($qns["status"]);
+	    	<?php $filter = function($qns) use($term){
+					return empty($term) ? true : Question::filterByTerm($qns, $term);
 	    		};
 
+	    		$questions = $acceptedQuestions;
 	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
 	    	?>
 	    </div>
 
 	    <!--Second tab: Answered-->
 	    <div id="ans" class="col s12">
-	    	<?php $filter = function($qns){
-	    			return true;
+	    	<?php $filter = function($qns) use($term){
+	    			return empty($term) ? true : Question::filterByTerm($qns, $term);
 	    		};
 
+	    		$questions = $answeredQuestions;
 	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
 	    	?>
 	    </div>
 
 	    <!--Third tab: Open-->
 	    <div id="open" class="col s12">
-	    	<?php $filter = function($qns){
-	    			return $qns["status"] == "open";
+	    	<?php 
+	    		$filter = function($qns) use($term){
+	    			return empty($term) ? true : Question::filterByTerm($qns, $term);
 	    		};
 
+	    		$questions = $openQuestions;
 	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";
 	    	?>
 	    </div>
