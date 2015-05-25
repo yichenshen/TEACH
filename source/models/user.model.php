@@ -9,6 +9,8 @@
 									"password" => "jackjack",
 									"balance" => 100,
 									"fine" => 0));
+		static $staff = array(array("username" => "staff",
+									"password" => "password"));
 
 		public static function getUser($username){
 			$return = null;
@@ -18,6 +20,16 @@
 				}
 			}
 			return $return;
+		}
+
+		public static function getStaff($username){
+			foreach (self::$staff as $s) {
+				if($s["username"] == $username){
+					return $s;
+				}
+			}
+
+			return null;
 		}
 
 		public static function isUser($username){
@@ -31,6 +43,11 @@
 
 		//TODO add staff list
 		public static function isStaff($username){
+			foreach (self::$staff as $s) {
+				if($s["username"] == $username){
+					return true;
+				}
+			}
 			return false;
 		}
 	}
