@@ -2,7 +2,9 @@
 	require_once $_SERVER['DOCUMENT_ROOT']."/models/user.model.php";
 
 	function getLogin($accessRight){
-		session_start();
+		if(!isset($_SESSION)){
+			session_start();
+		}
 
 		if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
 			return null;

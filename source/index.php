@@ -1,7 +1,7 @@
 <?php
 	require $_SERVER['DOCUMENT_ROOT']."/helpers/login.helper.php";
 
-	$loggedInUser = getLogin("user");
+	$loggedInUser = getLogin("all");
 
 	$pageTitle = "TEACH";
 

@@ -13,13 +13,13 @@
 									"password" => "password"));
 
 		public static function getUser($username){
-			$return = null;
 			foreach (self::$users as $user) {
 				if ($user["username"] == $username) {
-					$return = $user;
+					return $user;
 				}
 			}
-			return $return;
+
+			return null;
 		}
 
 		public static function getStaff($username){
