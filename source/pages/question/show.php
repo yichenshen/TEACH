@@ -3,12 +3,13 @@
 
 	$loggedInUser = getLogin("user");
 
-	if(isset($loggedInUser)){
-		$qID = $_GET["id"];
+	$qID = $_GET["id"];
 
-		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+	require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
 
-		$question = Question::getQuestion($qID, $loggedInUser);
+	$question = Question::getQuestion($qID, $loggedInUser);
+	
+	if(isset($loggedInUser) && isset($question)){
 
 		$pageTitle = $question["title"]." - TEACH";
 		$titleLabel = "Question";
