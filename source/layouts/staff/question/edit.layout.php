@@ -53,7 +53,7 @@
 				    </div>
 			    </div>
 			</div>
-			
+
 			<div class="card-action">
 				<div class="row">
 					 <div class="input-field col s12 m7 l8">
@@ -82,14 +82,4 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$('#fileInput').change( function(event) {
-		var tmppath = event.target.files.length;
-
-		if(tmppath===0){
-			tmppath = "No"
-		}
-
-		$('#output').val(tmppath + " file(s) uploaded");
-	});
-</script>
+<script type="text/javascript" src="/resources/js/fileupload.js" async></script>

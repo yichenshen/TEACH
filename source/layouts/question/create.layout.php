@@ -70,14 +70,4 @@
 	</form>
 </div>
 
-<script type="text/javascript">
-	$('#fileInput').change( function(event) {
-		var tmppath = event.target.files.length;
-
-		if(tmppath===0){
-			tmppath = "No"
-		}
-
-		$('#output').val(tmppath + " file(s) uploaded");
-	});
-</script>
+<script type="text/javascript" src="/resources/js/fileupload.js" async></script>
