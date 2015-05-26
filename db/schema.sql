@@ -67,7 +67,7 @@ CREATE TABLE `levels` (
 
 LOCK TABLES `levels` WRITE;
 /*!40000 ALTER TABLE `levels` DISABLE KEYS */;
-INSERT INTO `levels` VALUES (1,'Primary',0.50),(2,'N-Levels',1.00),(3,'O-Levels',1.00),(4,'A-Levels',1.50);
+INSERT INTO `levels` VALUES (1,'Primary',0.50),(2,'N-Levels',1.00),(3,'O-Levels',1.00),(4,'A-Levels',2.00);
 /*!40000 ALTER TABLE `levels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,6 +123,7 @@ CREATE TABLE `questions` (
   `status` varchar(100) DEFAULT 'OPEN',
   `statusUpdateTime` timestamp NULL DEFAULT NULL,
   `clarificationCount` tinyint(1) NOT NULL DEFAULT '0',
+  `express` tinyint(1) NOT NULL DEFAULT '0',
   `studentsUsername` varchar(16) NOT NULL,
   `staffUsername` varchar(16) DEFAULT NULL,
   `levelsId` int(11) DEFAULT NULL,
@@ -160,6 +161,7 @@ CREATE TABLE `staff` (
   `username` varchar(16) NOT NULL,
   `email` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
+  `type` varchar(20) DEFAULT 'Part-time',
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`),
@@ -297,4 +299,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-25 22:51:46
+-- Dump completed on 2015-05-26 13:30:19
