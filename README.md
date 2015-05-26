@@ -126,20 +126,52 @@ USE `TEACH`;
 
  - Each page has a `page.php` and a `page.layout.php`
   - `page.php` specifies the data required and `page.layout.php` specifies the layout
+  - `page.php` is found in `pages/`
+  - `page.layout.php` is found in `layouts/`
 
-The main template is `/templates/main.layout.php`. To set up a page, use the following in `page.php`
+The main template is `/templates/main.layout.php`. References to website level resources as well as universal elements should be defined here.
+
+
+To set up a page, use the following in `page.php`
 
 
 ```PHP
-$page_title = "...";
-$main_content = $_SERVER['DOCUMENT_ROOT']."/page.layout.php";
+$pageTitle = "...";
+$titleLabel = "...";
+
+//Set up data here
+
+$mainContent = $_SERVER['DOCUMENT_ROOT']."/page.layout.php";
 include($_SERVER['DOCUMENT_ROOT']."/templates/main.layout.php");
 ```
+
+######Helpers
+
+Various helpers are included in `helpers/`. They include various utility functions.
+
+For example, to check if the user is logged in, we can use the `getLogin()` function in `source/helpers/login.helper.php`
+
+```PHP
+require $_SERVER['DOCUMENT_ROOT']."/helpers/login.helper.php";
+
+$loggedInUser = getLogin("staff");
+
+if(isset($loggedInUser)){
+	//Authorised content
+}
+```
+
+######Models
+
+Models are representations of enities in the real world and mirrors those that would be in a database.
+
+Models can be found in `source/models/`. Without a database connection, data will be stored in the model itself. If not, SQL statements are found here too.
 
 ######Resources
 
  - Materialize reference can be found [here](http://materializecss.com/).
  - Internal resources can be found in `/resources`
+  - The internal CSS rules are defined in `/css/main.css`
  - External resources can be found in `/bower_components`
   - e.g. Materialize: `/bower_components/materialize/dist`
 
