@@ -1,5 +1,5 @@
 <div class="container">
-<br />
+	<br />
 	<nav>
 		<div class="nav-wrapper blue lighten-2">
 			<form action="/pages/staff/question/index.php" method="GET">
@@ -16,7 +16,7 @@
 	<div class="row">
 	    <div class="col s12">
 			<ul class="tabs blue-grey lighten-5 z-depth-1">
-				<li class="tab col s4"><a class="active" href="#act">Active</a></li>
+				<li class="tab col s4"><a class="active" href="#act">Accepted</a></li>
 				<li class="tab col s4"><a href="#ans">Answered</a></li>
 				<li class="tab col s4"><a href="#open">Open</a></li>
 			</ul>

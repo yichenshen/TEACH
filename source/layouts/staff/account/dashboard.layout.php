@@ -5,9 +5,9 @@
 		        <div class="col m1 hide-on-small-only hide-on-large-only">
 		        	<i class="small mdi-action-account-circle"></i>
 		        </div>
-		        <div class="col m5 s6 l6">
+		        <div class="col m11 s12">
 					<p class="valign-wrapper">
-					<i class="hide-on-med-and-down medium mdi-action-account-circle valign"></i>
+						<i class="hide-on-med-and-down medium mdi-action-account-circle valign"></i>
 			        	<span class="card-title"><?php echo $loggedInUser ?></span>
 					</p>
 				</div>
