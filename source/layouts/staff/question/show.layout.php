@@ -59,7 +59,7 @@
 			</div>
 		</div>
 
-		<a 	href="#" 
+		<a 	href="/pages/staff/question/edit.php?id=<?php echo $qID; ?>" 
 			class="btn-floating btn-large waves-effect waves-light waves-circle blue lighten-1 right tooltipped"
 			data-position="left" data-delay="10" data-tooltip="Edit">
 			<i class="mdi-editor-border-color right"></i>
@@ -73,7 +73,8 @@
 			</button>
 		</form>
 	<?php else: ?>
-		<a 	href="#" class="btn waves-effect waves-light green lighten-1 right">
+		<a 	href="/pages/staff/question/edit.php?id=<?php echo $qID; ?>" 
+			class="btn waves-effect waves-light green lighten-1 right">
 			Answer <i class="mdi-editor-mode-edit right"></i>
 		</a>
 	<?php endif; ?>

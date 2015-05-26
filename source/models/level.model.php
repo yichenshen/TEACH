@@ -14,5 +14,15 @@
 		public static function all(){
 			return self::$levels;
 		}
+
+		public static function getID($name){
+			foreach (self::$levels as $id => $val) {
+				if ($val["name"] == $name) {
+					return $id;
+				}
+			}
+
+			return null;
+		}
 	}
 ?>
