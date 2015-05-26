@@ -12,7 +12,7 @@
 
 		require $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
 		$levels = Level::all();
-		$defaultLevel = 3;
+		$defaultLevel = Level::getID(User::getUser($loggedInUser)['level']);
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/create.layout.php";
 		require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");

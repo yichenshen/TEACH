@@ -16,9 +16,9 @@
 		}
 
 		public static function getID($name){
-			foreach (self::$levels as $id => $val) {
+			foreach (self::$levels as $val) {
 				if ($val["name"] == $name) {
-					return $id;
+					return $val['id'];
 				}
 			}
 

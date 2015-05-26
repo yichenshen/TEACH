@@ -4,11 +4,13 @@
 		static $users = array(array("username" => "user",
 									"password" => "password",
 									"balance" => 200,
-									"fine" => 1),
+									"fine" => 1,
+									"level" => "A-Levels"),
 							  array("username" => "Jack",
 									"password" => "jackjack",
 									"balance" => 100,
-									"fine" => 0));
+									"fine" => 0,
+									"level" => "O-Levels"));
 		static $staff = array(array("username" => "staff",
 									"password" => "password"));
 
