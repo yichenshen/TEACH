@@ -65,7 +65,6 @@
 				<div class="divider"></div>
 				<div class="section">
 					<span>Rate this answer:&nbsp;&nbsp;</span>
-
 					<div class="hide-on-med-and-up"><br /></div>
 					<!-- From https://css-tricks.com/star-ratings/ -->
 					<div class="rating inline">
@@ -111,8 +110,32 @@
 	<?php endif; ?>
 </div>
 
+<div id="commentModal" class="modal">
+	<form>
+		<input type="hidden" name="id" value="<?php echo $qID; ?>" />
+	    
+	    <div class="modal-content">
+			<h5>Leave a comment?</h5>
+			<div class="input-field section">
+				<textarea id="comment" name="comment" class="materialize-textarea"></textarea>
+				<label for="comment">Comment</label>
+			</div>
+	    </div>
+
+	    <div class="modal-footer">
+			<button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">
+				Submit
+			</button>
+	    </div>
+	</form>
+</div>
+
 <script type="text/javascript">
 	$(".rating span").click(function(){
-		window.location.reload();
+		$('#commentModal').openModal();
+	});
+
+	$(document).ready(function(){
+	    $('.modal-trigger').leanModal();
 	});
 </script>

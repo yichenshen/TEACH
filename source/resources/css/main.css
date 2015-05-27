@@ -100,15 +100,15 @@ nav .nav-wrapper i.large{
 }
 
 .rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: left;
-  font-size: 30px;
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	text-align: left;
+	font-size: 30px;
 }
 .rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
+	display: inline-block;
+	position: relative;
+	width: 1.1em;
 }
 .rating > span:hover,
 .rating > span:hover ~ span {
