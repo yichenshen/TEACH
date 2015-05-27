@@ -26,7 +26,8 @@
 	</div>
 
 	<div class="card green lighten-4 allow-overflow">
-		<form action="/pages/staff/question/show.php?id=<?php echo $qID; ?>">
+		<form>
+			<input type="hidden" name="id" value="<?php echo $qID; ?>" />
 			<div class="card-content">
 				<p class="card-title black-text">Answer</p>
 				
@@ -35,7 +36,7 @@
 				<br />
 
 				<div class="input-field">
-					<textarea id="answer" class="materialize-textarea"><?php echo $answer; ?></textarea>
+					<textarea id="answer" class="materialize-textarea" name="answer"><?php echo $answer; ?></textarea>
 					<label for="answer">Answer:</label>
 				</div>
 
@@ -71,7 +72,7 @@
 
 					<div class="card-buttons col s12 m5 l4">
 
-						<button href="/pages/account/topup.php" 
+						<button type="submit" 
 								class="btn-large right waves-effect waves-light green white-text">
 							Answer/Edit
 						</button>
