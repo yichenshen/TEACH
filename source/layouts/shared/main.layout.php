@@ -56,6 +56,7 @@
             <ul>
               <li><a class="grey-text text-lighten-3" href="#!">About us</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+              <li><a class="grey-text text-lighten-3" href="/pages/info/affiliates.php">Affiliates</li>
             </ul>
           </div>
         </div>

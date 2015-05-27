@@ -55,7 +55,16 @@
 		    </li>
     	<?php endif; ?>
 	    
-	    <div class="divider"></div>	
+	    <div class="divider"></div>
+
+	    <li>
+	    	<a href="/pages/info/affiliates.php">
+    			<i class="left mdi-maps-local-library"></i>
+    			Tuition?
+    		</a>
+	    </li>
+	    
+	    <div class="divider"></div>    	
     	
     	<li>
     		<a href="/pages/account/logout.php">
@@ -63,11 +72,24 @@
     			Logout
     		</a>
     	</li>
-	<?php endif; ?>
 	
-	<div class="hide-on-med-and-up">
-	  	<?php if(!isset($loggedInUser)): ?>
-	    	<li><a href="/pages/account/login.php">Login</a></li>
+	  	<?php elseif(!isset($loggedInUser)): ?>
+			<div class="hide-on-med-and-up">
+		    	<li>
+		    		<a href="/pages/account/login.php">
+		    			<i class="mdi-action-https left"></i>
+		    			Login
+		    		</a>
+				</li>
+			    
+			    <div class="divider"></div>
+			    
+			    <li>
+			    	<a href="/pages/info/affiliates.php">
+		    			<i class="left mdi-maps-local-library"></i>
+		    			Affiliates
+		    		</a>
+			    </li>   
+			</div>
 		<?php endif; ?>
-	</div>
 </ul>
