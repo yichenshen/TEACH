@@ -78,6 +78,36 @@
 				</div>
 			</div>
 		</div>
+
+		<br />
+
+		<?php if($question['clarificationCount'] == 0): ?>
+			<div class="card amber lighten-3">
+				<form>
+					<input type="hidden" name="id" value="<?php echo $qID; ?>" />
+					<div class="card-content">
+						<p class="card-title black-text section">Clarify</p>
+						
+						<div class="divider"></div>
+
+						<div class="input-field section">
+							<textarea id="clarification" class="materialize-textarea validate" name="clarification" required></textarea>
+							<label for="clarification">Enter Clarification here</label>
+						</div>
+					</div>
+
+					<div class="card-action">
+						<div class="card-buttons right">
+							<button type="submit" 
+									class="btn waves-effect waves-light orange darken-1 white-text">
+								Answer/Edit
+							</button>
+				        </div>
+					</div>
+				</form>				
+			</div>
+		<?php endif; ?>
+
 	<?php endif; ?>
 </div>
 
