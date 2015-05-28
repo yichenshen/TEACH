@@ -64,16 +64,36 @@
 				<div class="section"><?php echo nl2br($question["answer"]); ?></div>
 				<div class="divider"></div>
 				<div class="section">
-					<span>Rate this answer:&nbsp;&nbsp;</span>
-					<div class="hide-on-med-and-up"><br /></div>
-					<!-- From https://css-tricks.com/star-ratings/ -->
-					<div class="rating inline">
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-					</div>
+					<?php if(isset($question['rating'])): ?>
+
+						<span>Rating:&nbsp;&nbsp;</span>
+						<div class="hide-on-med-and-up"><br /></div>
+						
+						<div class="rated inline">
+							<?php for($i=5; $i > $question['rating']; $i--):?>
+								<span>☆</span>
+							<?php endfor; ?>
+							<?php for($i = 0; $i < $question['rating']; $i++): ?>
+								<span class="selected">★</span>
+							<?php endfor; ?>
+						</div>
+						
+						<p>
+							Comment: <?php echo $question['ratingComment']; ?>
+						</p>
+					<?php else: ?>
+						<span>Rate this answer:&nbsp;&nbsp;</span>
+						<div class="hide-on-med-and-up"><br /></div>
+						
+						<!-- From https://css-tricks.com/star-ratings/ -->
+						<div class="rating inline">
+							<span>☆</span>
+							<span>☆</span>
+							<span>☆</span>
+							<span>☆</span>
+							<span>☆</span>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

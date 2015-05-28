@@ -36,6 +36,8 @@
   					 			  		"answer" => "Uh I'm really sorry but can you repeat that again?",
   					 			  		"clarificationCount" => 0,
   					 			  		"subject" => "",
+  					 			  		"rating" => "1",
+  					 			  		"ratingComment" => "????",
   					 			  		"level" => "O-Levels",
   					 			  		"studentsUsername" => "Jack",
   					 			  		"staffUsername" => "staff"),

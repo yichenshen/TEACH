@@ -120,3 +120,19 @@ nav .nav-wrapper i.large{
    position: absolute;
    color: #ffa000;
 }
+
+.rated {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	text-align: left;
+	font-size: 30px;
+}
+.rated > span {
+	display: inline-block;
+	position: relative;
+	width: 1.1em;
+}
+
+.rated .selected  {
+   color: #ffa000;
+}
