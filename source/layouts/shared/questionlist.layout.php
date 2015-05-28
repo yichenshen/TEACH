@@ -29,17 +29,21 @@
 			    	</span>
 		    	</span>
 			    <p class="grey-text text-darken-1">
-				    </span>
-				    	<span class="hide-on-med-and-down">
-					    	<?php echo truncate($question["content"], 70); ?>
-				    	</span>
-				    	<span class="hide-on-small-only hide-on-large-only">
-					    	<?php echo truncate($question["content"], 40); ?>
-				    	</span>
-				    	<span class="hide-on-med-and-up">
-					    	<?php echo truncate($question["content"], 20); ?>
+			    	<span class="hide-on-med-and-down">
+				    	<?php echo truncate($question["content"], 70); ?>
 			    	</span>
+			    	<span class="hide-on-small-only hide-on-large-only">
+				    	<?php echo truncate($question["content"], 40); ?>
+			    	</span>
+			    	<span class="hide-on-med-and-up">
+				    	<?php echo truncate($question["content"], 20); ?>
+			    	</span>
+			    	
+			    	<br />
+			    	
+			    	<div class="grey question-badge left"><?php echo $question["level"]; ?></div>
 			    </p>
+
 
 			    <?php echo label($question["status"]) ?>
 		    </a>
