@@ -14,6 +14,8 @@
 			return "<div class=\"light-green lighten-1 secondary-content question-badge\">modified</div>";
 		} elseif ($status == "open"){
 			return "<div class=\"orange lighten-2 secondary-content question-badge\">open</div>";
+		} elseif($status == "clarify"){
+			return "<div class=\"purple lighten-2 secondary-content question-badge\">clarify</div>";
 		} elseif ($status == "read"){
 			return "<div class=\"secondary-content grey-text text-lighten-1\">
 	    				<i class=\"mdi-action-done small\"></i>

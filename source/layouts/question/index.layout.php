@@ -55,7 +55,7 @@
 	    <!--Second tab: Open-->
 	    <div id="open" class="col s12">
 	    	<?php $filter = function($qns){
-	    			return $qns["status"] == "open";
+	    			return Question::reqResponse($qns["status"]);
 	    		};
 
 	    		require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/questionlist.layout.php";

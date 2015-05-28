@@ -58,7 +58,19 @@
 								  		"subject" => "Chemistry",
 								  		"level" => "O-Levels",
 								  		"studentsUsername" => "Jack",
-								  		"staffUsername" => "staff"));
+								  		"staffUsername" => "staff"),
+								  array("id" => 7,
+  					 			  		"title" => "Marble in a Bowl",
+  					 			  		"content" => "Consider the following. A hollow sphere of radius r is placed in a hollow hemispherical bowl of radius R, (R > r). The smaller sphere is given a small perturbation in its angle, and subsequently rolls without slipping in the bowl. Find the angular frequency of oscillation.\n\n[Clarification]\nWhich solution is recommended?",
+  					 			  		"status" => "clarify",
+  					 			  		"answer" => "Refer to document below",
+  					 			  		"clarificationCount" => 1,
+  					 			  		"subject" => "Physics",
+  					 			  		"rating" => "4",
+  					 			  		"ratingComment" => "Solution is complete, but complicated.",
+  					 			  		"level" => "A-Levels",
+  					 			  		"studentsUsername" => "user",
+  					 			  		"staffUsername" => "staff"));
 
 		//User/student queries
 		public static function all($user){
@@ -103,13 +115,13 @@
 
 		public static function staffAnswered($staff){
 			return array_filter(self::$questions, function($val) use($staff){
-				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && self::answered($val['status']);
+				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && self::answered($val['status'] && $val['status'] != "clarify");
 			});
 		}
 
 		public static function staffAccepted($staff){
 			return array_filter(self::$questions, function($val) use($staff){
-				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && $val['status'] == "open";
+				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && self::reqResponse($val['status']);
 			});
 		}
 
@@ -133,7 +145,11 @@
 		}
 
 		public static function answered($status){
-			return $status == "read" || self::active($status);
+			return $status == "read" || $status == "clarify" ||self::active($status);
+		}
+
+		public static function reqResponse($status){
+			return $status == "open" || $status == "clarify"; 
 		}
 
 		public static function unaccepted($question){
