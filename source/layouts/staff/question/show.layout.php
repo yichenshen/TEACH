@@ -1,63 +1,12 @@
-<?php require_once $_SERVER["DOCUMENT_ROOT"]."/helpers/questionlist.helper.php"; ?>
-
 <div class="container">
 	<br />
 
-	<div class="card blue-grey lighten-5">
-		<div class="card-content">
-		    <div class="section">
-		    	<div class="right hide-on-small-only">
-				    <div><?php echo label($question['status']); ?><br /></div>
-				    <div class="grey question-badge clear right"><?php echo $question["level"]; ?></div>
-			    </div>
-
-			    <span class="icon-wrapper hide-on-small-only">
-			    	<?php echo avatar($question["subject"]); ?>
-			    </span>
-			    	
-			    <span class="card-title black-text"><?php echo $question["title"]; ?></span>
-		    </div>
-
-			<div class="divider"></div>
-
-			<div class="section">
-			  <?php echo nl2br($question["content"]); ?>
-			</div>
-		</div>
-	</div>	
+	<?php require $_SERVER["DOCUMENT_ROOT"]."/layouts/shared/questiondisplay.layout.php"; ?>
 
 	<?php if ($answered): ?>	
 		<br />
 
-		<div class="card green lighten-4">
-			<div class="card-content">
-				<div class="section">
-					<span class="hide-on-small-only">
-			    	<i class="grey-text text-darken-3 mdi-action-question-answer small"></i>
-			    	&nbsp;
-				    </span>
-				    <span class="card-title black-text">Answer</span>
-				</div>
-
-				<div class="divider"></div>
-
-				<div class="section"><?php echo nl2br($question["answer"]); ?></div>
-				<div class="divider"></div>
-				<div class="section">
-					<span>Rate this answer:&nbsp;&nbsp;</span>
-
-					<div class="hide-on-med-and-up"><br /></div>
-					<!-- From https://css-tricks.com/star-ratings/ -->
-					<div class="rating inline">
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php require $_SERVER["DOCUMENT_ROOT"]."/layouts/shared/questionanswer.layout.php"; ?>
 
 		<a 	href="/pages/staff/question/edit.php?id=<?php echo $qID; ?>" 
 			class="btn-floating btn-large waves-effect waves-light waves-circle blue lighten-1 right tooltipped"
