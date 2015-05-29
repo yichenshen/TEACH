@@ -136,3 +136,8 @@ nav .nav-wrapper i.large{
 .rated .selected  {
    color: #ffa000;
 }
+
+.markdown ul li{
+	list-style-type: square;
+	margin-left: 4ch;
+}

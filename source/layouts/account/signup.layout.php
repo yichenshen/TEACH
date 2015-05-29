@@ -1,7 +1,7 @@
 <div class="container">
 	<h3>Signup</h3>
 
-	<form action="/">
+	<form action="/" id="signup" method="post">
 		<div class="row">
 
 			<div class="input-field col l10 s12">
@@ -46,6 +46,42 @@
 			</div>
 		</div>
 
-		<button type="submit" class="right btn blue waves-effect waves-light">Signup</button> 
+		<button id="submitButton" type="button" class="right btn blue waves-effect waves-light">Signup</button>
+
+		<div id="tcModal" class="modal modal-fixed-footer">
+
+		    <div class="modal-content markdown">
+				<?php 
+					require_once $_SERVER['DOCUMENT_ROOT']."/bower_components/parsedown/Parsedown.php";
+
+					$Parsedown = new Parsedown();
+
+					echo $Parsedown->text(file_get_contents($_SERVER['DOCUMENT_ROOT']."/resources/templates/terms_and_conditions.md"));  
+				?>
+		    </div>
+
+		    <div class="modal-footer">
+				<button type="button" id="disagree" class="modal-action modal-close waves-effect waves-red white btn-flat">
+					Disagree
+				</button>
+				<button type="submit" class="modal-action modal-close waves-effect waves-green white btn-flat">
+					Agree
+				</button>
+		    </div>
+		</div>
 	</form>
 </div>
+
+<script type="text/javascript">
+	$("#submitButton").click(function(){
+		$('#tcModal').openModal();
+	});
+
+	$("#disagree").click(function(){
+		$('#tcModal').closeModal();
+	});
+
+	$(document).ready(function(){
+	    $('.modal-trigger').leanModal();
+	});
+</script>
