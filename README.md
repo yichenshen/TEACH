@@ -18,6 +18,14 @@ This repository contains all technical aspects of the project, including databas
 
  - bower  (http://bower.io/)
 
+#####Website Dependencies
+
+ - [Materialize](http://materializecss.com/)
+ - [jQuery](https://jquery.com/)
+ - [Parsedown](http://parsedown.org/) 
+
+> Dependencies are already included in this repository.
+
 ---
 
 ###Setup
@@ -80,11 +88,6 @@ You may manually install/update the required packages using bower. Though they a
 bower install
 bower update
 ```
-
-Packages can be found in `/bower_components`. The following are currently included.
-
- - materialize
- - jquery 
 
 ---
 
@@ -179,4 +182,5 @@ Models can be found in `source/models/`. Without a database connection, data wil
 
 ###Credits
 
- - Icons: Icons made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](http://www.flaticon.com/) 
+ - Icons: Icons made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](http://www.flaticon.com/)
+ - Terms and Conditions was created using a Contractology template available at [http://www.freenetlaw.com](http://www.freenetlaw.com).

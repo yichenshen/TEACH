@@ -1,0 +1,15 @@
+{
+  "name": "parsedown",
+  "homepage": "https://github.com/erusev/parsedown",
+  "version": "1.5.3",
+  "_release": "1.5.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.5.3",
+    "commit": "b9e5228e92e5f5c17d7774cfb2de8e5e8362de1a"
+  },
+  "_source": "git://github.com/erusev/parsedown.git",
+  "_target": "~1.5.3",
+  "_originalSource": "erusev/parsedown",
+  "_direct": true
+}

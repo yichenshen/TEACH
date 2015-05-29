@@ -12,6 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "materialize": "~0.96.1"
+    "materialize": "~0.96.1",
+    "parsedown": "erusev/parsedown#~1.5.3"
   }
 }
