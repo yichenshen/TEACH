@@ -70,7 +70,10 @@
   					 			  		"ratingComment" => "Solution is complete, but complicated.",
   					 			  		"level" => "A-Levels",
   					 			  		"studentsUsername" => "user",
-  					 			  		"staffUsername" => "staff"));
+  					 			  		"staffUsername" => "staff",
+  					 			  		"attachments" => array(	array("type" => "question", "fileName" => "Marble_in_a_bowl.png"),
+  					 			  								array("type" => "answer", "fileName" => "Marble_in_a_bowl.pdf"),
+  					 			  								array("type" => "answer", "fileName" => "Working.pdf"))));
 
 		//User/student queries
 		public static function all($user){
