@@ -10,6 +10,8 @@
 	$pageTitle = "Signup - TEACH";
 	$titleLabel = "Signup";
 
+	$termsAndConditions = file_get_contents($_SERVER['DOCUMENT_ROOT']."/resources/templates/terms_and_conditions.md");
+
 	require $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
 	$levels = Level::all();
 
