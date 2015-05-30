@@ -61,7 +61,7 @@
 								  		"staffUsername" => "staff"),
 								  array("id" => 7,
   					 			  		"title" => "Marble in a Bowl",
-  					 			  		"content" => "Consider the following. A hollow sphere of radius r is placed in a hollow hemispherical bowl of radius R, (R > r). The smaller sphere is given a small perturbation in its angle, and subsequently rolls without slipping in the bowl. Find the angular frequency of oscillation.\n\n[Clarification]\nWhich solution is recommended?",
+  					 			  		"content" => "Consider the following. A hollow sphere of radius r is placed in a hollow hemispherical bowl of radius R, (R > r). The smaller sphere is given a small perturbation in its angle, and subsequently rolls without slipping in the bowl. Find the angular frequency of oscillation.\n\n__[Clarification]__\nWhich solution is recommended?",
   					 			  		"status" => "clarify",
   					 			  		"answer" => "Refer to document below",
   					 			  		"clarificationCount" => 1,

@@ -17,8 +17,14 @@
 
 		<div class="divider"></div>
 
-		<div class="section">
-		  <?php echo nl2br($question["content"]); ?>
+		<div class="section markdown">
+			<?php 
+				require_once $_SERVER['DOCUMENT_ROOT']."/bower_components/parsedown/Parsedown.php";
+
+				$Parsedown = new Parsedown();
+
+				echo $Parsedown->text(nl2br($question["content"]));
+			?>
 		</div>
 	</div>
 </div>	

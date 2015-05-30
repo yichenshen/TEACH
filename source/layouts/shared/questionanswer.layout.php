@@ -10,7 +10,15 @@
 
 		<div class="divider"></div>
 
-		<div class="section"><?php echo nl2br($question["answer"]); ?></div>
+		<div class="section markdown">
+			<?php 
+				require_once $_SERVER['DOCUMENT_ROOT']."/bower_components/parsedown/Parsedown.php";
+
+				$Parsedown = new Parsedown();
+
+				echo $Parsedown->text(nl2br($question["answer"]));
+			?>
+		</div>
 			
 		<?php if(isset($question['rating'])): ?>
 			<div class="divider"></div>
