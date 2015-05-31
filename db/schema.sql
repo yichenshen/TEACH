@@ -28,6 +28,7 @@ CREATE TABLE `attachments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fileName` varchar(45) NOT NULL,
   `type` varchar(20) NOT NULL,
+  `mimeType` varchar(45) DEFAULT NULL,
   `questionsId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
@@ -42,7 +43,7 @@ CREATE TABLE `attachments` (
 
 LOCK TABLES `attachments` WRITE;
 /*!40000 ALTER TABLE `attachments` DISABLE KEYS */;
-INSERT INTO `attachments` VALUES (1,'Marble_in_a_bowl.png','question',7),(2,'Marble_in_a_bowl.pdf','answer',7),(3,'Working.pdf','answer',7);
+INSERT INTO `attachments` VALUES (1,'Marble_in_a_bowl.png','question','image/png',7),(2,'Marble_in_a_bowl.pdf','answer','application/pdf',7),(3,'Working.pdf','answer','application/pdf',7);
 /*!40000 ALTER TABLE `attachments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,7 +119,7 @@ CREATE TABLE `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(150) NOT NULL,
   `content` varchar(2000) DEFAULT NULL,
-  `answerText` varchar(5000) DEFAULT NULL,
+  `answer` varchar(5000) DEFAULT NULL,
   `rating` int(11) DEFAULT NULL,
   `ratingComment` varchar(255) DEFAULT NULL,
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -305,4 +306,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 10:27:22
+-- Dump completed on 2015-05-31 10:33:54
