@@ -3,7 +3,7 @@
 	{
 		static $users = array(array("username" => "user",
 									"password" => "password",
-									"balance" => 200,
+									"balance" => 205.50,
 									"fine" => 1,
 									"level" => "A-Levels"),
 							  array("username" => "Jack",
