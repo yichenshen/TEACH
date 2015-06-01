@@ -15,7 +15,13 @@
 		        	<div class="hide-on-med-and-down">
 			        	<br />
 		        	</div>
-	        		Account balance: $<?php echo $balance; ?><br />
+	        		
+	        		<a href="/pages/account/transactions.php" class="teal-text text-lighten-4">
+	        			<u>Account balance: $<?php echo $balance; ?></u>
+	        		</a>
+
+	        		<br />
+		        	
 		        	<?php if($fine > 0){
 		        		echo "Fines: $".$fine; 
 		        	} ?>
