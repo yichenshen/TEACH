@@ -37,7 +37,12 @@
             </p>
           </div>
 
-          <a class="waves-effect waves-light btn-large light-blue darken-1" href="/pages/account/signup.php">Sign-up Now</a>
+          <a class="waves-effect waves-light btn-large light-blue darken-1 hide-on-med-and-up" href="/pages/account/signup.php">Sign-up Now</a>
+      </div>
+
+      <div class="hide-on-med-and-up col s12">
+        <br />
+        <br />
       </div>
 
       <div class="col s12 offset-m2 m5">
@@ -64,8 +69,17 @@
               Contact us below for more details.
             </p>
           </div>
+          
+          <a class="waves-effect waves-light btn-large light-blue darken-1 hide-on-med-and-up" href="#">Contact Us</a>
+      </div>
+    </div>
 
-          <a class="waves-effect waves-light btn-large light-blue darken-1" href="#">Contact Us</a>
+    <div class="row hide-on-small-only">
+      <div class="col m5">
+        <a class="waves-effect waves-light btn-large light-blue darken-1" href="/pages/account/signup.php">Sign-up Now</a>
+      </div>
+      <div class="col offset-m2 m5">
+        <a class="waves-effect waves-light btn-large light-blue darken-1" href="#">Contact Us</a>
       </div>
     </div>
   </div>
