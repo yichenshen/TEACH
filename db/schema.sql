@@ -239,7 +239,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES ('Jack','jack@hotmail.com','jackjack',100.00,0.00,'2015-05-26 08:51:34',3),('user','user@teach.com','password',200.00,1.00,'2015-05-20 05:42:10',4);
+INSERT INTO `students` VALUES ('Jack','jack@hotmail.com','jackjack',98.00,0.00,'2015-05-26 08:51:34',3),('user','user@teach.com','password',205.50,1.00,'2015-05-20 05:42:10',4);
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -285,7 +285,7 @@ CREATE TABLE `transactions` (
   UNIQUE KEY `id_UNIQUE` (`code`),
   KEY `fk_transactions_students1` (`studentsUsername`),
   CONSTRAINT `fk_transactions_students1` FOREIGN KEY (`studentsUsername`) REFERENCES `students` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -294,6 +294,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,'Coupon',100.00,'def3242sdsd2','2015-05-02 10:32:26','user'),(2,'Refund',1.00,NULL,'2015-05-26 17:41:40','user'),(3,'MasterCard',100.00,'000006248627','2015-05-29 22:14:51','user'),(4,'PayPal',10.00,'VADE0B248932','2015-05-31 12:39:12','user'),(5,'VISA',100.00,'00023124237','2015-05-01 12:23:11','Jack');
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -306,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 10:33:54
+-- Dump completed on 2015-06-01 12:05:20
