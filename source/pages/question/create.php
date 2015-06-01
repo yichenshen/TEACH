@@ -14,6 +14,9 @@
 		$levels = Level::all();
 		$defaultLevel = Level::getID(User::getUser($loggedInUser)['level']);
 
+		require $_SERVER['DOCUMENT_ROOT']."/models/service.model.php";
+		$serviceLevels = ServiceLevel::all();
+
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/create.layout.php";
 		require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php");
 	} else{

@@ -39,26 +39,23 @@
 		    	<label>Level</label>
 		    </div>
 
-		    <div class="input-field col s12 m6 l7">
+		    <div class="input-field col s12 m8 l7">
 		    	<select id="subject">
-	    	      <option value="" disabled selected>Choose your subject</option>
-	    	      <?php foreach ($subjects as $subject){
-	    	      	echo '<option value="'.$subject.'">'.$subject.'</option>';
-	    	      };?>
+					<option value="" disabled selected>Choose your subject</option>
+					<?php foreach ($subjects as $subject){
+						echo '<option value="'.$subject.'">'.$subject.'</option>';
+					};?>
 	    	    </select>
 	    	    <label>Subject</label>
 		    </div>
 
-
-		    <div class="input-field col s6 m5 offset-m1 l4 offset-l1 section">
-			    <div class="switch">
-			        <label>
-			        <span class="hide-on-small-only">Normal</span>
-						<input type="checkbox" name="express">
-						<span class="lever"></span>
-						Express
-			        </label>
-				</div>
+			<div class="input-field col s12 m8 l7">
+		    	<select id="service">
+					<?php foreach ($serviceLevels as $service){
+						echo '<option value="'.$service['id'].'">'.$service['name'].' (Price x'.$service['costMultiplier'].')</option>';
+					};?>
+	    	    </select>
+	    	    <label>Subject</label>
 		    </div>
 
 		    <div class="col s12">
