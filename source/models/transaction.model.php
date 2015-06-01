@@ -2,9 +2,15 @@
 	class Transaction
 	{
 		//Dummy data
-		static $transactions = array(array(	"code" => 4,
+		static $transactions = array(array(	"code" => 5,
+											"type" => "VISA",
+											"extID" => "00023124237",
+											"amount" => 100.00,
+											"createTime" => "2015-05-01 12:23:11",
+											"studentUsername" => "Jack"),
+									array(	"code" => 4,
 											"type" => "Paypal",
-											"extID" => "1AB23456C7890123D",
+											"extID" => "VADE0B248932",
 											"amount" => 10.00,
 											"createTime" => "2015-05-31 12:39:12",
 											"studentUsername" => "user"),

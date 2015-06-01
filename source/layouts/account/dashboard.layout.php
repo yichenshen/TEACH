@@ -17,14 +17,18 @@
 		        	</div>
 	        		
 	        		<a href="/pages/account/transactions.php" class="teal-text text-lighten-4">
+		        		<i class="mdi-action-account-balance-wallet"></i>
 	        			<u>Account balance: $<?php echo $balance; ?></u>
 	        		</a>
 
 	        		<br />
 		        	
-		        	<?php if($fine > 0){
-		        		echo "Fines: $".$fine; 
-		        	} ?>
+		        	<span class="red-text text-lighten-4">
+			        	<?php if($fine > 0){
+			        		echo "<i class=\"mdi-editor-attach-money\"></i> ";
+			        		echo "Fines: $".$fine; 
+			        	} ?>
+		        	</span>
 		        </p>
 	        </div>
 	        <div class="card-action">

@@ -8,7 +8,7 @@
 									"level" => "A-Levels"),
 							  array("username" => "Jack",
 									"password" => "jackjack",
-									"balance" => 100,
+									"balance" => 98.00,
 									"fine" => 0,
 									"level" => "O-Levels"));
 		static $staff = array(array("username" => "staff",
