@@ -141,3 +141,11 @@ nav .nav-wrapper i.large{
 	list-style-type: square;
 	margin-left: 4ch;
 }
+
+table.striped tbody tr:nth-child(odd) {
+    background-color: #e4e4e4; 
+}
+
+table.hoverable tbody tr:hover {
+	background-color: #cfcfcf;
+}
