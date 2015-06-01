@@ -122,22 +122,24 @@ CREATE TABLE `questions` (
   `answer` varchar(5000) DEFAULT NULL,
   `rating` int(11) DEFAULT NULL,
   `ratingComment` varchar(255) DEFAULT NULL,
-  `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(100) DEFAULT 'OPEN',
   `statusUpdateTime` timestamp NULL DEFAULT NULL,
   `clarificationCount` tinyint(1) NOT NULL DEFAULT '0',
-  `express` tinyint(1) NOT NULL DEFAULT '0',
   `studentsUsername` varchar(16) NOT NULL,
   `staffUsername` varchar(16) DEFAULT NULL,
   `levelsId` int(11) DEFAULT NULL,
   `subjectsName` varchar(100) DEFAULT NULL,
+  `serviceLevelsID` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `questions_id_UNIQUE` (`id`),
   KEY `fk_questions_students` (`studentsUsername`),
   KEY `fk_questions_levels1` (`levelsId`),
   KEY `fk_questions_staff1` (`staffUsername`),
   KEY `fk_questions_subjects1` (`subjectsName`),
+  KEY `fk_questions_serviceLevel_idx` (`serviceLevelsID`),
   CONSTRAINT `fk_questions_levels1` FOREIGN KEY (`levelsId`) REFERENCES `levels` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk_questions_serviceLevel` FOREIGN KEY (`serviceLevelsID`) REFERENCES `serviceLevels` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_questions_staff1` FOREIGN KEY (`staffUsername`) REFERENCES `staff` (`username`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_questions_students` FOREIGN KEY (`studentsUsername`) REFERENCES `students` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_questions_subjects1` FOREIGN KEY (`subjectsName`) REFERENCES `subjects` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
@@ -150,8 +152,35 @@ CREATE TABLE `questions` (
 
 LOCK TABLES `questions` WRITE;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
-INSERT INTO `questions` VALUES (1,'Why did the chicken cross the road?','I really can\'t think of a reason for it to do so!\\nHelp Me!','To get to the other side.',NULL,NULL,'2015-05-26 09:12:23','answered','2015-05-26 19:41:40',0,0,'user',NULL,1,'Biology'),(2,'What is 1+1?','Is it equals to the question ID of this question?','Very smart observation. \\n\\n Now stop wasting your money.',NULL,NULL,'2015-05-26 09:12:23','modified','2015-05-26 09:41:40',0,0,'user','staff',3,'Maths'),(3,'Can I ask a question?','It\'s a really interesting question!\\n\\nI really want to ask it!',NULL,NULL,NULL,'2015-05-26 09:22:04','open','2015-05-26 09:22:04',0,0,'user',NULL,2,'Chemistry'),(4,'This is a long and really really really really really really really really really old question.','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor ut ex quis posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis dapibus ullamcorper. Curabitur sagittis sapien in nisl ornare sodales. Sed sodales erat in arcu maximus, id ultrices risus scelerisque. Etiam dictum dolor mi, eu finibus nisi tristique et. Suspendisse orci massa, fermentum rhoncus dolor vel, gravida tempus odio. Suspendisse ut arcu efficitur, dignissim massa ut, congue sem. Ut et dolor urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus aliquet nibh sed cursus. Integer lacinia scelerisque dui, interdum viverra odio rutrum vitae. Vivamus quis eros pretium, vehicula orci nec, cursus nisl. Phasellus ac imperdiet lorem. Maecenas luctus purus id congue vulputate. \\n\\nMorbi placerat elit ac diam eleifend imperdiet. Integer a cursus felis, vel lobortis ante. Donec commodo facilisis fermentum. Vestibulum ut augue faucibus, euismod risus ut, volutpat ligula. Proin eu ullamcorper mi. Nulla sit amet pretium orci, vel pretium nisi. Maecenas id elit iaculis, tempus lectus id, convallis felis. Suspendisse mollis mi lectus, ut gravida leo condimentum quis. Nunc vehicula libero vitae ipsum placerat volutpat. Pellentesque id sem a arcu tristique gravida non eu eros. Phasellus ultrices, lectus eget mollis elementum, neque mauris ullamcorper massa, id tempor orci diam ut sem. Sed placerat tortor et ornare ultrices. Duis interdum neque non sagittis tempus. Quisque quis euismod sem.\\n\\nPellentesque id erat nisi. Sed et felis tellus. Cras consequat neque mauris, eu mollis risus pulvinar quis. Aliquam vitae viverra ligula. Fusce interdum ipsum urna, et blandit tellus malesuada quis. In ac tortor nisl. Maecenas id dolor scelerisque, pulvinar ligula at, gravida magna. Sed mauris lorem, pretium ac aliquet vel, laoreet vitae risus. Vivamus porta enim sit amet.','Uh I\'m really sorry but can you repeat that again?',1,'????','2015-05-26 09:22:04','read','2015-05-27 09:39:31',0,0,'Jack','staff',3,NULL),(5,'Zombie cat?','Schrödinger wrote:\\n\\n A cat is penned up in a steel chamber, along with the following device (which must be secured against direct interference by the cat): in a Geiger counter, there is a tiny bit of radioactive substance, so small, that perhaps in the course of the hour one of the atoms decays, but also, with equal probability, perhaps none; if it happens, the counter tube discharges and through a relay releases a hammer that shatters a small flask of hydrocyanic acid. If one has left this entire system to itself for an hour, one would say that the cat still lives if meanwhile no atom has decayed. The psi-function of the entire system would express this by having in it the living and dead cat (pardon the expression) mixed or smeared out in equal parts.\\n\\nSo is the cat alive or dead?','There are many explanations to this question.\\n\\nThe most popular of which is the Copenhagen interpretation, which states that the system will cease to be in a superposition of states upon observation. This implies that until you open the box (or find out for certain if the cat is alive or dead), the cat is indeed, both dead and alive. (Zombie cat ftw)\\n\\nThe other popular interpretation is the many worlds interpretation. In this case, the cat is alive in one world and dead in the other.',NULL,NULL,'2015-05-26 09:25:41','fined','2015-05-26 09:46:30',0,0,'user',NULL,4,'Physics'),(6,'CuSO4','What is the molar mass (M) of Copper(II) Sulphate (CuSO4)?',NULL,NULL,NULL,'2015-05-26 09:25:41','open','2015-05-26 09:25:41',0,0,'Jack','staff',3,'Chemistry'),(7,'Marble in a Bowl','Consider the following. A hollow sphere of radius r is placed in a hollow hemispherical bowl of radius R, (R > r). The smaller sphere is given a small perturbation in its angle, and subsequently rolls without slipping in the bowl. Find the angular frequency of oscillation.\\n\\n__[Clarification]__\\nWhich solution is recommended?','Refer to document below',4,'Solution is complete, but complicated.','2015-05-31 02:07:10','clarify','2015-06-01 04:41:53',1,0,'user','staff',4,'Physics');
+INSERT INTO `questions` VALUES (1,'Why did the chicken cross the road?','I really can\'t think of a reason for it to do so!\\nHelp Me!','To get to the other side.',NULL,NULL,'2015-05-26 09:12:23','answered','2015-05-26 19:41:40',0,'user',NULL,1,'Biology',1),(2,'What is 1+1?','Is it equals to the question ID of this question?','Very smart observation. \\n\\n Now stop wasting your money.',NULL,NULL,'2015-05-26 09:12:23','modified','2015-05-26 09:41:40',0,'user','staff',3,'Maths',1),(3,'Can I ask a question?','It\'s a really interesting question!\\n\\nI really want to ask it!',NULL,NULL,NULL,'2015-05-26 09:22:04','open','2015-05-26 09:22:04',0,'user',NULL,2,'Chemistry',1),(4,'This is a long and really really really really really really really really really old question.','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor ut ex quis posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis dapibus ullamcorper. Curabitur sagittis sapien in nisl ornare sodales. Sed sodales erat in arcu maximus, id ultrices risus scelerisque. Etiam dictum dolor mi, eu finibus nisi tristique et. Suspendisse orci massa, fermentum rhoncus dolor vel, gravida tempus odio. Suspendisse ut arcu efficitur, dignissim massa ut, congue sem. Ut et dolor urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus aliquet nibh sed cursus. Integer lacinia scelerisque dui, interdum viverra odio rutrum vitae. Vivamus quis eros pretium, vehicula orci nec, cursus nisl. Phasellus ac imperdiet lorem. Maecenas luctus purus id congue vulputate. \\n\\nMorbi placerat elit ac diam eleifend imperdiet. Integer a cursus felis, vel lobortis ante. Donec commodo facilisis fermentum. Vestibulum ut augue faucibus, euismod risus ut, volutpat ligula. Proin eu ullamcorper mi. Nulla sit amet pretium orci, vel pretium nisi. Maecenas id elit iaculis, tempus lectus id, convallis felis. Suspendisse mollis mi lectus, ut gravida leo condimentum quis. Nunc vehicula libero vitae ipsum placerat volutpat. Pellentesque id sem a arcu tristique gravida non eu eros. Phasellus ultrices, lectus eget mollis elementum, neque mauris ullamcorper massa, id tempor orci diam ut sem. Sed placerat tortor et ornare ultrices. Duis interdum neque non sagittis tempus. Quisque quis euismod sem.\\n\\nPellentesque id erat nisi. Sed et felis tellus. Cras consequat neque mauris, eu mollis risus pulvinar quis. Aliquam vitae viverra ligula. Fusce interdum ipsum urna, et blandit tellus malesuada quis. In ac tortor nisl. Maecenas id dolor scelerisque, pulvinar ligula at, gravida magna. Sed mauris lorem, pretium ac aliquet vel, laoreet vitae risus. Vivamus porta enim sit amet.','Uh I\'m really sorry but can you repeat that again?',1,'????','2015-05-26 09:22:04','read','2015-05-27 09:39:31',0,'Jack','staff',3,NULL,1),(5,'Zombie cat?','Schrödinger wrote:\\n\\n A cat is penned up in a steel chamber, along with the following device (which must be secured against direct interference by the cat): in a Geiger counter, there is a tiny bit of radioactive substance, so small, that perhaps in the course of the hour one of the atoms decays, but also, with equal probability, perhaps none; if it happens, the counter tube discharges and through a relay releases a hammer that shatters a small flask of hydrocyanic acid. If one has left this entire system to itself for an hour, one would say that the cat still lives if meanwhile no atom has decayed. The psi-function of the entire system would express this by having in it the living and dead cat (pardon the expression) mixed or smeared out in equal parts.\\n\\nSo is the cat alive or dead?','There are many explanations to this question.\\n\\nThe most popular of which is the Copenhagen interpretation, which states that the system will cease to be in a superposition of states upon observation. This implies that until you open the box (or find out for certain if the cat is alive or dead), the cat is indeed, both dead and alive. (Zombie cat ftw)\\n\\nThe other popular interpretation is the many worlds interpretation. In this case, the cat is alive in one world and dead in the other.',NULL,NULL,'2015-05-26 09:25:41','fined','2015-05-26 09:46:30',0,'user',NULL,4,'Physics',1),(6,'CuSO4','What is the molar mass (M) of Copper(II) Sulphate (CuSO4)?',NULL,NULL,NULL,'2015-05-26 09:25:41','open','2015-05-26 09:25:41',0,'Jack','staff',3,'Chemistry',1),(7,'Marble in a Bowl','Consider the following. A hollow sphere of radius r is placed in a hollow hemispherical bowl of radius R, (R > r). The smaller sphere is given a small perturbation in its angle, and subsequently rolls without slipping in the bowl. Find the angular frequency of oscillation.\\n\\n__[Clarification]__\\nWhich solution is recommended?','Refer to document below',4,'Solution is complete, but complicated.','2015-05-31 02:07:10','clarify','2015-06-01 04:41:53',1,'user','staff',4,'Physics',1);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `serviceLevels`
+--
+
+DROP TABLE IF EXISTS `serviceLevels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `serviceLevels` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `costMultiplier` float NOT NULL,
+  `answerTime` time NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `serviceLevels`
+--
+
+LOCK TABLES `serviceLevels` WRITE;
+/*!40000 ALTER TABLE `serviceLevels` DISABLE KEYS */;
+INSERT INTO `serviceLevels` VALUES (1,'Normal',1,'72:00:00'),(2,'Premium',1.5,'24:00:00'),(3,'Priority',2,'12:00:00');
+/*!40000 ALTER TABLE `serviceLevels` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -307,4 +336,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-01 12:05:20
+-- Dump completed on 2015-06-01 22:21:06
