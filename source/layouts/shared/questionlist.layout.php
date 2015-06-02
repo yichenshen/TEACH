@@ -41,9 +41,18 @@
 			    	
 			    	<br />
 			    	
-			    	<div class="grey question-badge left"><?php echo $question["level"]; ?></div>
+			    	<div class="blue-grey lighten-1 question-badge left hide-on-small-only"><?php echo $question["level"]; ?></div>
 			    </p>
 
+			    <?php if(User::isStaff($loggedInUser) && Question::reqResponse($question['status'])): ?>
+			    	<span class="grey-text">
+				    	<b>
+				    		<span class="hide-on-small-only">&nbsp;</span>
+				    		Due: 
+				    		<?php echo $question['answerTime']; ?>
+				    	</b>
+			    	</span>
+			    <?php endif ?>
 
 			    <?php echo label($question["status"]) ?>
 		    </a>
