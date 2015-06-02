@@ -119,7 +119,7 @@
 
 		public static function staffAnswered($staff){
 			return array_filter(self::$questions, function($val) use($staff){
-				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && self::answered($val['status'] && $val['status'] != "clarify");
+				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && self::answered($val['status']) && $val['status'] != "clarify";
 			});
 		}
 
