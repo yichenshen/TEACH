@@ -25,6 +25,11 @@ main {
 	font-size: 23px;
 }
 
+.main-panel{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
 .bottom-right-btn{
 	bottom: 35px; 
 	right: 24px;

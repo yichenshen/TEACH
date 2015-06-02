@@ -1,17 +1,18 @@
 <div class="container">
-  <div class="center">    
-    <h1>Welcome to TEACH</h1>
-    
+  <div class="center">        
     <div class="row">
-      <div class="col s6 offset-s3">
+      <div class="col s6 offset-s3 m4 offset-m4">
         <img src="/resources/images/school1.svg">
+      </div>
+      <div class="col s12">
+        <h4>Answers on demand, anytime anywhere.</h4>
       </div>
     </div>
       
     <div class="divider"></div>
 
     <div class="row section">
-      <div class="col s12 m5">
+      <div class="col s12 m6">
           
           <div class="row">
             <div class="col offset-s3 s6">
@@ -21,7 +22,7 @@
 
           <h4>Signup today!</h4>
 
-          <div class="left-align">
+          <div class="left-align main-panel">
             <p>
               Looking for help with your studies? Look no further!
             </p>
@@ -45,7 +46,7 @@
         <br />
       </div>
 
-      <div class="col s12 offset-m2 m5">
+      <div class="col s12 m6">
          <div class="row">
             <div class="col offset-s3 s6">
               <img src="/resources/images/network.svg" style="width:100%">
@@ -54,7 +55,7 @@
 
           <h4>Join our Family!</h4>
 
-          <div class="left-align">
+          <div class="left-align main-panel">
             <p>
               Interested in teaching? Have some free time?
             </p>
