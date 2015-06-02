@@ -22,19 +22,28 @@
 	        		</a>
 
 	        		<br />
+
+	        		<?php if($disputeNum > 0): ?>
+		        		<span class="amber-text text-lighten-4">
+			        		<i class="mdi-alert-warning"></i>
+			        		<?php echo $disputeNum." Questions disputed"; ?>
+		        		</span>
+		        	<?php endif; ?>
+
+	        		<br />
 		        	
-		        	<span class="red-text text-lighten-4">
-			        	<?php if($fine > 0){
-			        		echo "<i class=\"mdi-editor-attach-money\"></i> ";
-			        		echo "Fines: $".$fine; 
-			        	} ?>
-		        	</span>
+			        <?php if($fine > 0): ?>
+			        	<span class="red-text text-lighten-4">
+							<i class="mdi-editor-attach-money"></i>
+				        	<?php echo "Acknowledged Fines: $".$fine; ?>
+			        	</span>
+		        	<?php endif; ?>
 		        </p>
 	        </div>
 	        <div class="card-action">
 		        <div class="right card-buttons">
 		        	<?php if($fine > 0): ?>
-		        		<a href="/pages/account/fines.php" class="btn waves-effect waves-light red lighten-1 white-text ">Pay Fines</a>
+		        		<a href="/pages/account/fines.php" class="btn waves-effect waves-light red lighten-1 white-text ">Disputes/Fines</a>
 		        	<?php endif; ?>
 					<a href="/pages/account/topup.php" class="btn waves-effect waves-light blue-grey white-text">Top-up</a>
 		        </div>

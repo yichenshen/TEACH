@@ -6,11 +6,11 @@
 			<div class="card-content">
 				<p class="valign-wrapper">
 				<i class="mdi-alert-error small red-text valign"></i>
-					&nbsp;<b>The selected level of this question did not match its content and was thus changed to "<?php echo $question["level"]; ?>".</b>
+					&nbsp;<b>The selected level of this question did not match its content and will be changed to "<?php echo $question["finalLevel"]; ?>".</b>
 				</p>
 				<br />
 				<p>
-					Please email us at <a href="mailto:leveldisputes@teach.com" target="_top">leveldisputes@teach.com</a> if you feel this is done in error. Otherwise, please accept the change by clicking the button below.
+					Please email us at <a href="mailto:leveldisputes@teach.com" target="_top">leveldisputes@teach.com</a> if you feel this is in error. Otherwise, please accept the change by clicking the button below.
 				</p>
 			</div>
 			<div class="card-action">

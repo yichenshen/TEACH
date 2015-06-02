@@ -6,9 +6,13 @@
 		<li class="collection-item blue-grey lighten-5">
 			Account balance: <b>$<?php echo $balance; ?></b>
 		</li>
+
+		<li class="collection-item amber lighten-4">
+			<b><?php echo $disputeNum; ?> Questions disputed</b>
+		</li>
 		
 		<li class="collection-item red lighten-4">
-			Fines: <b>$<?php echo $fine; ?></b>
+			Acknowledged Fines: <b>$<?php echo $fine; ?></b>
 		</li>
 		
 		<li class="collection-item green lighten-4">

@@ -12,7 +12,9 @@
 									"fine" => 0,
 									"level" => "O-Levels"));
 		static $staff = array(array("username" => "staff",
-									"password" => "password"));
+									"password" => "password"),
+							  array("username" => "Alice",
+							  		"password" => "wonderland"));
 
 		public static function getUser($username){
 			foreach (self::$users as $user) {
