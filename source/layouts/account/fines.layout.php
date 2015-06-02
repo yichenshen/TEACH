@@ -12,11 +12,11 @@
 		</li>
 		
 		<li class="collection-item red lighten-4">
-			Acknowledged Fines: <b>$<?php echo $fine; ?></b>
+			Acknowledged Fines: <b>$<?php echo number_format($fine,2); ?></b>
 		</li>
 		
 		<li class="collection-item green lighten-4">
-			Balance after payment: <b>$<?php echo $balance-$fine; ?></b>
+			Balance after payment: <b>$<?php echo number_format($balance-$fine,2); ?></b>
 		</li>
 
 		<li class="collection-item blue-grey lighten-5">

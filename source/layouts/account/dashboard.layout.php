@@ -18,7 +18,7 @@
 	        		
 	        		<a href="/pages/account/transactions.php" class="teal-text text-lighten-4">
 		        		<i class="mdi-action-account-balance-wallet"></i>
-	        			<u>Account balance: $<?php echo $balance; ?></u>
+	        			<u>Account balance: $<?php echo number_format($balance,2); ?></u>
 	        		</a>
 
 	        		<br />
@@ -35,7 +35,7 @@
 			        <?php if($fine > 0): ?>
 			        	<span class="red-text text-lighten-4">
 							<i class="mdi-editor-attach-money"></i>
-				        	<?php echo "Acknowledged Fines: $".$fine; ?>
+				        	<?php echo "Acknowledged Fines: $".number_format($fine,2); ?>
 			        	</span>
 		        	<?php endif; ?>
 		        </p>

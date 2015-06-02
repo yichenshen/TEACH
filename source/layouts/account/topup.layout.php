@@ -6,16 +6,16 @@
 
 			<li class="collection-header"><h4>Top-up</h4></li>
 
-			<li class="collection-item"><label class="large-font grey-text">Account balance: $<?php echo $balance; ?></label></li>
+			<li class="collection-item"><label class="large-font grey-text">Account balance: $<?php echo number_format($balance,2); ?></label></li>
 			
 			<li class="collection-item">
 				<div class="range-field">
-					<label for="amountPicker" id="costLabel" class="large-font">Top-up Amount: $10</label>
+					<label for="amountPicker" id="costLabel" class="large-font">Top-up Amount: $10.00</label>
 					<input type="range" name="amount" id="amountPicker" min="10" max="150" value="10" step="5" onchange="updateLabel()" />
 				</div>
 			</li>
 			
-			<li class="collection-item"><label id="totalAmount" class="large-font grey-text">Total after top-up: $<?php echo $balance+10; ?></label></li>
+			<li class="collection-item"><label id="totalAmount" class="large-font grey-text">Total after top-up: $<?php echo number_format($balance+10,2); ?></label></li>
 
 			<li class="collection-item">
 				<label class="large-font">Payment Method</label>
@@ -57,7 +57,7 @@
 <script type="text/javascript">
 	function updateLabel(){
 		var topupAmount = $('#amountPicker').val();
-		$('#costLabel').text('Top-up Amount: $' + topupAmount);
-		$('#totalAmount').text('Total after top-up: $' + (parseFloat(topupAmount) + <?php echo $balance; ?>));
+		$('#costLabel').text('Top-up Amount: $' + parseFloat(topupAmount).toFixed(2));
+		$('#totalAmount').text('Total after top-up: $' + (parseFloat(topupAmount) + <?php echo $balance; ?>).toFixed(2));
 	}
 </script>
