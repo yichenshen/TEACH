@@ -9,7 +9,7 @@
 
 		$term = trim(isset($_GET['search']) ? $_GET['search'] : "");
 
-		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 		$acceptedQuestions = Question::staffAccepted($loggedInUser);
 		$answeredQuestions = Question::staffAnswered($loggedInUser);
 		$openQuestions = Question::staffOpenToAll();

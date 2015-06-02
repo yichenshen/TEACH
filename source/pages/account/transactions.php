@@ -10,7 +10,7 @@
 
 		$balance = User::getUser($loggedInUser)['balance'];
 
-		require $_SERVER['DOCUMENT_ROOT']."/models/transaction.model.php";
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/transaction.model.php";
 		$transactions = Transaction::all($loggedInUser);
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/account/transactions.layout.php";

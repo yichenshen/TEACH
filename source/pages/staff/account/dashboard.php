@@ -9,7 +9,7 @@
 
 		$user = User::getUser($loggedInUser);
 
-		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 		$questions = Question::staffAccepted($loggedInUser);
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/staff/account/dashboard.layout.php";

@@ -12,7 +12,7 @@
 
 	$termsAndConditions = file_get_contents($_SERVER['DOCUMENT_ROOT']."/resources/templates/terms_and_conditions.md");
 
-	require $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
+	require_once $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
 	$levels = Level::all();
 
 	$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/account/signup.layout.php";

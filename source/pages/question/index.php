@@ -9,7 +9,7 @@
 
 		$term = trim(isset($_GET['search']) ? $_GET['search'] : "");
 
-		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 		$questions = Question::all($loggedInUser);
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/index.layout.php";

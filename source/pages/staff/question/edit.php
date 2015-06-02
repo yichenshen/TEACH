@@ -5,7 +5,7 @@
 
 	$qID = $_GET["id"];
 
-	require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+	require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 
 	$question = Question::staffGetQuestion($qID, $loggedInUser);
 
@@ -15,7 +15,7 @@
 
 		$answer = isset($question['answer'])? $question['answer'] : "";
 
-		require $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
 		$levels = Level::all();
 		$defaultLevel = Level::getID($question['level']);
 

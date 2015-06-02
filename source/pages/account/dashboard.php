@@ -11,7 +11,7 @@
 		$balance = $user['balance'];
 		$fine = $user['fine'];
 
-		require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 		$disputeNum = count(Question::getFinedQuestionsLabel($loggedInUser));
 		$questions = Question::getActiveQuestionsLabel($loggedInUser);
 

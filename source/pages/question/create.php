@@ -7,14 +7,14 @@
 		$pageTitle = "Ask a Question!";
 		$titleLabel = "Ask";
 
-		require $_SERVER['DOCUMENT_ROOT']."/models/subject.model.php";
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/subject.model.php";
 		$subjects = Subject::all();
 
-		require $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/level.model.php";
 		$levels = Level::all();
 		$defaultLevel = Level::getID(User::getUser($loggedInUser)['level']);
 
-		require $_SERVER['DOCUMENT_ROOT']."/models/service.model.php";
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/service.model.php";
 		$serviceLevels = ServiceLevel::all();
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/question/create.layout.php";

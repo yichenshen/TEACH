@@ -5,7 +5,7 @@
 
 	$qID = $_GET["id"];
 
-	require($_SERVER['DOCUMENT_ROOT']."/models/question.model.php");
+	require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 
 	$question = Question::staffGetQuestion($qID, $loggedInUser);
 
