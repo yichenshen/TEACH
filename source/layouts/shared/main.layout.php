@@ -59,7 +59,7 @@
               <li><a class="grey-text text-lighten-3" href="#!">About us</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
               <li><a class="grey-text text-lighten-3" href="/pages/info/termsandconditions.php">Terms And Conditions</a></li>
-              <li><a class="grey-text text-lighten-3" href="/pages/info/affiliates.php">Affiliates</li>
+              <li><a class="grey-text text-lighten-3" href="/pages/info/affiliates.php">Affiliates</a></li>
             </ul>
           </div>
         </div>
