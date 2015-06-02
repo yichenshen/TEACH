@@ -54,7 +54,12 @@
 			    	</span>
 			    <?php endif ?>
 
-			    <?php echo label($question["status"]) ?>
+				<span class="hide-on-small-only">
+			    	<?php echo service($question["serviceLevel"]); ?>
+		    	</span>
+
+			    <?php echo label($question["status"]); ?>
+
 		    </a>
 		<?php endforeach; ?>
 	</div>

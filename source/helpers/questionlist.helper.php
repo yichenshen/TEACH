@@ -67,4 +67,18 @@
 	    			<img src=\"$file\" class=\"icon\">
     			</div>";
 	}
+
+	function service($serviceLevel){
+
+		if($serviceLevel == 1){
+			return "";
+		}
+
+		require_once $_SERVER['DOCUMENT_ROOT']."/models/service.model.php";
+
+		return '<div class="right '.(($serviceLevel==3) ? 'red-text' : 'green-text').' tooltipped"
+					 data-position="left" data-delay="10" data-tooltip="'.ServiceLevel::getServiceLevel($serviceLevel)['name'].'">
+    				<i class="mdi-action-alarm small"></i>
+    			</div>';
+	}
 ?>
