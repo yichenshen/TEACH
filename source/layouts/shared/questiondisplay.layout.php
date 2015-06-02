@@ -8,11 +8,26 @@
 			    <div class="grey question-badge clear right"><?php echo $question["level"]; ?></div>
 		    </div>
 
+		  	<span class="right">&nbsp;&nbsp;</span>
+
+		  	<div class="hide-on-small-only">
+		    <?php echo service($question["serviceLevel"]); ?>
+
+		    </div>
+
 		    <span class="icon-wrapper hide-on-small-only">
 		    	<?php echo avatar($question["subject"]); ?>
 		    </span>
 		    	
 		    <span class="card-title black-text"><?php echo $question["title"]; ?></span>
+
+			<?php if(User::isStaff($loggedInUser) && Question::reqResponse($question['status'])): ?>
+		    	<p class="grey-text">
+		    		Due: 
+		    		<?php echo $question['answerTime']; ?>
+		    	</p>
+		    <?php endif ?>
+
 	    </div>
 
 		<div class="divider"></div>
