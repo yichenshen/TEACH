@@ -12,6 +12,12 @@
 		    <div class="input-field col s12">
 		        <textarea id="content" class="materialize-textarea" length="2000" maxlength="2000"></textarea>
 		        <label for="content">Elaborate</label>
+		        
+		        <a 	href="javascript:OpenLatexEditor('content','latex','')" 
+		        	class="right btn-floating blue waves-effect waves-light waves-circle tooltipped"
+		        	data-position="right" data-delay="10" data-tooltip="Add equation">
+			        <i class="mdi-editor-functions"></i>
+				</a>
 		    </div>
 		
 		    <div class="input-field file-field col s12 m4 l3">
@@ -68,3 +74,4 @@
 </div>
 
 <script type="text/javascript" src="/resources/js/fileupload.js" async></script>
+<script type="text/javascript" src="/resources/js/editor.js"></script>
