@@ -208,7 +208,7 @@ CREATE TABLE `staff` (
 
 LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-INSERT INTO `staff` VALUES ('staff','staff@teach.com','password','Full-Time','0000-00-00 00:00:00');
+INSERT INTO `staff` VALUES ('Alice','alice@teach.com','wonderland','Part-Time','2015-06-02 03:56:43'),('staff','staff@teach.com','password','Full-Time','2015-04-26 04:37:24');
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,4 +336,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-02 11:04:12
+-- Dump completed on 2015-06-02 11:58:04
