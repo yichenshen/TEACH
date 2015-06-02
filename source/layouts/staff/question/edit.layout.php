@@ -15,9 +15,14 @@
 				<div class="input-field">
 					<textarea id="answer" class="materialize-textarea" name="answer"><?php echo $answer; ?></textarea>
 					<label for="answer">Answer:</label>
+			        <a 	href="javascript:OpenLatexEditor('answer','latex','')" 
+			        	class="right btn-floating green waves-effect waves-light waves-circle tooltipped"
+			        	data-position="right" data-delay="10" data-tooltip="Add equation">
+				        <i class="mdi-editor-functions"></i>
+					</a>
 				</div>
 
-				<div class="row">
+				<div class="row clear">
 					<div class="input-field file-field col s12 m5 l3">
 						<div class="btn-flat green lighten-2 white-text">
 							<span>Attachments</span>
@@ -61,3 +66,4 @@
 </div>
 
 <script type="text/javascript" src="/resources/js/fileupload.js" async></script>
+<script type="text/javascript" src="/resources/js/editor.js"></script>
