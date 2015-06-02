@@ -31,25 +31,23 @@
 		<br />
 
 		<?php if($question['clarificationCount'] == 0): ?>
-			<div class="card amber lighten-3">
+			<a class="waves-effect waves-light btn green lighten-1 right modal-trigger" href="#clarficationModal">Clarify</a>
+
 				<form>
 					<input type="hidden" name="id" value="<?php echo $qID; ?>" />
-					<div class="card-content">
-						<p class="card-title black-text section">Clarify</p>
-						
-						<div class="divider"></div>
-
-						<div class="input-field section">
-							<textarea id="clarification" class="materialize-textarea validate" name="clarification" required></textarea>
-							<label for="clarification">Enter Clarification here</label>
+				
+					<div id="clarficationModal" class="modal">
+						<div class="modal-content">
+							<div class="input-field section">
+								<textarea id="clarification" class="materialize-textarea validate" name="clarification" required></textarea>
+								<label for="clarification">Enter Clarification here</label>
+							</div>					
 						</div>
-					</div>
 
-					<div class="card-action">
-						<div class="card-buttons right">
+						<div class="modal-footer">
 							<button type="submit" 
-									class="btn waves-effect waves-light orange darken-1 white-text">
-								Answer/Edit
+									class="modal-action modal-close waves-effect waves-green btn-flat">
+								Submit
 							</button>
 				        </div>
 					</div>
