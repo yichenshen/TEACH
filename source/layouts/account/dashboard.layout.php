@@ -42,7 +42,7 @@
 	        </div>
 	        <div class="card-action">
 		        <div class="right card-buttons">
-		        	<?php if($fine > 0): ?>
+		        	<?php if($fine > 0 || $disputeNum > 0): ?>
 		        		<a href="/pages/account/fines.php" class="btn waves-effect waves-light red lighten-1 white-text ">Disputes/Fines</a>
 		        	<?php endif; ?>
 					<a href="/pages/account/topup.php" class="btn waves-effect waves-light blue-grey white-text">Top-up</a>
