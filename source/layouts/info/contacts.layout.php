@@ -1,10 +1,10 @@
 <div class="container">
 	<h4>Contact Us</h4>
 	<p>
-		Say hi to us! We are happy to help with queries or accept comments on our social enterprise.
+		Drop by to say hi! We are happy to help with queries or accept comments on our social enterprise.
 	</p>
 	<p>
-		Find us at our <aFacebook page.
+		Find us at our <a href="https://www.facebook.com/pages/TEACH-Education-for-All-Comprehensive-Help/488118441339096">Facebook page.</a>
 		<br />
 		Or email us at <a href="mailto:contact@teach.com.sg">contact@teach.com.sg</a>.
 	</p>
