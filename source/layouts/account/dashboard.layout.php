@@ -5,13 +5,13 @@
 		        <div class="col m1 hide-on-small-only hide-on-large-only">
 		        	<i class="small mdi-action-account-circle"></i>
 		        </div>
-		        <div class="col m5 s6 l6">
+		        <div class="col m5 s12 l6">
 					<p class="valign-wrapper">
 					<i class="hide-on-med-and-down medium mdi-action-account-circle valign"></i>
 			        	<span class="card-title"><?php echo $loggedInUser ?></span>
 					</p>
 				</div>
-		        <p class="col s6">
+		        <p class="col s12">
 		        	<div class="hide-on-med-and-down">
 			        	<br />
 		        	</div>
