@@ -153,6 +153,10 @@ span.question-badge{
 	margin-left: 4ch;
 }
 
+.card .card-content .markdown p{
+	margin-bottom: 1.5em;
+}
+
 table.striped tbody tr:nth-child(odd) {
     background-color: #e4e4e4; 
 }
