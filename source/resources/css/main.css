@@ -96,7 +96,6 @@ nav .nav-wrapper i.large{
 	margin-left: 12.5%;
 }
 
-
 .question-badge{
 	padding: 0px 8px; 
 	border-radius: 2px;
@@ -108,7 +107,6 @@ nav .nav-wrapper i.large{
 span.question-badge{
 	padding: 2px 8px;
 }
-
 
 .rating {
 	unicode-bidi: bidi-override;
@@ -163,4 +161,10 @@ table.striped tbody tr:nth-child(odd) {
 
 table.hoverable tbody tr:hover {
 	background-color: #cfcfcf;
+}
+
+.adbox-main{
+	width: 12%; 
+	right: 1%;
+	margin-top: 35px;
 }

@@ -23,6 +23,14 @@
     </header>
 
     <main>
+      <div class="hide-on-med-and-down adbox-main pinned">
+        Ads
+        <br />
+        <a href="http://www.unicef.org/education/" target="_blank">
+          <img src="/resources/images/unicef.jpg" style="width: 100%">
+        </a>
+      </div>
+
       <?php include $mainContent ?>
       <?php if(isset($loggedInUser) && User::isUser($loggedInUser)): ?>
         <div class="fixed-action-btn bottom-right-btn">
@@ -40,7 +48,7 @@
 
         <!--Footer-->
         <div class="row">
-          <div class="col l6 s12">
+          <div class="col l6 m4 s12">
             <p class="white-text small-spacing">
               <span class="large-font">TEACH</span>
               <br />
@@ -53,7 +61,7 @@
               <span class="large-font">H</span>elp 
             </p>
           </div>
-          <div class="col l4 offset-l2 s12">
+          <div class="col offset-l1 l5 m5 s12">
             <h5 class="white-text">Links</h5>
             <ul>
               <li><a class="grey-text text-lighten-3" href="#!">About us</a></li>
@@ -61,6 +69,13 @@
               <li><a class="grey-text text-lighten-3" href="/pages/info/termsandconditions.php">Terms And Conditions</a></li>
               <li><a class="grey-text text-lighten-3" href="/pages/info/affiliates.php">Affiliates</a></li>
             </ul>
+          </div>
+
+          <div class="col m3 s5 white-text hide-on-large-only">
+            <h5>Ads</h5>
+            <a href="http://www.unicef.org/education/" target="_blank">
+              <img src="/resources/images/unicef.jpg" style="width: 100%">
+            </a>
           </div>
         </div>
       </div>
