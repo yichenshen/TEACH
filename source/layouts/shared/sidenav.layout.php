@@ -53,6 +53,13 @@
 		    		Questions Finder
 		    	</a>
 		    </li>
+
+		    <li>
+		    	<a href="/pages/staff/account/ranking.php">
+			    	<i class="left mdi-action-trending-up"></i>
+			    	Leaderboard
+		    	</a>
+		    </li>
     	<?php endif; ?>
 	    
 	    <div class="divider"></div>
