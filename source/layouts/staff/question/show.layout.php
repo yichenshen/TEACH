@@ -8,11 +8,13 @@
 
 		<?php require $_SERVER["DOCUMENT_ROOT"]."/layouts/shared/questionanswer.layout.php"; ?>
 
-		<a 	href="/pages/staff/question/edit.php?id=<?php echo $qID; ?>" 
-			class="btn-floating btn-large waves-effect waves-light waves-circle blue lighten-1 right tooltipped"
-			data-position="left" data-delay="10" data-tooltip="Edit">
-			<i class="mdi-editor-border-color right"></i>
-		</a>
+		<?php if($editable): ?>
+			<a 	href="/pages/staff/question/edit.php?id=<?php echo $qID; ?>" 
+				class="btn-floating btn-large waves-effect waves-light waves-circle blue lighten-1 right tooltipped"
+				data-position="left" data-delay="10" data-tooltip="Edit">
+				<i class="mdi-editor-border-color right"></i>
+			</a>
+		<?php endif; ?>
 	<?php elseif($unaccepted): ?>
 		<form action="/pages/staff/question/index.php">
 			<button type="submit" 

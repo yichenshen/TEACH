@@ -3,22 +3,22 @@
 	{
 		//Dummy data
 		static $questions = array(array("id" => 1,
-										"title" => "Why did the chicken cross the road?",
-										"content" => "I really can't think of a reason for it to do so!\nHelp Me!",
+										"title" => "Classification",
+										"content" => "What is the system to classify life?\n\nHow do we get the scientific name of an organism?",
   										"status" => "answered",
-  										"answer" => "To get to the other side.",
+  										"answer" => "Today, life is classfied with a system called the Linnean classification. The system classifies life based on 6 levels, namely(from broadly to specifically):\n 1. Kingdom\n 2. Phylum\n 3. Class\n 4. Order\n 5. Family\n 6. Genus\n 7. Species\n\n> You can remember it with this mnemonic: __K__a__P__o __Class__ __O__f __F__at __G__irl__S__ \n\nThe scientic name of a species is just the Genus and then the Species. _E.g. Homo sapiens_",
   										"clarificationCount" => 0,
   										"subject" => "Biology",
-  										"level" => "Primary",
+  										"level" => "O-Levels",
   										"serviceLevel" => 1,
   										"answerTime" => "2015-05-29 17:12:23",
   										"studentsUsername" => "user",
   										"staffUsername" => "Alice"), 
   					 			  array("id" => 2,
-  					 			  		"title" => "What is 1+1?",
-  					 			  		"content" => "Is it equals to the question ID of this question?",
+  					 			  		"title" => "Partial Fractions",
+  					 			  		"content" => "Express \\[\\frac{2x+1}{\\left ( x+1 \\right ) \\left ( x^2-2x+1 \\right )}\\] in partial fractions.",
   					 					"status" => "modified",
-  					 					"answer" => "Very smart observation. \n\n Now stop wasting your money.",
+  					 					"answer" => "__Simplify the expression__ to \\[\\frac {2x+1}{\\left(x+1 \\right )\\left(x^2-2x+1 \\right )} = \\frac {2x+1}{\\left(x+1 \\right )\\left(x-1 \\right )^2} = \\frac{A}{x+1} + \\frac{B}{x-1} + \\frac{C}{\\left(x-1 \\right )^2}\\]\n\n__Multiply both sides by the denominator__ in the second step and: \\[2x+1 = A\\left(x-1 \\right )^2+B\\left(x-1 \\right )\\left(x+1 \\right )+C\\left(x+1 \\right )\\]\n\nIf we __sub in the correct values for x__,\\[\\\\x=1\\rightarrow C=\\frac{3}{2} \\\\ \\\\x=-1\\rightarrow A=-\\frac{1}{4}\\]\n\nAnd finally if we __compare the coefficients of x<sup>2</sup>__, we obtain\\[B=\\frac{1}{4}\\]\n\nPutting everything together, we obtain: \\[\\frac{2x+1}{\\left(x+1 \\right )\\left(x-1 \\right )^2} = -\\frac{1}{4\\left(x+1 \\right )} + \\frac{1}{4\\left(x-1 \\right )}+\\frac{3}{2\\left(x-1 \\right )^2}\\]\nWhich is our answer.",
   					 					"clarificationCount" => 0,
   					 					"subject" => "Maths",
   					 					"level" => "O-Levels",
@@ -27,11 +27,11 @@
   					 					"studentsUsername" => "user",
 										"staffUsername" => "staff"),
   					 			  array("id" => 3,
-  					 			  		"title" => "Can I ask a question?",
-  					 			  		"content" => "It's a really interesting question!\n\nI really want to ask it!",
+  					 			  		"title" => "Ducks and Chickens",
+  					 			  		"content" => "The ratio of the number of ducks to the number of chickens was 9 : 5. \n\nWhen 20 ducks and 22 chickens were added, the birds were distributed into groups of 7. In each group, there were 4 ducks. \n\nFind the number of birds at first.",
   					 			  		"status" => "open",
-  					 			  		"subject" => "Chemistry",
-  					 			  		"level" => "N-Levels",
+  					 			  		"subject" => "Maths",
+  					 			  		"level" => "Primary",
 		 			  					"serviceLevel" => 2,
   										"answerTime" => "2015-05-27 17:22:04",
   					 			  		"studentsUsername" => "user"),
@@ -74,9 +74,9 @@
 								  		"staffUsername" => "staff"),
 								  array("id" => 7,
   					 			  		"title" => "Marble in a Bowl",
-  					 			  		"content" => "Consider the following. A hollow sphere of radius r is placed in a hollow hemispherical bowl of radius R, (R > r). The smaller sphere is given a small perturbation in its angle, and subsequently rolls without slipping in the bowl. Find the angular frequency of oscillation.\n\n__[Clarification]__\nWhich solution is recommended?",
+  					 			  		"content" => "Consider the following. A hollow sphere of radius r is placed in a hollow hemispherical bowl of radius R, (R > r). The smaller sphere is given a small perturbation in its angle, and subsequently rolls without slipping in the bowl. The acceleration due to gravity is g. Find the angular frequency of oscillation.\n\n__[Clarification]__\nWhich solution is recommended?",
   					 			  		"status" => "clarify",
-  					 			  		"answer" => "Refer to document below",
+  					 			  		"answer" => "The final answer is \\[\\omega = \\sqrt{\\frac{5g}{7\\left(R-r \\right )}}\\]\n\nThe steps to obtain this answer is rather complicated. Please refer to the documents below for reference.",
   					 			  		"clarificationCount" => 1,
   					 			  		"subject" => "Physics",
   					 			  		"rating" => "4",
@@ -143,12 +143,25 @@
 			});
 		}
 
-		public static function staffGetQuestion($ID, $staff){
-			$eligible = array_filter(self::$questions, function($val) use($staff){
-				return self::unaccepted($val) || $val['staffUsername'] == $staff;
+		public static function searchAnswered($term){
+			$archives = array_filter(self::$questions, function($val){
+				return self::answered($val['status']);
 			});
 
-				
+			if(!empty($term)){
+				return array_filter($archives, function($qns) use($term){
+					return filterByTerm($qns, $term);
+				});
+			} else {
+				return $archives;
+			}
+		}
+
+		public static function staffGetQuestion($ID, $staff){
+			$eligible = array_filter(self::$questions, function($val) use($staff){
+				return self::unaccepted($val) || $val['staffUsername'] == $staff || self::answered($val['status']);
+			});
+
 			foreach ($eligible as $eQns) {
 				if ($eQns["id"] == $ID) {
 					return $eQns;
