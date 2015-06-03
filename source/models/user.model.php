@@ -1,4 +1,7 @@
 <?php
+
+	require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
+
 	class User
 	{
 		static $users = array(array("username" => "user",
@@ -53,5 +56,47 @@
 				}
 			}
 			return false;
+		}
+
+		public static function rankStaffRating(){
+
+			$staffRating = array();
+
+			foreach (self::$staff as $s) {
+				$questions = Question::staffAnswered($s['username']);
+
+				$totalRating = 0;
+				$totalQns = 0;
+
+				foreach ($questions as $qns) {
+					if(isset($qns['rating']) && $qns['rating'] != 0){
+						$totalRating += $qns['rating'];
+						$totalQns++;
+					}
+				}
+				if($totalQns > 0){
+					$staffRating[$s['username']] = 1.0 * $totalRating / $totalQns;
+				} else{
+					$staffRating[$s['username']] = 0;
+				}
+			}
+
+			arsort($staffRating);
+
+			return $staffRating;
+		}
+
+		public static function rankStaffAnswer(){
+			$staffRating = array();
+
+			foreach (self::$staff as $s) {
+				$questions = Question::staffAnswered($s['username']);
+
+				$staffRating[$s['username']] = count($questions);
+			}
+
+			arsort($staffRating);
+
+			return $staffRating;
 		}
 	}
