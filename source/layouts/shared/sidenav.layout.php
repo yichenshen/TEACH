@@ -48,6 +48,15 @@
 	    	</li>
 
 		    <li>
+		    	<a href="/pages/staff/account/ranking.php">
+			    	<i class="left mdi-action-trending-up"></i>
+			    	Leaderboard
+		    	</a>
+		    </li>
+
+	    	<div class="divider"></div>
+
+		    <li>
 		    	<a href="/pages/staff/question/index.php">
 		    		<i class="left mdi-action-note-add"></i>
 		    		Questions Finder
@@ -55,9 +64,9 @@
 		    </li>
 
 		    <li>
-		    	<a href="/pages/staff/account/ranking.php">
-			    	<i class="left mdi-action-trending-up"></i>
-			    	Leaderboard
+		    	<a href="/pages/staff/question/archive.php">
+			    	<i class="left mdi-content-archive"></i>
+			    	Archive
 		    	</a>
 		    </li>
     	<?php endif; ?>
