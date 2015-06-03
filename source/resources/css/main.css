@@ -96,6 +96,7 @@ nav .nav-wrapper i.large{
 	margin-left: 12.5%;
 }
 
+
 .question-badge{
 	padding: 0px 8px; 
 	border-radius: 2px;
@@ -103,6 +104,11 @@ nav .nav-wrapper i.large{
 	font-weight: 350;
 	color: #fff;
 }
+
+span.question-badge{
+	padding: 2px 8px;
+}
+
 
 .rating {
 	unicode-bidi: bidi-override;

@@ -10,6 +10,7 @@
 		$user = User::getUser($loggedInUser);
 		$balance = $user['balance'];
 		$fine = $user['fine'];
+		$email = $user['email'];
 
 		require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 		$disputeNum = count(Question::getFinedQuestionsLabel($loggedInUser));

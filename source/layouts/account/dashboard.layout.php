@@ -8,37 +8,37 @@
 		        <div class="col m5 s12 l6">
 					<p class="valign-wrapper">
 					<i class="hide-on-med-and-down medium mdi-action-account-circle valign"></i>
-			        	<span class="card-title"><?php echo $loggedInUser ?></span>
+			        	<span class="card-title truncate"><?php echo $loggedInUser ?></span>
+			        	<div>
+			        		<?php echo $email; ?>
+			        	</div>
+			        	<span class="question-badge blue">Student</span>
 					</p>
 				</div>
-		        <p class="col s12">
-		        	<div class="hide-on-med-and-down">
-			        	<br />
-		        	</div>
+		        <div class="col s12 m6">
+		        	<br />
 	        		
 	        		<a href="/pages/account/transactions.php" class="teal-text text-lighten-4">
 		        		<i class="mdi-action-account-balance-wallet"></i>
 	        			<u>Account balance: $<?php echo number_format($balance,2); ?></u>
 	        		</a>
 
-	        		<br />
-
 	        		<?php if($disputeNum > 0): ?>
+		        		<br />
 		        		<span class="amber-text text-lighten-4">
 			        		<i class="mdi-alert-warning"></i>
 			        		<?php echo $disputeNum." Questions disputed"; ?>
 		        		</span>
 		        	<?php endif; ?>
 
-	        		<br />
-		        	
 			        <?php if($fine > 0): ?>
+		        		<br />
 			        	<span class="red-text text-lighten-4">
 							<i class="mdi-editor-attach-money"></i>
 				        	<?php echo "Acknowledged Fines: $".number_format($fine,2); ?>
 			        	</span>
 		        	<?php endif; ?>
-		        </p>
+		        </div>
 	        </div>
 	        <div class="card-action">
 		        <div class="right card-buttons">

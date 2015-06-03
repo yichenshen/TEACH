@@ -8,16 +8,20 @@
 									"password" => "password",
 									"balance" => 205.50,
 									"fine" => 1,
-									"level" => "A-Levels"),
+									"level" => "A-Levels",
+									"email" => "user@teach.com"),
 							  array("username" => "Jack",
 									"password" => "jackjack",
 									"balance" => 98.00,
 									"fine" => 0,
-									"level" => "O-Levels"));
+									"level" => "O-Levels",
+									"email" => "jack@hotmail.com"));
 		static $staff = array(array("username" => "staff",
-									"password" => "password"),
+									"password" => "password",
+									"email" => "alice@teach.com"),
 							  array("username" => "Alice",
-							  		"password" => "wonderland"));
+							  		"password" => "wonderland",
+							  		"email" => "staff@teach.com"));
 
 		public static function getUser($username){
 			foreach (self::$users as $user) {
