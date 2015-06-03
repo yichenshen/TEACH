@@ -2,3 +2,5 @@
 *.bak
 *.orig
 
+#Exclude bower_components
+/source/bower_components/

@@ -14,7 +14,7 @@ This repository contains all technical aspects of the project, including databas
 
 > [XAMPP](https://www.apachefriends.org/) contains Apache, MySQL and PHP
 
-#####Optional
+#####Installation Requirements
 
  - bower  (http://bower.io/)
 
@@ -23,8 +23,7 @@ This repository contains all technical aspects of the project, including databas
  - [Materialize](http://materializecss.com/)
  - [jQuery](https://jquery.com/)
  - [Parsedown](http://parsedown.org/) 
-
-> Dependencies are already included in this repository.
+ - [MathJax](https://www.mathjax.org/)
 
 ---
 
@@ -71,6 +70,19 @@ Where `database_file` is the path to the file as above.
 
 > Location: `/source`
 
+######Install Dependencies
+
+You may install/update the required packages using bower. 
+
+```bash
+bower install
+bower update
+```
+
+######Setup
+
+> Only do this after dependencies are installed
+
 1. Copy the contents of the entire folder `/source` _(not the folder itself)_ to to your Apache root folder. 
  - XAMPP Windows: `C:\xampp\htdocs\`
  - Linux(non-XAMPP): `/var/www/html/`
@@ -80,14 +92,6 @@ Where `database_file` is the path to the file as above.
  
 > Remember to sync from download folder to Apache root and back when changes are made.
 
-######Manual install
-
-You may manually install/update the required packages using bower. Though they are already included in the repository for convenience. 
-
-```bash
-bower install
-bower update
-```
 
 ---
 
@@ -177,6 +181,7 @@ Models can be found in `source/models/`. Without a database connection, data wil
   - The internal CSS rules are defined in `/css/main.css`
  - External resources can be found in `/bower_components`
   - e.g. Materialize: `/bower_components/materialize/dist`
+ - To install new packages, use `bower install <package name> -S`
 
 ---
 
