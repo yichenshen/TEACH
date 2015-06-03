@@ -5,11 +5,21 @@
 		        <div class="col m1 hide-on-small-only hide-on-large-only">
 		        	<i class="small mdi-action-account-circle"></i>
 		        </div>
-		        <div class="col m11 s12">
+		        <div class="col m5 s6 l6">
 					<p class="valign-wrapper">
 						<i class="hide-on-med-and-down medium mdi-action-account-circle valign"></i>
 			        	<span class="card-title"><?php echo $loggedInUser ?></span>
 					</p>
+					<div><?php echo $email; ?></div>
+					<span class="question-badge blue">Staff</span>
+				</div>
+
+				<div class="col s12 m6">
+					<br />
+					<?php echo "Average rating: ".$rating."/5"; ?>
+					<br />
+					<?php echo "Questions Answered: ".$answered; ?>
+
 				</div>
 	        </div>
 	    </div>

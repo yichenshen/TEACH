@@ -7,7 +7,10 @@
 		$pageTitle = "Staff Dashboard - TEACH";
 		$titleLabel = "Dashboard";
 
-		$user = User::getUser($loggedInUser);
+		$user = User::getStaff($loggedInUser);
+		$email = $user['email'];
+		$answered = User::staffQuestionAnswered($loggedInUser);
+		$rating = User::staffAverageRating($loggedInUser);
 
 		require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 		$questions = Question::staffAccepted($loggedInUser);

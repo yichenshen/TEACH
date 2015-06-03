@@ -18,10 +18,10 @@
 									"email" => "jack@hotmail.com"));
 		static $staff = array(array("username" => "staff",
 									"password" => "password",
-									"email" => "alice@teach.com"),
+									"email" => "staff@teach.com"),
 							  array("username" => "Alice",
 							  		"password" => "wonderland",
-							  		"email" => "staff@teach.com"));
+							  		"email" => "alice@teach.com"));
 
 		public static function getUser($username){
 			foreach (self::$users as $user) {
@@ -52,7 +52,6 @@
 			return false;
 		}
 
-		//TODO add staff list
 		public static function isStaff($username){
 			foreach (self::$staff as $s) {
 				if($s["username"] == $username){
@@ -62,27 +61,36 @@
 			return false;
 		}
 
+		public static function staffAverageRating($staff){
+			$questions = Question::staffAnswered($staff);
+
+			$totalRating = 0;
+			$totalQns = 0;
+
+			foreach ($questions as $qns) {
+				if(isset($qns['rating']) && $qns['rating'] != 0){
+					$totalRating += $qns['rating'];
+					$totalQns++;
+				}
+			}
+
+			if($totalQns > 0){
+				return 1.0 * $totalRating / $totalQns;
+			} else {
+				return 0;
+			}
+		}
+
+		public static function staffQuestionAnswered($staff){
+			return count(Question::staffAnswered($staff));
+		}
+
 		public static function rankStaffRating(){
 
 			$staffRating = array();
 
 			foreach (self::$staff as $s) {
-				$questions = Question::staffAnswered($s['username']);
-
-				$totalRating = 0;
-				$totalQns = 0;
-
-				foreach ($questions as $qns) {
-					if(isset($qns['rating']) && $qns['rating'] != 0){
-						$totalRating += $qns['rating'];
-						$totalQns++;
-					}
-				}
-				if($totalQns > 0){
-					$staffRating[$s['username']] = 1.0 * $totalRating / $totalQns;
-				} else{
-					$staffRating[$s['username']] = 0;
-				}
+				$staffRating[$s['username']] = self::staffAverageRating($s['username']);
 			}
 
 			arsort($staffRating);
@@ -94,9 +102,7 @@
 			$staffRating = array();
 
 			foreach (self::$staff as $s) {
-				$questions = Question::staffAnswered($s['username']);
-
-				$staffRating[$s['username']] = count($questions);
+				$staffRating[$s['username']] = self::staffQuestionAnswered($s['username']);
 			}
 
 			arsort($staffRating);
