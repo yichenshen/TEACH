@@ -38,7 +38,7 @@
 
 				$Parsedown = new Parsedown();
 
-				echo $Parsedown->text(nl2br($question["content"]));
+				echo $Parsedown->text(nl2br(str_replace("\\", "\\\\", $question["content"])));
 			?>
 		</div>
 

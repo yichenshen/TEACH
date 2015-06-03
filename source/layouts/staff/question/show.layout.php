@@ -28,3 +28,12 @@
 		</a>
 	<?php endif; ?>
 </div>
+
+<script type="text/javascript" src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	    tex2jax: {
+	    	inlineMath: [['$', '$'], ['\\(','\\)']]
+		}
+	});
+</script>

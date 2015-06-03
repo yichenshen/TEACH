@@ -13,7 +13,7 @@
 		        <textarea id="content" class="materialize-textarea" length="2000" maxlength="2000"></textarea>
 		        <label for="content">Elaborate your question here:</label>
 		        
-		        <a 	href="javascript:OpenLatexEditor('content','latex','')" 
+		        <a 	href="javascript:OpenLatexEditor('content','latex','en-en')" 
 		        	class="right btn-floating blue waves-effect waves-light waves-circle tooltipped"
 		        	data-position="right" data-delay="10" data-tooltip="Add equation">
 			        <i class="mdi-editor-functions"></i>

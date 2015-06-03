@@ -16,7 +16,7 @@
 
 				$Parsedown = new Parsedown();
 
-				echo $Parsedown->text(nl2br($question["answer"]));
+				echo $Parsedown->text(nl2br(str_replace("\\", "\\\\", $question["answer"])));
 			?>
 		</div>
 

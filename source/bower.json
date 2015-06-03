@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "materialize": "~0.96.1",
-    "parsedown": "erusev/parsedown#~1.5.3"
+    "parsedown": "erusev/parsedown#~1.5.3",
+    "MathJax": "~2.5.3"
   }
 }

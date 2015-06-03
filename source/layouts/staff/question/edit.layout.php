@@ -15,7 +15,7 @@
 				<div class="input-field">
 					<textarea id="answer" class="materialize-textarea" name="answer"><?php echo $answer; ?></textarea>
 					<label for="answer">Answer:</label>
-			        <a 	href="javascript:OpenLatexEditor('answer','latex','')" 
+			        <a 	href="javascript:OpenLatexEditor('answer','latex','en-en')" 
 			        	class="right btn-floating green waves-effect waves-light waves-circle tooltipped"
 			        	data-position="right" data-delay="10" data-tooltip="Add equation">
 				        <i class="mdi-editor-functions"></i>
@@ -67,3 +67,12 @@
 
 <script type="text/javascript" src="/resources/js/fileupload.js" async></script>
 <script type="text/javascript" src="/resources/js/editor.js"></script>
+
+<script type="text/javascript" src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	    tex2jax: {
+	    	inlineMath: [['$', '$'], ['\\(','\\)']]
+		}
+	});
+</script>
