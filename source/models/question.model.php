@@ -150,7 +150,7 @@
 
 			if(!empty($term)){
 				return array_filter($archives, function($qns) use($term){
-					return filterByTerm($qns, $term);
+					return self::filterByTerm($qns, $term);
 				});
 			} else {
 				return $archives;
