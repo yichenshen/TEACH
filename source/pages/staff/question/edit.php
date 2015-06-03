@@ -9,7 +9,7 @@
 
 	$question = Question::staffGetQuestion($qID, $loggedInUser);
 
-	if(isset($loggedInUser) && isset($question) && !Question::unaccepted($question)){
+	if(isset($loggedInUser) && isset($question) && $question['staffUsername'] == $loggedInUser){
 		$pageTitle = "Edit - TEACH";
 		$titleLabel = "Answer";
 
