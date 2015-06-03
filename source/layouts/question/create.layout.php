@@ -6,12 +6,12 @@
 			
 			<div class="input-field col s12">
 		        <input id="title" type="text" class="validate" length="150" maxlength="150" required>
-		        <label for="title">Question</label>
+		        <label for="title">Question Title</label>
 			</div>
 		    
 		    <div class="input-field col s12">
 		        <textarea id="content" class="materialize-textarea" length="2000" maxlength="2000"></textarea>
-		        <label for="content">Elaborate</label>
+		        <label for="content">Elaborate your question here:</label>
 		        
 		        <a 	href="javascript:OpenLatexEditor('content','latex','')" 
 		        	class="right btn-floating blue waves-effect waves-light waves-circle tooltipped"
