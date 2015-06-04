@@ -15,11 +15,22 @@
 				<div class="input-field">
 					<textarea id="answer" class="materialize-textarea" name="answer"><?php echo $answer; ?></textarea>
 					<label for="answer">Answer:</label>
-			        <a 	href="javascript:OpenLatexEditor('answer','latex','en-en')" 
-			        	class="right btn-floating green waves-effect waves-light waves-circle tooltipped"
-			        	data-position="right" data-delay="10" data-tooltip="Add equation">
-				        <i class="mdi-editor-functions"></i>
-					</a>
+	                <div class="right">
+	        	        <a 	href="javascript:OpenLatexEditor('content','latex','en-en')" 
+	        	        	class="btn-floating green waves-effect waves-light waves-circle tooltipped"
+	        	        	data-position="bottom" data-delay="10" data-tooltip="Add equation">
+	        		        <i class="mdi-editor-functions"></i>
+	        			</a>
+
+	        			&nbsp;
+
+	        			<?php require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/previewbox.layout.php"; ?>
+	        			<a class="btn-floating waves-effect waves-light waves-circle green tooltipped" 
+	        					data-position="bottom" data-delay="10" data-tooltip="Preview Formatting"
+	        					onclick="preview('#answer')">
+	        				<i class="mdi-action-search"></i>
+	        			</a> 
+	                </div>
 				</div>
 
 				<div class="row clear">
