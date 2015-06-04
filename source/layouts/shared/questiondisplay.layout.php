@@ -38,6 +38,8 @@
 
 				$Parsedown = new Parsedown();
 
+				$Parsedown->setBreaksEnabled(true);
+
 				echo $Parsedown->text(str_replace("\\", "\\\\", $question["content"]));
 			?>
 		</div>
