@@ -33,28 +33,26 @@
 		<?php if($question['clarificationCount'] == 0): ?>
 			<a class="waves-effect waves-light btn green lighten-1 right modal-trigger" href="#clarficationModal">Clarify</a>
 
-				<form>
-					<input type="hidden" name="id" value="<?php echo $qID; ?>" />
-				
-					<div id="clarficationModal" class="modal">
-						<div class="modal-content">
-							<div class="input-field section">
-								<textarea id="clarification" class="materialize-textarea validate" name="clarification" required></textarea>
-								<label for="clarification">Enter Clarification here</label>
-							</div>					
-						</div>
-
-						<div class="modal-footer">
-							<button type="submit" 
-									class="modal-action modal-close waves-effect waves-green btn-flat">
-								Submit
-							</button>
-				        </div>
+			<form>
+				<input type="hidden" name="id" value="<?php echo $qID; ?>" />
+			
+				<div id="clarficationModal" class="modal">
+					<div class="modal-content">
+						<div class="input-field section">
+							<textarea id="clarification" class="materialize-textarea validate" name="clarification" required></textarea>
+							<label for="clarification">Enter Clarification here</label>
+						</div>					
 					</div>
-				</form>				
-			</div>
-		<?php endif; ?>
 
+					<div class="modal-footer">
+						<button type="submit" 
+								class="modal-action modal-close waves-effect waves-green btn-flat">
+							Submit
+						</button>
+			        </div>
+				</div>
+			</form>				
+		<?php endif; ?>
 	<?php endif; ?>
 </div>
 
@@ -77,6 +75,7 @@
 	    </div>
 	</form>
 </div>
+
 
 <script type="text/javascript">
 	$(".rating span").click(function(){
