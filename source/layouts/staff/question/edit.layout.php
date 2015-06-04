@@ -16,7 +16,7 @@
 					<textarea id="answer" class="materialize-textarea" name="answer"><?php echo $answer; ?></textarea>
 					<label for="answer">Answer:</label>
 	                <div class="right">
-	        	        <a 	href="javascript:OpenLatexEditor('content','latex','en-en')" 
+	        	        <a 	href="javascript:OpenLatexEditor('answer','latex','en-en')" 
 	        	        	class="btn-floating green waves-effect waves-light waves-circle tooltipped"
 	        	        	data-position="bottom" data-delay="10" data-tooltip="Add equation">
 	        		        <i class="mdi-editor-functions"></i>
@@ -27,7 +27,7 @@
 	        			<?php require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/previewbox.layout.php"; ?>
 	        			<a class="btn-floating waves-effect waves-light waves-circle green tooltipped" 
 	        					data-position="bottom" data-delay="10" data-tooltip="Preview Formatting"
-	        					onclick="preview('#answer 	')">
+	        					onclick="preview('#answer')">
 	        				<i class="mdi-action-search"></i>
 	        			</a> 
 	                </div>
