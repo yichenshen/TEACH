@@ -29,14 +29,16 @@
 			    	</span>
 		    	</span>
 			    <p class="grey-text text-darken-1">
+				    <?php $text = preg_replace("/(\\\\\[|\\$)(.*?)(\\\\\]|\\$)/", "[EQUATION]", $question['content']); ?>
+
 			    	<span class="hide-on-med-and-down">
-				    	<?php echo truncate($question["content"], 70); ?>
+				    	<?php echo truncate($text, 70); ?>
 			    	</span>
 			    	<span class="hide-on-small-only hide-on-large-only">
-				    	<?php echo truncate($question["content"], 40); ?>
+				    	<?php echo truncate($text, 40); ?>
 			    	</span>
 			    	<span class="hide-on-med-and-up">
-				    	<?php echo truncate($question["content"], 20); ?>
+				    	<?php echo truncate($text, 20); ?>
 			    	</span>
 			    	
 			    	<br />
