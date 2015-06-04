@@ -12,12 +12,20 @@
 		    <div class="input-field col s12">
 		        <textarea id="content" class="materialize-textarea" length="2000" maxlength="2000"></textarea>
 		        <label for="content">Elaborate your question here:</label>
+
+		        <span class="question-badge blue-grey">Markdown enabled textbox</span>
+		        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">[Cheatsheet]</a>
 		        
 		        <a 	href="javascript:OpenLatexEditor('content','latex','en-en')" 
 		        	class="right btn-floating blue waves-effect waves-light waves-circle tooltipped"
 		        	data-position="right" data-delay="10" data-tooltip="Add equation">
 			        <i class="mdi-editor-functions"></i>
 				</a>
+		    </div>
+
+		    <div class="col s12">
+		    	<br/>
+		    	<div class="divider"></div>
 		    </div>
 		
 		    <div class="input-field file-field col s12 m4 l3">
