@@ -4,8 +4,8 @@
 	<div class="row">
 	    <div class="col s12">
 			<ul class="tabs blue-grey lighten-5 z-depth-1">
-				<li class="tab col s6"><a class="active" href="#rating">Accepted</a></li>
-				<li class="tab col s6"><a href="#answer">Answered</a></li>
+				<li class="tab col s6"><a class="active" href="#rating">Rating</a></li>
+				<li class="tab col s6"><a href="#answer">Questions</a></li>
 			</ul>
 	    </div>
 
@@ -15,9 +15,9 @@
 		    	<table class="striped centered">
 		    		<thead>
 		    			<tr>
-		    				<th>Ranking</th>
-		    				<th>Staff</th>
-		    				<th>Average rating</th>
+		    				<th width="10%">Ranking</th>
+		    				<th width="45%">Staff</th>
+		    				<th width="45%">Average rating</th>
 		    			</tr> 
 			    	</thead>
 
@@ -46,9 +46,9 @@
 		    	<table class="striped centered">
 		    		<thead>
 		    			<tr>
-		    				<th>Ranking</th>
-		    				<th>Staff</th>
-		    				<th>Question Answered</th>
+		    				<th width="10%">Ranking</th>
+		    				<th width="45%">Staff</th>
+		    				<th width="45%">Question Answered</th>
 		    			</tr> 
 			    	</thead>
 
