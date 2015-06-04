@@ -16,11 +16,22 @@
 		        <span class="question-badge blue-grey">Markdown enabled textbox</span>
 		        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">[Cheatsheet]</a>
 		        
-		        <a 	href="javascript:OpenLatexEditor('content','latex','en-en')" 
-		        	class="right btn-floating blue waves-effect waves-light waves-circle tooltipped"
-		        	data-position="right" data-delay="10" data-tooltip="Add equation">
-			        <i class="mdi-editor-functions"></i>
-				</a>
+		        <div class="right">
+			        <a 	href="javascript:OpenLatexEditor('content','latex','en-en')" 
+			        	class="btn-floating blue waves-effect waves-light waves-circle tooltipped"
+			        	data-position="bottom" data-delay="10" data-tooltip="Add equation">
+				        <i class="mdi-editor-functions"></i>
+					</a>
+
+					&nbsp;
+
+					<?php require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/previewbox.layout.php"; ?>
+					<a class="btn-floating waves-effect waves-light waves-circle blue tooltipped" 
+							data-position="bottom" data-delay="10" data-tooltip="Preview Formatting"
+							onclick="preview('#content')">
+						<i class="mdi-action-search"></i>
+					</a> 
+		        </div>
 		    </div>
 
 		    <div class="col s12">
@@ -83,3 +94,12 @@
 
 <script type="text/javascript" src="/resources/js/fileupload.js" async></script>
 <script type="text/javascript" src="/resources/js/editor.js"></script>
+
+<script type="text/javascript" src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	    tex2jax: {
+	    	inlineMath: [['$', '$'], ['\\(','\\)']]
+		}
+	});
+</script>
