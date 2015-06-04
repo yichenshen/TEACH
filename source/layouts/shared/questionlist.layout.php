@@ -44,7 +44,7 @@
 			    	<div class="blue-grey lighten-1 question-badge left hide-on-small-only"><?php echo $question["level"]; ?></div>
 			    </p>
 
-			    <?php if(User::isStaff($loggedInUser) && Question::reqResponse($question['status'])): ?>
+			    <?php if(User::isStaff($loggedInUser) && Question::reqResponse($question['status']) && $question['status'] != "clarify"): ?>
 			    	<span class="grey-text">
 				    	<b>
 				    		<span class="hide-on-small-only">&nbsp;</span>

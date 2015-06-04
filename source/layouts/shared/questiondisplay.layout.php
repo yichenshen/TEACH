@@ -21,7 +21,7 @@
 		    	
 		    <span class="card-title black-text"><?php echo $question["title"]; ?></span>
 
-			<?php if(User::isStaff($loggedInUser) && Question::reqResponse($question['status'])): ?>
+			<?php if(User::isStaff($loggedInUser) && Question::reqResponse($question['status']) && $question['status'] != "clarify"): ?>
 		    	<p class="grey-text">
 		    		Due: 
 		    		<?php echo $question['answerTime']; ?>
