@@ -15,7 +15,7 @@
 
 		$answered = Question::answered($question["status"]);
 		$unaccepted = Question::unaccepted($question);
-		$editable = $question['staffUsername'] == $loggedInUser;
+		$editable = isset($question['staffUsername']) && $question['staffUsername'] == $loggedInUser;
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/staff/question/show.layout.php";
 		require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php"); 	
