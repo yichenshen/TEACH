@@ -27,7 +27,7 @@
 	        			<?php require $_SERVER['DOCUMENT_ROOT']."/layouts/shared/previewbox.layout.php"; ?>
 	        			<a class="btn-floating waves-effect waves-light waves-circle green tooltipped" 
 	        					data-position="bottom" data-delay="10" data-tooltip="Preview Formatting"
-	        					onclick="preview('#answer')">
+	        					onclick="preview('#answer 	')">
 	        				<i class="mdi-action-search"></i>
 	        			</a> 
 	                </div>
@@ -46,6 +46,25 @@
 						<br /><br />
 				    </div>
 			    </div>
+
+			    <?php 
+					if(isset($question["attachments"])){
+						$ansAttachments = array_filter($question["attachments"], function($attach){
+							return $attach["type"] == "answer";
+						});
+					}
+				?>
+
+				<?php if(isset($ansAttachments) && sizeof($ansAttachments) > 0): ?>
+					<h6>Attachments</h6>
+					<?php foreach ($ansAttachments as $attach): ?>
+						<a href="/uploads/questions/<?php echo $qID."/".$attach["fileName"] ?>" >
+							<i class="mdi-file-file-download"></i>
+							<?php echo $attach["fileName"]; ?>
+						</a>
+						<br />
+					<?php endforeach;?>
+				<?php endif; ?>
 			</div>
 
 			<div class="card-action">
