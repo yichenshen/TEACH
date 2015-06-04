@@ -8,19 +8,5 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	function preview(container){
-
-		var text = $(container).val();
-
-		if(!text){
-			text = "No text entered";
-		}
-
-		$('#preview-content').html(text);
-
-		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview-content"]);
-
-		$('#preview').openModal();
-	}
-</script>
+<script type="text/javascript" src="/bower_components/markdown/lib/markdown.js"></script>
+<script type="text/javascript" src="/resources/js/preview.js"></script>
