@@ -46,6 +46,12 @@
 		        		<a href="/pages/account/fines.php" class="btn waves-effect waves-light red lighten-1 white-text ">Disputes/Fines</a>
 		        	<?php endif; ?>
 					<a href="/pages/account/topup.php" class="btn waves-effect waves-light blue-grey white-text">Top-up</a>
+		        	
+					<a 	href="/pages/account/edit.php" 
+						class="btn-floating btn-flat waves-effect waves-light waves-circle transparent tooltipped"
+						data-postion="bottom" data-delay="10" data-tooltip="Account Settings">
+		        		<i class="mdi-action-settings"></i>
+	        		</a>
 		        </div>
             </div>
 	    </div>
