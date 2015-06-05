@@ -23,6 +23,15 @@
 				</div>
 	        </div>
 	    </div>
+	    <div class="card-action">
+		    <div class="right card-buttons">
+				<a 	href="/pages/staff/account/edit.php" 
+					class="btn-floating btn-flat waves-effect waves-light waves-circle transparent tooltipped"
+					data-postion="bottom" data-delay="10" data-tooltip="Account Settings">
+	        		<i class="mdi-action-settings"></i>
+	    		</a>
+    		</div>
+	    </div>
 	</div>
 
 	<div class="section">
