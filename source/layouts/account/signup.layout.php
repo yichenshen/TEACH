@@ -28,6 +28,12 @@
 				<label for="username">Email</label>
 			</div>
 
+			<div class="input-field col l10 s12">
+				<i class="mdi-social-people prefix"></i>
+				<input id="referral" type="text" class="validate">
+				<label for="referral">Referral Code</label>
+			</div>
+
 			<div class="col s12">&nbsp;</div>
 			<div class="col s12 divider"></div>
 			<div class="col s12">&nbsp;</div>
