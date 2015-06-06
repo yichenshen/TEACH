@@ -19,7 +19,14 @@
 					<?php echo "Average rating: ".$rating."/5"; ?>
 					<br />
 					<?php echo "Questions Answered: ".$answered; ?>
-
+					<br />
+					<br />
+					<b>Subjects:</b>
+					<?php 
+						foreach ($subjects as $s){
+							echo "<br />".$s;
+						}
+					?>
 				</div>
 	        </div>
 	    </div>
