@@ -18,10 +18,12 @@
 									"email" => "jack@hotmail.com"));
 		static $staff = array(array("username" => "staff",
 									"password" => "password",
-									"email" => "staff@teach.com"),
+									"email" => "staff@teach.com",
+									"subjects" => array("Physics", "Chemistry", "Maths")),
 							  array("username" => "Alice",
 							  		"password" => "wonderland",
-							  		"email" => "alice@teach.com"));
+							  		"email" => "alice@teach.com",
+							  		"subjects" => array("Biology", "Physics")));
 
 		public static function getUser($username){
 			foreach (self::$users as $user) {

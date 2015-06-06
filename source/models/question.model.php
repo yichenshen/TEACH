@@ -1,4 +1,7 @@
-<?php	
+<?php
+
+	require_once $_SERVER['DOCUMENT_ROOT']."/models/user.model.php";
+
 	class Question
 	{
 		//Dummy data
@@ -125,9 +128,10 @@
 		}
 
 		//Staff queries
-		public static function staffOpenToAll(){
-			return array_filter(self::$questions, function($val){
-				return self::unaccepted($val);
+		public static function staffOpenToAll($staff){
+			$subjects = User::getStaff($staff)['subjects'];
+			return array_filter(self::$questions, function($val) use($subjects){
+				return self::unaccepted($val) && self::filterBySubject($val, $subjects);
 			});
 		}
 
@@ -158,8 +162,12 @@
 		}
 
 		public static function staffGetQuestion($ID, $staff){
-			$eligible = array_filter(self::$questions, function($val) use($staff){
-				return self::unaccepted($val) || $val['staffUsername'] == $staff || self::answered($val['status']);
+			$subjects = User::getStaff($staff)['subjects'];
+
+			$eligible = array_filter(self::$questions , function($val) use($staff, $subjects){
+				return 	(self::unaccepted($val) && self::filterBySubject($val, $subjects)) || 
+						(isset($val['staffUsername']) && $val['staffUsername'] == $staff) || 
+						self::answered($val['status']);
 			});
 
 			foreach ($eligible as $eQns) {
@@ -189,6 +197,10 @@
 
 		public static function filterByTerm($question, $term){
 			return stripos($question["title"], $term) !== false || stripos($question["subject"], $term) !== false;	
+		}
+
+		public static function filterBySubject($question, $subjects){
+			return in_array($question['subject'], $subjects);
 		}
 	}
 ?>

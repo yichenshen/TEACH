@@ -12,7 +12,7 @@
 		require_once $_SERVER['DOCUMENT_ROOT']."/models/question.model.php";
 		$acceptedQuestions = Question::staffAccepted($loggedInUser);
 		$answeredQuestions = Question::staffAnswered($loggedInUser);
-		$openQuestions = Question::staffOpenToAll();
+		$openQuestions = Question::staffOpenToAll($loggedInUser);
 
 		$mainContent = $_SERVER['DOCUMENT_ROOT']."/layouts/staff/question/index.layout.php";
 		require($_SERVER['DOCUMENT_ROOT']."/layouts/shared/main.layout.php"); 	
