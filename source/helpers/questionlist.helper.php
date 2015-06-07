@@ -56,6 +56,11 @@
 				$style = "green lighten-2";
 				break;
 
+			case "Science":
+				$file = "/resources/images/science.svg";
+				$style = "teal lighten-1";
+				break;
+
 			default:
 				$subject = "General";
 				break;

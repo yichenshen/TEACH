@@ -19,11 +19,11 @@
 		static $staff = array(array("username" => "staff",
 									"password" => "password",
 									"email" => "staff@teach.com",
-									"subjects" => array("Physics", "Chemistry", "Maths")),
+									"subjects" => array("Physics", "Chemistry", "Maths", "Science")),
 							  array("username" => "Alice",
 							  		"password" => "wonderland",
 							  		"email" => "alice@teach.com",
-							  		"subjects" => array("Biology", "Physics")));
+							  		"subjects" => array("Biology", "Physics", "Science")));
 
 		public static function getUser($username){
 			foreach (self::$users as $user) {
