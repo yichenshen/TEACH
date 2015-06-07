@@ -11,12 +11,13 @@ This repository contains all technical aspects of the project, including databas
  - Apache HTTP Server 2.4
  - PHP 5
  - Web browser with HTML5 and Javascript
+  - Chrome or Firefox
 
 > [XAMPP](https://www.apachefriends.org/) contains Apache, MySQL and PHP
 
 #####Installation Requirements
 
- - bower  (http://bower.io/)
+ - [Bower](http://bower.io/)
 
 #####Website Dependencies
 
@@ -24,6 +25,11 @@ This repository contains all technical aspects of the project, including databas
  - [jQuery](https://jquery.com/)
  - [Parsedown](http://parsedown.org/) 
  - [MathJax](https://www.mathjax.org/)
+ - [markdown.js](https://github.com/evilstreak/markdown-js)
+
+######Included in source
+
+ - [CodeCogs Equation Editor](http://www.codecogs.com/latex/about.php)
 
 ---
 
@@ -72,7 +78,7 @@ Where `database_file` is the path to the file as above.
 
 ######Install Dependencies
 
-You may install/update the required packages using bower. 
+You may install/update the required packages using Bower. 
 
 ```bash
 bower install
@@ -87,11 +93,10 @@ bower update
  - XAMPP Windows: `C:\xampp\htdocs\`
  - Linux(non-XAMPP): `/var/www/html/`
 2. Make sure Apache is running from either XAMPP or OS services.
-3. Open a broweser and go to the host address
+3. Open a browser and go to the host address
  - Default: http://localhost/
  
 > Remember to sync from download folder to Apache root and back when changes are made.
-
 
 ---
 
@@ -143,6 +148,9 @@ To set up a page, use the following in `page.php`
 
 
 ```PHP
+require $_SERVER['DOCUMENT_ROOT']."/helpers/login.helper.php";
+$loggedInUser = getLogin("all");
+
 $pageTitle = "...";
 $titleLabel = "...";
 
@@ -151,6 +159,8 @@ $titleLabel = "...";
 $mainContent = $_SERVER['DOCUMENT_ROOT']."/page.layout.php";
 include($_SERVER['DOCUMENT_ROOT']."/templates/main.layout.php");
 ```
+
+> If you need authentication, you may change `getLogin("all")` to adjust permissions. After that, check if `$loggedInUser` is set to verify if the account is present in the session. You may want to use an if statement to control the content loaded accordingly.
 
 ######Helpers
 
@@ -174,14 +184,29 @@ Models are representations of enities in the real world and mirrors those that w
 
 Models can be found in `source/models/`. Without a database connection, data will be stored in the model itself. If not, SQL statements are found here too.
 
+
 ######Resources
 
  - Materialize reference can be found [here](http://materializecss.com/).
- - Internal resources can be found in `/resources`
-  - The internal CSS rules are defined in `/css/main.css`
- - External resources can be found in `/bower_components`
-  - e.g. Materialize: `/bower_components/materialize/dist`
+ - Internal resources can be found in `resources/`
+  - The internal CSS rules are defined in `css/main.css`
+  - Internal Javascript components, including file uploads and previews, are found in `js/`
+ - External resources can be found in `bower_components/`
+  - e.g. Materialize: `bower_components/materialize/dist/`
  - To install new packages, use `bower install <package name> -S`
+
+---
+
+####LaTeX and Markdown
+
+As the editors support LaTeX forumlas and Markdown for equations and formatting respectively, the data will be stored in a combination of both where applicable. 
+
+Markdown is entered manually on the website, and is parsed by Parsedown server side (for displaying question and answer content), and markdown.js client side (for previews).
+
+LaTeX equations can be entered manually (enclosed in `$...$` or `\[...\]`), or they can be entered with the CodeCogs equation editor, found in `/source/resources/js/editor.js`. They are parsed client side using the MathJax Javascript library.
+
+
+> Becareful when dealing with LaTeX and Markdown syntax. Markdown is parsed, first, then the HTML itself, then finally the LaTeX. Escape characters must be repeated for each parse if neccessary.
 
 ---
 
