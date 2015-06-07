@@ -235,7 +235,7 @@ CREATE TABLE `staffHasSubjects` (
 
 LOCK TABLES `staffHasSubjects` WRITE;
 /*!40000 ALTER TABLE `staffHasSubjects` DISABLE KEYS */;
-INSERT INTO `staffHasSubjects` VALUES ('Biology','Alice'),('Physics','Alice'),('Chemistry','staff'),('Maths','staff'),('Physics','staff');
+INSERT INTO `staffHasSubjects` VALUES ('Biology','Alice'),('Physics','Alice'),('Science','Alice'),('Chemistry','staff'),('Maths','staff'),('Physics','staff'),('Science','staff');
 /*!40000 ALTER TABLE `staffHasSubjects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -292,7 +292,7 @@ CREATE TABLE `subjects` (
 
 LOCK TABLES `subjects` WRITE;
 /*!40000 ALTER TABLE `subjects` DISABLE KEYS */;
-INSERT INTO `subjects` VALUES ('Biology'),('Chemistry'),('Maths'),('Physics');
+INSERT INTO `subjects` VALUES ('Biology'),('Chemistry'),('Maths'),('Physics'),('Science');
 /*!40000 ALTER TABLE `subjects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,4 +336,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-05 12:33:05
+-- Dump completed on 2015-06-07 10:32:24
