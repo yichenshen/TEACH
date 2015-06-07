@@ -64,7 +64,9 @@
 				</div>
 				
 				<p>
-					Comment: <?php echo $question['ratingComment']; ?>
+					<?php if(isset($question['ratingComment'])){
+						echo "Comment: ".$question['ratingComment'];
+					} ?>
 				</p>
 			</div>
 		<?php elseif(User::isUser($loggedInUser)): ?>
