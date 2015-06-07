@@ -6,13 +6,13 @@
 	{
 		static $users = array(array("username" => "user",
 									"password" => "password",
-									"balance" => 205.50,
+									"balance" => 203.25,
 									"fine" => 1,
 									"level" => "A-Levels",
 									"email" => "user@teach.com"),
 							  array("username" => "Jack",
 									"password" => "jackjack",
-									"balance" => 98.00,
+									"balance" => 97.00,
 									"fine" => 0,
 									"level" => "O-Levels",
 									"email" => "jack@hotmail.com"));
