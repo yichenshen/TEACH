@@ -12,6 +12,7 @@
   										"answer" => "Today, life is classfied with a system called the Linnean classification. The system classifies life based on 6 levels, namely(from broadly to specifically):\n 1. Kingdom\n 2. Phylum\n 3. Class\n 4. Order\n 5. Family\n 6. Genus\n 7. Species\n\n> You can remember it with this mnemonic: __K__a__P__o __Class__ __O__f __F__at __G__irl__S__ \n\nThe scientic name of a species is just the Genus and then the Species. _E.g. Homo sapiens_",
   										"clarificationCount" => 0,
   										"subject" => "Biology",
+  										"rating" => "5",
   										"level" => "O-Levels",
   										"serviceLevel" => 1,
   										"answerTime" => "2015-05-29 17:12:23",
@@ -24,6 +25,8 @@
   					 					"answer" => "__Simplify the expression__ to \\[\\frac {2x+1}{\\left(x+1 \\right )\\left(x^2-2x+1 \\right )} = \\frac {2x+1}{\\left(x+1 \\right )\\left(x-1 \\right )^2} = \\frac{A}{x+1} + \\frac{B}{x-1} + \\frac{C}{\\left(x-1 \\right )^2}\\]\n\n__Multiply both sides by the denominator__ in the second step and: \\[2x+1 = A\\left(x-1 \\right )^2+B\\left(x-1 \\right )\\left(x+1 \\right )+C\\left(x+1 \\right )\\]\n\nIf we __sub in the correct values for x__,\\[\\\\x=1\\rightarrow C=\\frac{3}{2} \\\\ \\\\x=-1\\rightarrow A=-\\frac{1}{4}\\]\n\nAnd finally if we __compare the coefficients of x<sup>2</sup>__, we obtain\\[B=\\frac{1}{4}\\]\n\nPutting everything together, we obtain: \\[\\frac{2x+1}{\\left(x+1 \\right )\\left(x-1 \\right )^2} = -\\frac{1}{4\\left(x+1 \\right )} + \\frac{1}{4\\left(x-1 \\right )}+\\frac{3}{2\\left(x-1 \\right )^2}\\]\nWhich is our answer.",
   					 					"clarificationCount" => 0,
   					 					"subject" => "Maths",
+  					 					"rating" => "5",
+  					 					"ratingComment" => "Thanks",
   					 					"level" => "O-Levels",
   					 					"serviceLevel" => 1,
   										"answerTime" => "2015-05-29 17:12:23",
@@ -91,7 +94,20 @@
   					 			  		"staffUsername" => "staff",
   					 			  		"attachments" => array(	array("type" => "question", "fileName" => "Marble_in_a_bowl.png"),
   					 			  								array("type" => "answer", "fileName" => "Marble_in_a_bowl.pdf"),
-  					 			  								array("type" => "answer", "fileName" => "Working.pdf"))));
+  					 			  								array("type" => "answer", "fileName" => "Working.pdf"))),
+								  array("id" => 8,
+								  		"title" => "Cheryl's Birthday",
+								  		"content" => "Albert and Bernard just became friends with Cheryl, and they want to know when her birthday is. Cheryl gives them a list of 10 possible dates:\n\n| |\n| - |\n| | 15 May | 16 May | | | 19 May |\n| | | | 17 June | 18 June | |\n| 14 July | | 16 July | | | |\n| 14 August | 15 August | | 17 August | | |\n\nCheryl then tells Albert and Bernard separately the month and the day of her birthday respectively.\n\nAlbert: I don't know when Cheryl's birthday is, but I know that Bernard doesn't know too.\nBernard: At first I don't know when Cheryl's birthday is, but I know now.\nAlbert: Then I also know when Cheryl's birthday is.\n\nSo when is Cheryl's birthday?",
+								  		"status" => "answered",
+								  		"answer" => "Cheryl's birthday is on `July 16`.\n\n> Albert: I don’t know when Cheryl’s birthday is, but I know that Bernard doesn’t know too.\n\nAlbert knows only the month, and Bernard knows only the day.\nIf the day was to be 18 or 19, Bernard will know the full date immediately, as they only appear once. Since Albert is confident that Bernard does not know the date, the month told to him must not include 18 or 19, this leaves us with\n\n| |\n| - |\n| 14 July | | 16 July | |\n| 14 August | 15 August | | 17 August | \n\nBoth Bernard now knows the month is either July or August.\n\n> Bernard: At first I don’t know when Cheryl’s birthday is, but now I know.\n\nFrom this we can rule out both `14 July` and `14 August`, since if the day was 14, it would be impossible for Bernard to deduce the date.\n\n> Albert: Then I also know when Cheryl’s birthday is.\n\nThis gives us `16 July` since Albert is only able to rule out 14, but could deduce the final date. This means that the month has to be July, or he will not be able to determine between `15 August` and `17 August` as the final date.",
+								  		"clarificationCount" => 0,
+								  		"subject" => "Maths",
+								  		"rating" => "5",
+								  		"level" => "O-Levels",
+								  		"serviceLevel" => 1,
+								  		"answerTime" => "2015-06-10 14:48:13",
+								  		"studentsUsername" => "Jack",
+								  		"staffUsername" => "staff"));
 
 		//User/student queries
 		public static function all($user){
