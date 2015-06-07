@@ -25,7 +25,7 @@ This repository contains all technical aspects of the project, including databas
  - [jQuery](https://jquery.com/)
  - [Parsedown](http://parsedown.org/) 
  - [MathJax](https://www.mathjax.org/)
- - [markdown.js](https://github.com/evilstreak/markdown-js)
+ - [marked](https://github.com/chjj/marked)
 
 ######Included in source
 
@@ -201,7 +201,7 @@ Models can be found in `source/models/`. Without a database connection, data wil
 
 As the editors support LaTeX forumlas and Markdown for equations and formatting respectively, the data will be stored in a combination of both where applicable. 
 
-Markdown is entered manually on the website, and is parsed by Parsedown server side (for displaying question and answer content), and markdown.js client side (for previews).
+Markdown is entered manually on the website, and is parsed by Parsedown server side (for displaying question and answer content), and by marked client side (for previews).
 
 LaTeX equations can be entered manually (enclosed in `$...$` or `\[...\]`), or they can be entered with the CodeCogs equation editor, found in `/source/resources/js/editor.js`. They are parsed client side using the MathJax Javascript library.
 
