@@ -32,7 +32,7 @@
 					    		</td>
 
 					    		<td><?php echo $staffName; ?></td>
-					    		<td><?php echo $rating; ?></td>
+					    		<td><?php echo (float) number_format($rating,2); ?></td>
 				    		</tr>
 					    <?php endforeach; ?>
 			    	</tbody>

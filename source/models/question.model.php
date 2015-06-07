@@ -157,6 +157,12 @@
 			});
 		}
 
+		public static function staffRated($staff){
+			return array_filter(self::$questions, function($val) use($staff){
+				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && isset($val['rating']) && $val['rating'] > 0;
+			});
+		}
+
 		public static function staffAccepted($staff){
 			return array_filter(self::$questions, function($val) use($staff){
 				return isset($val['staffUsername']) && $val['staffUsername'] == $staff && self::reqResponse($val['status']);

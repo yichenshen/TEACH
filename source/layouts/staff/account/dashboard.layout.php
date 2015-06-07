@@ -16,7 +16,7 @@
 
 				<div class="col s12 m6">
 					<br />
-					<?php echo "Average rating: ".$rating."/5"; ?>
+					<?php echo "Average rating: ".(float) number_format($rating,2)."/5"; ?>
 					<br />
 					<?php echo "Questions Answered: ".$answered; ?>
 					<br />

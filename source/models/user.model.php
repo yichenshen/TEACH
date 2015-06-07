@@ -64,7 +64,7 @@
 		}
 
 		public static function staffAverageRating($staff){
-			$questions = Question::staffAnswered($staff);
+			$questions = Question::staffRated($staff);
 
 			$totalRating = 0;
 			$totalQns = 0;
@@ -77,7 +77,7 @@
 			}
 
 			if($totalQns > 0){
-				return 1.0 * $totalRating / $totalQns;
+				return $totalRating / $totalQns;
 			} else {
 				return 0;
 			}
