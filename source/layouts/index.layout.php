@@ -71,7 +71,7 @@
             </p>
           </div>
           
-          <a class="waves-effect waves-light btn-large light-blue darken-1 hide-on-med-and-up" href="#">Contact Us</a>
+          <a class="waves-effect waves-light btn-large light-blue darken-1 hide-on-med-and-up" href="/pages/info/contacts.php">Contact Us</a>
       </div>
     </div>
 
@@ -80,7 +80,7 @@
         <a class="waves-effect waves-light btn-large light-blue darken-1" href="/pages/account/signup.php">Sign-up Now</a>
       </div>
       <div class="col offset-m2 m5">
-        <a class="waves-effect waves-light btn-large light-blue darken-1" href="#">Contact Us</a>
+        <a class="waves-effect waves-light btn-large light-blue darken-1" href="/pages/info/contacts.php">Contact Us</a>
       </div>
     </div>
   </div>
