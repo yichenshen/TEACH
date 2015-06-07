@@ -8,5 +8,5 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="/bower_components/markdown/lib/markdown.js"></script>
+<script type="text/javascript" src="/bower_components/marked/marked.min.js"></script>
 <script type="text/javascript" src="/resources/js/preview.js"></script>

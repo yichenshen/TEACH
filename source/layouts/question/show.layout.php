@@ -15,7 +15,7 @@
 			</div>
 			<div class="card-action">
 				<div class="right card-buttons">
-					<a class="btn white-text red lighten-1 waves-effect waves-light">Accept</a> 	
+					<a href="#" class="btn white-text red lighten-1 waves-effect waves-light">Accept</a> 	
 				</div>
 			</div>
 		</div>

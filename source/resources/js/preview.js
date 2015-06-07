@@ -6,7 +6,7 @@ function preview(container){
 		text = "No text entered";
 	}
 
-	text = markdown.toHTML(text.replace(/\\/g,"\\\\"));
+	text = marked(text.replace(/\\/g,"\\\\"),{gfm: true, breaks: true, tables: true});
 
 	$('#preview-content').html(text);
 
